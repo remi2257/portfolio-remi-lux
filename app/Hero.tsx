@@ -15,6 +15,7 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
     >
       <div className="mono-grid aspect-square h-48 sm:h-64">
         <Image
+          priority
           src="/assets/hero-day-1.jpg"
           alt="Rémi Lux Day"
           width={256}
@@ -46,7 +47,7 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
       </h3>
       <div className="flex items-center gap-x-8">
         <Button asChild>
-          <Link href="mailto:remiluxpc@gmail.com" target="_blank">
+          <Link href="#contact" className="scroll-smooth">
             Contact me
           </Link>
         </Button>

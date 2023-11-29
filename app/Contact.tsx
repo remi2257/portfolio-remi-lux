@@ -76,7 +76,7 @@ const Contact: React.FC<{ className?: string }> = ({ className }) => {
   }
 
   return (
-    <Card className={cn("", className)}>
+    <Card id="contact" className={cn("", className)}>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <CardHeader>
