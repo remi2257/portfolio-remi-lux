@@ -1,0 +1,34 @@
+{
+  "plugins": ["prettier", "import", "tailwindcss"],
+
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
+
+  "settings": {
+    "import/internal-regex": "^@/.*"
+  },
+
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "groups": [
+          "external",
+          "builtin",
+          "internal",
+          "sibling",
+          "parent",
+          "index"
+        ]
+      }
+    ]
+  }
+}
