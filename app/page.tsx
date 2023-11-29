@@ -9,7 +9,7 @@ export default function Home() {
       <Hero className="mx-auto max-w-prose" />
 
       <About className="mx-auto max-w-prose" index={1} />
-      <Projects className="mx-auto max-w-prose" index={2} />
+      <Projects className="mx-auto" index={2} />
       <ProfessionalExperiences className="mx-auto" index={3} />
     </main>
   );
