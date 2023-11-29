@@ -1,5 +1,6 @@
 import Footer from "@/components/molecules/Footer";
 import Navbar from "@/components/molecules/Navbar";
+import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -25,6 +26,8 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

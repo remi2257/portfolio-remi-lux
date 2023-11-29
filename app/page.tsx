@@ -1,4 +1,5 @@
 import About from "./About";
+import Contact from "./Contact";
 import Hero from "./Hero";
 import ProfessionalExperiences from "./ProfessionalExperiences";
 import Projects from "./Projects";
@@ -11,6 +12,8 @@ export default function Home() {
       <About className="mx-auto max-w-prose" index={1} />
       <Projects className="mx-auto" index={2} />
       <ProfessionalExperiences className="mx-auto" index={3} />
+
+      <Contact className="mx-auto max-w-prose" />
     </main>
   );
 }
