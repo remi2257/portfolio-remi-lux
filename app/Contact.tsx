@@ -1,5 +1,10 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
 import { sendMail } from "@/actions/sendMail";
 import { Button } from "@/components/ui/button";
 import {
@@ -22,11 +27,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { cn } from "@/lib/utils";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
-
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 
 const FormSchema = z.object({
   name: z.string().min(1).max(20),
@@ -86,7 +86,7 @@ const Contact: React.FC<{ className?: string }> = ({ className }) => {
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+          <CardContent className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
             <FormField
               control={form.control}
               name="name"

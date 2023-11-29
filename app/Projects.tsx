@@ -1,12 +1,13 @@
+import Link from "next/link";
+import { MdGridOn } from "react-icons/md";
+import { TbPhotoAi, TbTrain } from "react-icons/tb";
+
 import SectionTitle from "@/components/atoms/SectionTitle";
 import VerticalTimeline, {
   TimelineElement,
 } from "@/components/molecules/VerticalTimeline";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { MdGridOn } from "react-icons/md";
-import { TbPhotoAi, TbTrain } from "react-icons/tb";
 
 const projectList: TimelineElement[] = [
   {

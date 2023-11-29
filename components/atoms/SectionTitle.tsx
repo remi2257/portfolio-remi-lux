@@ -26,10 +26,10 @@ const SectionTitle: React.FC<{
         className={cn("h-16 sm:h-24 w-px bg-gradient-to-r", gradientClass)}
       />
 
-      <div className="font-semibold rounded-full h-12 w-12 sm:h-16 sm:w-16 grid place-items-center bg-foreground text-background bg-gradient-to-r">
+      <div className="grid h-12 w-12 place-items-center rounded-full bg-foreground bg-gradient-to-r font-semibold text-background sm:h-16 sm:w-16">
         {index}
       </div>
-      <h4 className="font-extrabold bg-clip-text text-transparent bg-gradient-to-r text-center">
+      <h4 className="bg-gradient-to-r bg-clip-text text-center font-extrabold text-transparent">
         {title}
       </h4>
     </div>

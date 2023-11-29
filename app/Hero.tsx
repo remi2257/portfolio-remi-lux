@@ -1,8 +1,9 @@
+import Image from "next/image";
+import Link from "next/link";
+
 import SocialIcons from "@/components/molecules/SocialIcons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import Link from "next/link";
 
 const Hero: React.FC<{ className?: string }> = ({ className }) => {
   return (
@@ -12,7 +13,7 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
         className
       )}
     >
-      <div className="mono-grid h-48 sm:h-64 aspect-square">
+      <div className="mono-grid aspect-square h-48 sm:h-64">
         <Image
           src="/assets/hero-day-1.jpg"
           alt="Rémi Lux Day"
@@ -32,14 +33,14 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
           )}
         />
       </div>
-      <h2 className="text-2xl sm:text-3xl font-black text-center text-pretty">
+      <h2 className="text-pretty text-center text-2xl font-black sm:text-3xl">
         Experienced web developer specializing in{" "}
-        <span className="bg-clip-text text-transparent bg-gradient-to-r gradient-colors-1">
+        <span className="gradient-colors-1 bg-gradient-to-r bg-clip-text text-transparent">
           ReactJS
         </span>
         .
       </h2>
-      <h3 className="sm:text-xl text-muted-foreground text-center text-pretty">
+      <h3 className="text-pretty text-center text-muted-foreground sm:text-xl">
         I have a strong foundration in HTML, CSS and Javascript, and I am
         skilled in creating interactive and visually appealing websites.
       </h3>

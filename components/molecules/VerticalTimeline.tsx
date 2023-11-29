@@ -1,5 +1,7 @@
-import { cn } from "@/lib/utils";
 import { IconType } from "react-icons";
+
+import { cn } from "@/lib/utils";
+
 import { Badge } from "../ui/badge";
 import {
   Card,
@@ -45,7 +47,7 @@ const VerticalTimelineElement: React.FC<VerticalTimelineElementProps> = ({
         className={cn("col-start-2", odd ? "sm:col-start-1" : "sm:col-start-3")}
       >
         <CardHeader>
-          <CardTitle className="flex justify-between items-center">
+          <CardTitle className="flex items-center justify-between">
             {title}
             {archived && <Badge> Archived</Badge>}
           </CardTitle>
@@ -54,7 +56,7 @@ const VerticalTimelineElement: React.FC<VerticalTimelineElementProps> = ({
         <CardContent className="whitespace-pre-line">{description}</CardContent>
         {footer && <CardFooter>{footer}</CardFooter>}
       </Card>
-      <div className="flex flex-col items-center sm:gap-y-2 gap-y-1 h-max py-4 bg-background col-start-1 sm:col-start-2">
+      <div className="col-start-1 flex h-max flex-col items-center gap-y-1 bg-background py-4 sm:col-start-2 sm:gap-y-2">
         <Icon className="h-8 w-8 sm:h-12 sm:w-12" />
         <span className="text-sm sm:hidden">{date}</span>
       </div>
@@ -74,10 +76,10 @@ const VerticalTimeline: React.FC<{ elements: TimelineElement[] }> = ({
   elements,
 }) => {
   return (
-    <div className="grid grid-flow-dense grid-cols-[auto,1fr] sm:grid-cols-[1fr,auto,1fr] relative py-8 gap-x-2 sm:gap-x-8 gap-y-6">
+    <div className="relative grid grid-flow-dense grid-cols-[auto,1fr] gap-x-2 gap-y-6 py-8 sm:grid-cols-[1fr,auto,1fr] sm:gap-x-8">
       <div
         // Vertical line
-        className="absolute -z-10 inset-y-0 w-px bg-muted-foreground col-span-1 col-start-1 sm:col-start-2 justify-self-center"
+        className="absolute inset-y-0 -z-10 col-span-1 col-start-1 w-px justify-self-center bg-muted-foreground sm:col-start-2"
       />
 
       {elements.map((elmt, index) => (

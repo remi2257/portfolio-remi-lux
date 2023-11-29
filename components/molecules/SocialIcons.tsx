@@ -1,22 +1,11 @@
 import Link from "next/link";
 import { FaGithub, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
 
 import { Button } from "../ui/button";
 
 const SocialIcons: React.FC = () => {
   return (
     <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-px">
-      <Button
-        variant="link"
-        asChild
-        size="icon"
-        className="transition-colors hover:text-muted-foreground"
-      >
-        <Link href="mailto:remiluxpc@gmail.com" target="_blank">
-          <IoMdMail className="h-8 w-8" />
-        </Link>
-      </Button>
       <Button
         variant="link"
         asChild

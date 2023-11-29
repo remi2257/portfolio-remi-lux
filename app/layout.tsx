@@ -1,8 +1,10 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+
 import Footer from "@/components/molecules/Footer";
 import Navbar from "@/components/molecules/Navbar";
 import { Toaster } from "@/components/ui/toaster";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+
 import "./globals.css";
 import { ThemeProvider } from "./theme-provider";
 

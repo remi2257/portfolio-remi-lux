@@ -1,5 +1,3 @@
-import SectionTitle from "@/components/atoms/SectionTitle";
-import { cn } from "@/lib/utils";
 import {
   SiAngularjs,
   SiCss3,
@@ -13,6 +11,9 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
+
+import SectionTitle from "@/components/atoms/SectionTitle";
+import { cn } from "@/lib/utils";
 
 const About: React.FC<{ index: number; className?: string }> = ({
   index,
@@ -37,7 +38,7 @@ const About: React.FC<{ index: number; className?: string }> = ({
       </div>
 
       <div className="flex flex-col items-center gap-y-6">
-        <div className="uppercase text-muted-foreground font-medium text-lg">
+        <div className="text-lg font-medium uppercase text-muted-foreground">
           Experience with
         </div>
         <div className="flex flex-col items-center gap-6 sm:gap-8">

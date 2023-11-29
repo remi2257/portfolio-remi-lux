@@ -1,15 +1,16 @@
-import SectionTitle from "@/components/atoms/SectionTitle";
-import VerticalTimeline, {
-  TimelineElement,
-} from "@/components/molecules/VerticalTimeline";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { BsBank } from "react-icons/bs";
 import { FaBox } from "react-icons/fa";
 import { GiFrance, GiRobotGrab } from "react-icons/gi";
 import { TbSubmarine } from "react-icons/tb";
 import { WiMoonAltWaxingCrescent1 } from "react-icons/wi";
+
+import SectionTitle from "@/components/atoms/SectionTitle";
+import VerticalTimeline, {
+  TimelineElement,
+} from "@/components/molecules/VerticalTimeline";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const experienceList: TimelineElement[] = [
   {
