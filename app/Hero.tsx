@@ -13,7 +13,7 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
         className
       )}
     >
-      <div className="mono-grid aspect-square h-48 sm:h-64">
+      <div className="mono-grid aspect-square h-48 animate-[appear_0.75s_ease-out] sm:h-64">
         <Image
           priority
           src="/assets/hero-day-1.jpg"
