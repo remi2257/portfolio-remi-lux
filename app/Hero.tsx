@@ -35,15 +35,15 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
         />
       </div>
       <h2 className="text-pretty text-center text-2xl font-black sm:text-3xl">
-        Experienced web developer specializing in{" "}
+        Experienced Full-Stack Engineer specialized in{" "}
         <span className="gradient-colors-1 bg-gradient-to-r bg-clip-text text-transparent">
-          ReactJS
+          Front-End
         </span>
-        .
       </h2>
-      <h3 className="text-pretty text-center text-muted-foreground sm:text-xl">
-        I have a strong foundration in HTML, CSS and Javascript, and I am
-        skilled in creating interactive and visually appealing websites.
+      <h3 className="text-balance text-center text-muted-foreground sm:text-xl">
+        With a robust HTML, CSS, and Javascript foundation and Full-Stack
+        expertise, I develop visually engaging websites with enhanced
+        functionality.
       </h3>
       <div className="flex items-center gap-x-8">
         <Button asChild>

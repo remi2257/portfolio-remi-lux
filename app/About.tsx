@@ -25,15 +25,23 @@ const About: React.FC<{ index: number; className?: string }> = ({
 
   return (
     <section className={cn("max-w-prose space-y-8", className)}>
-      <div className="text-center text-lg">
-        <SectionTitle index={index} title="About" className="mb-6" />
-        <p className="text-pretty">
-          I&apos;m Rémi Lux! I&apos;ve got 2+ years of web development
-          experience, mainly focusing on front-end.
+      <div className="text-pretty space-y-4 text-center text-lg">
+        <SectionTitle index={index} title="About" className="mb-2" />
+        <p>Hey, I&apos;m Rémi Lux!</p>
+
+        <p>
+          I started my software journey in robotics with a focus on Computer
+          Vision from 2019 to 2021, giving robots the gift of sight.
         </p>
-        <p className="text-pretty">
-          I love new challenges and I&apos;m always looking for opportunities to
-          learn new things.
+
+        <p>
+          Since 2021, I&apos;ve shifted to Web Development, specializing in the
+          front-end.
+        </p>
+
+        <p>
+          With over 2 years of experience, I thrive on challenges and am always
+          eager for opportunities to learn and grow.
         </p>
       </div>
 
