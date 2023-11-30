@@ -24,7 +24,7 @@ const About: React.FC<{ index: number; className?: string }> = ({
   const iconClasses = "h-10 w-10 sm:h-12 sm:w-12";
 
   return (
-    <section className={cn("max-w-prose space-y-8", className)}>
+    <section id="about" className={cn("max-w-prose space-y-8", className)}>
       <div className="text-pretty space-y-4 text-center text-lg">
         <SectionTitle index={index} title="About" className="mb-2" />
         <p>Hey, I&apos;m Rémi Lux!</p>

@@ -128,7 +128,10 @@ const ProfessionalExperiences: React.FC<{
   className?: string;
 }> = ({ index, className }) => {
   return (
-    <section className={cn("space-y-8 sm:space-y-12", className)}>
+    <section
+      id="experiences"
+      className={cn("space-y-8 sm:space-y-12", className)}
+    >
       <SectionTitle
         index={index}
         title="Professional Experiences"

@@ -85,7 +85,7 @@ const Projects: React.FC<{ index: number; className?: string }> = ({
   className,
 }) => {
   return (
-    <section className={cn("space-y-8 sm:space-y-12", className)}>
+    <section id="projects" className={cn("space-y-8 sm:space-y-12", className)}>
       <SectionTitle index={index} title="Projects" className="mb-6" />
       <VerticalTimeline elements={projectList} />
     </section>

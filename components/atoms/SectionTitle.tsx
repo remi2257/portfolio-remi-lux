@@ -23,7 +23,7 @@ const SectionTitle: React.FC<{
     >
       <div
         // Separator
-        className={cn("h-16 sm:h-24 w-px bg-gradient-to-r", gradientClass)}
+        className={cn("h-12 sm:h-20 w-px bg-gradient-to-r", gradientClass)}
       />
 
       <div className="grid h-12 w-12 place-items-center rounded-full bg-foreground bg-gradient-to-r font-semibold text-background sm:h-16 sm:w-16">

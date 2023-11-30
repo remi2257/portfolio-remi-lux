@@ -47,9 +47,7 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
       </h3>
       <div className="flex items-center gap-x-8">
         <Button asChild>
-          <Link href="#contact" className="scroll-smooth">
-            Contact me
-          </Link>
+          <Link href="#contact">Contact me</Link>
         </Button>
         <SocialIcons />
       </div>
