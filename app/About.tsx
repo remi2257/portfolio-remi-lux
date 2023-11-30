@@ -55,10 +55,13 @@ const About: React.FC<{ index: number; className?: string }> = ({
     "flex flex-wrap justify-center items-center gap-3 sm:gap-x-4";
 
   return (
-    <section id="about" className={cn("max-w-prose space-y-8", className)}>
-      <div className="text-pretty space-y-4 text-center text-lg">
-        <SectionTitle index={index} title="About" className="mb-2" />
-        <p>Hey, I&apos;m Rémi Lux!</p>
+    <section id="about" className={cn("space-y-6 sm:space-y-10", className)}>
+      <SectionTitle index={index} title="About" />
+
+      <div className="text-pretty space-y-3 pb-2 text-center text-base text-muted-foreground sm:space-y-6 sm:text-lg">
+        <p className="text-xl font-bold text-foreground sm:text-2xl">
+          Hey, I&apos;m Rémi Lux!
+        </p>
 
         <p>
           I started my software journey in robotics with a focus on Computer
@@ -77,7 +80,7 @@ const About: React.FC<{ index: number; className?: string }> = ({
       </div>
 
       <div className="flex flex-col items-center gap-y-6">
-        <div className="text-lg font-medium uppercase text-muted-foreground">
+        <div className="text-base font-medium uppercase text-muted-foreground sm:text-lg">
           Experience with
         </div>
         <div className="flex flex-col items-center gap-6 sm:gap-8">
