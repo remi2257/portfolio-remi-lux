@@ -12,7 +12,7 @@ export default async function Navbar() {
           <h2 className="font-bold sm:text-lg xl:text-xl">Rémi Lux</h2>
         </Link>
 
-        <div className="hidden sm:flex md:gap-x-2">
+        <div className="hidden md:flex lg:gap-x-4">
           <Button asChild variant="link">
             <Link href="#about">About</Link>
           </Button>
@@ -23,7 +23,10 @@ export default async function Navbar() {
             <Link href="#experiences">Experiences</Link>
           </Button>
           <Button asChild variant="link">
-            <Link href="#contact">Contact</Link>
+            <Link href="#education">Education</Link>
+          </Button>
+          <Button asChild variant="outline">
+            <Link href="#contact">Contact Me</Link>
           </Button>
         </div>
 
