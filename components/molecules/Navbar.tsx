@@ -8,9 +8,7 @@ export default async function Navbar() {
   return (
     <header className="mb-8 border-b sm:mb-12">
       <div className="container flex items-center justify-between gap-x-2 py-2 sm:py-4">
-        <Link href="/">
-          <h2 className="font-bold sm:text-lg xl:text-xl">Rémi Lux</h2>
-        </Link>
+        <h1 className="font-bold sm:text-lg xl:text-xl">Rémi Lux</h1>
 
         <div className="hidden md:flex lg:gap-x-4">
           <Button asChild variant="link">
