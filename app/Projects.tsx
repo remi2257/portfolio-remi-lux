@@ -4,12 +4,9 @@ import { MdGridOn } from "react-icons/md";
 import { SiGithub } from "react-icons/si";
 import { TbPhotoAi, TbTrain } from "react-icons/tb";
 
-import SectionTitle from "@/components/atoms/SectionTitle";
-import VerticalTimeline, {
-  TimelineElement,
-} from "@/components/molecules/VerticalTimeline";
+import TimelineSection from "@/components/molecules/TimelineSection";
+import { TimelineElement } from "@/components/molecules/VerticalTimeline";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 const projectList: TimelineElement[] = [
   {
@@ -85,10 +82,13 @@ const Projects: React.FC<{ index: number; className?: string }> = ({
   className,
 }) => {
   return (
-    <section id="projects" className={cn("space-y-8 sm:space-y-12", className)}>
-      <SectionTitle index={index} title="Projects" className="mb-6" />
-      <VerticalTimeline elements={projectList} />
-    </section>
+    <TimelineSection
+      id="projects"
+      index={index}
+      label="Projects"
+      timelineElements={projectList}
+      className={className}
+    />
   );
 };
 

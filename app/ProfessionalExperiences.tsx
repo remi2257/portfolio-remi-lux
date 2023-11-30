@@ -6,12 +6,9 @@ import { TbSubmarine } from "react-icons/tb";
 import { VscGraphLine } from "react-icons/vsc";
 import { WiMoonAltWaxingCrescent1 } from "react-icons/wi";
 
-import SectionTitle from "@/components/atoms/SectionTitle";
-import VerticalTimeline, {
-  TimelineElement,
-} from "@/components/molecules/VerticalTimeline";
+import TimelineSection from "@/components/molecules/TimelineSection";
+import { TimelineElement } from "@/components/molecules/VerticalTimeline";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 const experienceList: TimelineElement[] = [
   {
@@ -128,17 +125,13 @@ const ProfessionalExperiences: React.FC<{
   className?: string;
 }> = ({ index, className }) => {
   return (
-    <section
+    <TimelineSection
       id="experiences"
-      className={cn("space-y-8 sm:space-y-12", className)}
-    >
-      <SectionTitle
-        index={index}
-        title="Professional Experiences"
-        className="mb-6"
-      />
-      <VerticalTimeline elements={experienceList} />
-    </section>
+      index={index}
+      label="Professional Experiences"
+      timelineElements={experienceList}
+      className={className}
+    />
   );
 };
 
