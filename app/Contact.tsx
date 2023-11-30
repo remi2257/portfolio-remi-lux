@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { ImSpinner2 } from "react-icons/im";
 import { z } from "zod";
 
 import { sendMail } from "@/actions/sendMail";
@@ -42,7 +43,9 @@ type FormInput = z.infer<typeof FormSchema>;
 const Contact: React.FC<{ className?: string }> = ({ className }) => {
   const { toast } = useToast();
 
-  const [mailSent, setMailSent] = useState(false);
+  const [mailSendState, setMailSendState] = useState<"sending" | "sent" | null>(
+    null
+  );
 
   const form = useForm<FormInput>({
     resolver: zodResolver(FormSchema),
@@ -56,13 +59,14 @@ const Contact: React.FC<{ className?: string }> = ({ className }) => {
 
   async function onSubmit(formData: FormInput) {
     try {
-      setMailSent(true);
+      setMailSendState("sending");
       await sendMail(formData);
       toast({
         title: "Email sent",
         description: "I will get back to you as soon as possible.",
         duration: 5000,
       });
+      setMailSendState("sent");
     } catch (e) {
       toast({
         title: "Failed to send email",
@@ -71,7 +75,7 @@ const Contact: React.FC<{ className?: string }> = ({ className }) => {
         duration: 5000,
         variant: "destructive",
       });
-      setMailSent(false);
+      setMailSendState(null);
     }
   }
 
@@ -150,7 +154,16 @@ const Contact: React.FC<{ className?: string }> = ({ className }) => {
           </CardContent>
 
           <CardFooter>
-            <Button disabled={mailSent}>Send</Button>
+            <Button disabled={mailSendState !== null}>
+              {mailSendState === null && "Send"}
+              {mailSendState === "sending" && (
+                <>
+                  Sending
+                  <ImSpinner2 className="ml-2 h-4 w-4 animate-spin" />
+                </>
+              )}
+              {mailSendState === "sent" && "Sent"}
+            </Button>
           </CardFooter>
         </form>
       </Form>
