@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaCar } from "react-icons/fa";
 import { MdGridOn } from "react-icons/md";
 import { SiGithub } from "react-icons/si";
 import { TbPhotoAi, TbTrain } from "react-icons/tb";
@@ -28,7 +29,6 @@ const projectList: TimelineElement[] = [
     Icon: TbPhotoAi,
     date: "2023",
   },
-
   {
     title: "TGV Max Extra",
     subtitle: "Angular, Firebase, Stripe",
@@ -41,7 +41,7 @@ const projectList: TimelineElement[] = [
   },
   {
     title: "Sudoku Solver",
-    subtitle: "Solve sudoku with AI",
+    subtitle: "Solve any Sudoku with Computer Vision",
     badges: ["500+ Stars"],
     description: `Dynamically resolves the solutions for multiple Sudoku grids in real-time. Once solved, these solutions are showcased through Augmented Reality.
       This project has garnered more than 500 stars on GitHub.`,
@@ -52,6 +52,26 @@ const projectList: TimelineElement[] = [
     footer: (
       <Button asChild>
         <Link href="https://github.com/remi2257/sudoku-solver" target="_blank">
+          See on GitHub
+          <SiGithub className="ml-2 h-4 w-4" />
+        </Link>
+      </Button>
+    ),
+  },
+  {
+    title: "Little Car AI",
+    subtitle: "Use AI to teach a car to drive",
+    badges: ["AI"],
+    description: `Teaching a car to drive through Reinforcement Learning.
+                  The Neural Net processes LIDAR and speed data, with high-reward agents influencing the next generation, creating a cycle of improvement, mimicking natural selection.
+                  `,
+
+    Icon: FaCar,
+    date: "2018",
+
+    footer: (
+      <Button asChild>
+        <Link href="https://github.com/remi2257/little-car-ai" target="_blank">
           See on GitHub
           <SiGithub className="ml-2 h-4 w-4" />
         </Link>

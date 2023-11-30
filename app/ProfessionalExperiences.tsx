@@ -33,7 +33,6 @@ const experienceList: TimelineElement[] = [
     Icon: WiMoonAltWaxingCrescent1,
     date: "2023",
   },
-
   {
     title: "Milleis Private Bank",
     subtitle: "Front-end Developer",
