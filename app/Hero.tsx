@@ -1,9 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import SocialIcons from "@/components/molecules/SocialIcons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+import HeroImage from "./HeroImage";
 
 const Hero: React.FC<{ className?: string }> = ({ className }) => {
   return (
@@ -13,27 +14,7 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
         className
       )}
     >
-      <div className="mono-grid aspect-square h-48 animate-[appear_0.75s_ease-out] place-items-center sm:h-64">
-        <Image
-          priority
-          src="/assets/hero-day-1.jpg"
-          alt="Rémi Lux Day"
-          width={256}
-          height={256}
-          className={cn(
-            "rounded-full object-cover transition duration-500 opacity-100 dark:-translate-x-1/2 dark:opacity-0 dark:pointer-events-none"
-          )}
-        />
-        <Image
-          src="/assets/hero-night-1.jpg"
-          alt="Rémi Lux Night"
-          width={256}
-          height={256}
-          className={cn(
-            "rounded-full object-cover transition duration-500 opacity-0 translate-x-1/2 dark:translate-x-0 dark:opacity-100 pointer-events-none dark:pointer-events-auto"
-          )}
-        />
-      </div>
+      <HeroImage />
       <h2 className="text-pretty text-center text-2xl font-black sm:text-3xl">
         Experienced Full-Stack Engineer specialized in{" "}
         <span className="gradient-colors-1 bg-gradient-to-r bg-clip-text text-transparent">
