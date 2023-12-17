@@ -12,8 +12,8 @@ import { ThemeProvider } from "./theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Rémi Lux - Full-Stack Developer",
-  description: `Passionate and skilled full-stack developer based in Paris, France.
+  title: "Rémi Lux | Full-Stack Engineer",
+  description: `Passionate and skilled Full-Stack Engineer based in Paris, France.
                 Specializing in Front-End, with a focus on React/Next.
                 Dedicated to creating innovative solutions and striving to become the best version of myself.
                 `,
