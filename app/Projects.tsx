@@ -12,16 +12,16 @@ const projectList: TimelineElement[] = [
   {
     title: "Profile Perfect AI",
     subtitle: "Next.js, TailwindCSS, Stable Diffusion, GPU Cloud, Stripe",
-    badges: ["Live"],
+    badges: ["AI", "Archived"],
     description: `Profile Perfect AI allows users to create AI-generated photos. All users have to do is upload a few photos of themselves, and the AI will generate a new photo of them.
                   Whether on LinkedIn, dating apps, or social networks, you can be sure that your profile photo leaves a lasting impression.`,
-    footer: (
-      <Button asChild>
-        <Link href="https://profile-perfect-ai.remi-lux.dev/" target="_blank">
-          Visit website
-        </Link>
-      </Button>
-    ),
+    // footer: (
+    //   <Button asChild>
+    //     <Link href="https://profile-perfect-ai.remi-lux.dev/" target="_blank">
+    //       Visit website
+    //     </Link>
+    //   </Button>
+    // ),
 
     Icon: TbPhotoAi,
     date: "2023",
