@@ -13,13 +13,14 @@ import {
   View,
 } from "@react-pdf/renderer";
 import { Style } from "@react-pdf/types";
-import { createContext, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Switch } from "@/components/ui/switch";
 
+import ResumeContextProvider, { ResumeContext } from "./ResumeContext";
 import {
   SmallSectionData,
   educationData,
@@ -27,7 +28,7 @@ import {
   professionalExperienceData,
   skillsData,
 } from "./data";
-import { Color, ColorPalette, colorList, colorPaletteMap } from "./style";
+import { Color, colorList, colorPaletteMap } from "./style";
 
 const titleFont = "Century Gothic";
 Font.register({
@@ -68,29 +69,14 @@ Font.register({
   ],
 });
 
+// Avoid word breaks
+Font.registerHyphenationCallback(word => [word]);
+
 const styles = StyleSheet.create({
   px: {
     paddingHorizontal: 24,
   },
 });
-
-interface ResumeContextType {
-  colorPalette: ColorPalette;
-}
-
-const ResumeContext = createContext<ResumeContextType>({
-  colorPalette: colorPaletteMap.blue,
-});
-
-const ResumeContextProvider: React.FC<
-  React.PropsWithChildren<ResumeContextType>
-> = ({ colorPalette, children }) => {
-  return (
-    <ResumeContext.Provider value={{ colorPalette }}>
-      {children}
-    </ResumeContext.Provider>
-  );
-};
 
 // ---
 
@@ -98,7 +84,8 @@ type ResumeSmallSectionProps = SmallSectionData;
 
 const ResumeSmallSection: React.FC<ResumeSmallSectionProps> = ({
   name,
-  subtitle: date,
+  nameExtra,
+  subtitle,
   points,
 }) => {
   return (
@@ -110,25 +97,38 @@ const ResumeSmallSection: React.FC<ResumeSmallSectionProps> = ({
       }}
     >
       <View
-      // Title & Date
+        // Title & Date
+        style={{
+          rowGap: 1,
+        }}
       >
-        <Text
+        <View
           style={{
-            fontSize: 11,
-            fontWeight: "bold",
-            lineHeight: 1.2,
+            flexDirection: "row",
+            alignItems: "center",
+            columnGap: 6,
           }}
         >
-          {name}
-        </Text>
-        {date && (
+          <Text
+            style={{
+              fontSize: 12,
+              fontWeight: "bold",
+              lineHeight: 1.2,
+            }}
+          >
+            {name}
+          </Text>
+          {nameExtra}
+        </View>
+        {subtitle && (
           <Text
             style={{
               fontSize: 10,
               fontStyle: "italic",
+              color: "hsl(0, 0%, 20%)",
             }}
           >
-            {date}
+            {subtitle}
           </Text>
         )}
       </View>
@@ -145,7 +145,7 @@ const ResumeSmallSection: React.FC<ResumeSmallSectionProps> = ({
             style={{
               flexDirection: "row",
               columnGap: 1,
-              fontSize: 9,
+              fontSize: 10,
             }}
           >
             {points.length > 1 && <Text>•</Text>}
@@ -180,23 +180,22 @@ const ResumeBigSection: React.FC<ResumeBigSectionProps> = ({
   const { colorPalette } = useContext(ResumeContext);
 
   return (
-    <View style={[{ rowGap: 8 }, style]}>
+    <View style={[{ rowGap: 6 }, style]}>
       <View
+        // Title & Separator
         style={{
-          rowGap: 4,
+          rowGap: 3,
         }}
       >
         <Text
           style={{
             fontFamily: titleFont,
-            fontSize: 12,
+            fontSize: 14,
             fontWeight: "bold",
 
             color: colorPalette.titleFg,
 
             textTransform: "uppercase",
-
-            marginLeft: 4,
           }}
         >
           {name}
@@ -207,12 +206,18 @@ const ResumeBigSection: React.FC<ResumeBigSectionProps> = ({
             height: 1,
             backgroundColor: colorPalette.titleFg,
             borderRadius: 99,
+            marginLeft: -3,
           }}
         />
       </View>
-      {dataList.map((data, i) => (
-        <ResumeSmallSection key={i} {...data} />
-      ))}
+      <View
+        // List of small sections
+        style={{ rowGap: 8 }}
+      >
+        {dataList.map((data, i) => (
+          <ResumeSmallSection key={i} {...data} />
+        ))}
+      </View>
     </View>
   );
 };
@@ -235,11 +240,11 @@ const Resume: React.FC<ResumeProps> = ({
   const { colorPalette } = useContext(ResumeContext);
 
   return (
-    <Document title={documentTitle}>
+    <Document title={documentTitle} author="Rémi LUX">
       <Page
         size="A4"
         style={{
-          rowGap: 16,
+          rowGap: 12,
         }}
       >
         <View
@@ -258,7 +263,7 @@ const Resume: React.FC<ResumeProps> = ({
               color: "white",
 
               fontFamily: titleFont,
-              fontSize: 14,
+              fontSize: 15,
             },
           ]}
         >
@@ -284,7 +289,7 @@ const Resume: React.FC<ResumeProps> = ({
                 <View>
                   <Text
                     style={{
-                      fontSize: 24,
+                      fontSize: 26,
                       fontWeight: "bold",
                       marginBottom: 2,
                     }}
@@ -353,12 +358,12 @@ const Resume: React.FC<ResumeProps> = ({
           <View
             style={{
               flexDirection: "row",
-              columnGap: 24,
+              columnGap: 28,
             }}
           >
             <View
               style={{
-                width: "28%",
+                width: "33%",
                 rowGap: 16,
               }}
             >
@@ -385,6 +390,8 @@ const Resume: React.FC<ResumeProps> = ({
             style={[
               styles.px,
               {
+                marginTop: 8,
+
                 flexDirection: "row",
                 justifyContent: "space-evenly",
                 alignItems: "center",
@@ -475,11 +482,11 @@ const ResumeDisplay: React.FC = () => {
   );
 
   return (
-    <div className="grid grid-cols-2 items-center justify-items-center gap-x-8">
+    <div className="grid items-center justify-items-center gap-x-8 sm:grid-cols-2">
       {isClient && (
         <>
           <PDFViewer
-            className="aspect-[2/3] w-[500px]"
+            className="hidden aspect-[2/3] w-[500px] sm:block"
             // showToolbar={false}
           >
             {PdfDocument}
