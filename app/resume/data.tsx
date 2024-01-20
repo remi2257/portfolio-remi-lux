@@ -224,8 +224,8 @@ export const personnalProjectsData: SmallSectionData[] = [
             marginRight: 1,
           }}
         >
-          600
-        </Text>{" "}
+          600{" "}
+        </Text>
         <ImagePdf
           src="/assets/github_star.png"
           style={{

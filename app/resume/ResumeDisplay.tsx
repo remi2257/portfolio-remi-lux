@@ -14,6 +14,7 @@ import {
 } from "@react-pdf/renderer";
 import { Style } from "@react-pdf/types";
 import { useContext, useEffect, useState } from "react";
+import { RiLoader4Fill } from "react-icons/ri";
 
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -464,6 +465,15 @@ const ResumeDisplay: React.FC = () => {
   const [isClient, setIsClient] = useState(false);
   useEffect(() => setIsClient(true), []);
 
+  const [loadingPdf, setLoadingPdf] = useState(true);
+
+  useEffect(() => {
+    if (!loadingPdf) return;
+
+    const timeout = setTimeout(() => setLoadingPdf(false), 1500);
+    return () => clearTimeout(timeout);
+  }, [loadingPdf]);
+
   const [withPhoto, setWithPhoto] = useState(true);
   const [anonymous, setAnonymous] = useState(false);
 
@@ -485,26 +495,37 @@ const ResumeDisplay: React.FC = () => {
     <div className="grid items-center justify-items-center gap-x-8 sm:grid-cols-2">
       {isClient && (
         <>
-          <PDFViewer
-            className="hidden aspect-[2/3] w-[500px] sm:block"
-            // showToolbar={false}
-          >
-            {PdfDocument}
-          </PDFViewer>
-
-          <div className="flex flex-col items-center gap-y-12">
-            <div className="flex flex-col items-center gap-y-4">
-              <div className="text-center text-2xl">
-                Customise my resume to your needs
+          <div className="relative hidden aspect-[2/3] sm:block sm:w-80 md:w-96 lg:w-[480px]">
+            <PDFViewer
+              className="h-full w-full"
+              // showToolbar={false}
+            >
+              {PdfDocument}
+            </PDFViewer>
+            {loadingPdf && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-y-2 bg-black/35 text-xl font-bold text-white backdrop-blur-sm">
+                <span>Generating</span>
+                <RiLoader4Fill className="size-12 animate-spin" />
               </div>
-              <div className="flex gap-x-16">
+            )}
+          </div>
+
+          <div className="flex flex-col items-center gap-y-16">
+            <div className="flex flex-col items-center gap-y-6">
+              <div className="text-center text-2xl">
+                Customize my resume to your needs
+              </div>
+              <div className="flex flex-col gap-x-16 gap-y-4 md:flex-row">
                 <div className="space-y-2">
                   <div className="text-center text-lg">Identity</div>
                   <div className="flex items-center space-x-2">
                     <Switch
                       id="with-photo"
                       checked={withPhoto}
-                      onCheckedChange={() => setWithPhoto(v => !v)}
+                      onCheckedChange={() => {
+                        setWithPhoto(v => !v);
+                        setLoadingPdf(true);
+                      }}
                       disabled={anonymous}
                     />
                     <Label htmlFor="with-photo">Photo</Label>
@@ -513,7 +534,10 @@ const ResumeDisplay: React.FC = () => {
                     <Switch
                       id="anonymous"
                       checked={anonymous}
-                      onCheckedChange={() => setAnonymous(v => !v)}
+                      onCheckedChange={() => {
+                        setAnonymous(v => !v);
+                        setLoadingPdf(true);
+                      }}
                     />
                     <Label htmlFor="anonymous">Anonymous</Label>
                   </div>
@@ -522,7 +546,10 @@ const ResumeDisplay: React.FC = () => {
                   <div className="text-center text-lg">Theme</div>
                   <RadioGroup
                     value={mainColor}
-                    onValueChange={(v: Color) => setMainColor(v)}
+                    onValueChange={(v: Color) => {
+                      setMainColor(v);
+                      setLoadingPdf(true);
+                    }}
                   >
                     {colorList.map(color => (
                       <div key={color} className="flex items-center space-x-2">
