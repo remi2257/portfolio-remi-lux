@@ -13,9 +13,12 @@ import {
   View,
 } from "@react-pdf/renderer";
 import { Style } from "@react-pdf/types";
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Switch } from "@/components/ui/switch";
 
 import {
   SmallSectionData,
@@ -24,9 +27,7 @@ import {
   professionalExperienceData,
   skillsData,
 } from "./data";
-import { Colors } from "./style";
-
-const DOCUMENT_NAME = "LUX_REMI_CV";
+import { Color, ColorPalette, colorList, colorPaletteMap } from "./style";
 
 const titleFont = "Century Gothic";
 Font.register({
@@ -52,6 +53,10 @@ Font.register({
       src: "/fonts/SourceSans3-Regular.ttf",
     },
     {
+      fontWeight: "semibold",
+      src: "/fonts/SourceSans3-SemiBold.ttf",
+    },
+    {
       fontWeight: "bold",
       src: "/fonts/SourceSans3-Bold.ttf",
     },
@@ -69,6 +74,26 @@ const styles = StyleSheet.create({
   },
 });
 
+interface ResumeContextType {
+  colorPalette: ColorPalette;
+}
+
+const ResumeContext = createContext<ResumeContextType>({
+  colorPalette: colorPaletteMap.blue,
+});
+
+const ResumeContextProvider: React.FC<
+  React.PropsWithChildren<ResumeContextType>
+> = ({ colorPalette, children }) => {
+  return (
+    <ResumeContext.Provider value={{ colorPalette }}>
+      {children}
+    </ResumeContext.Provider>
+  );
+};
+
+// ---
+
 type ResumeSmallSectionProps = SmallSectionData;
 
 const ResumeSmallSection: React.FC<ResumeSmallSectionProps> = ({
@@ -81,10 +106,12 @@ const ResumeSmallSection: React.FC<ResumeSmallSectionProps> = ({
       style={{
         fontFamily: bodyFont,
 
-        rowGap: 4,
+        rowGap: 2,
       }}
     >
-      <View>
+      <View
+      // Title & Date
+      >
         <Text
           style={{
             fontSize: 11,
@@ -139,15 +166,19 @@ const ResumeSmallSection: React.FC<ResumeSmallSectionProps> = ({
 
 type ResumeBigSectionProps = {
   name: string;
-  style?: Style;
   dataList: SmallSectionData[];
+
+  style?: Style;
 };
 
 const ResumeBigSection: React.FC<ResumeBigSectionProps> = ({
   name,
-  style = {},
   dataList,
+
+  style = {},
 }) => {
+  const { colorPalette } = useContext(ResumeContext);
+
   return (
     <View style={[{ rowGap: 8 }, style]}>
       <View
@@ -161,7 +192,7 @@ const ResumeBigSection: React.FC<ResumeBigSectionProps> = ({
             fontSize: 12,
             fontWeight: "bold",
 
-            color: Colors.title,
+            color: colorPalette.titleFg,
 
             textTransform: "uppercase",
 
@@ -174,7 +205,7 @@ const ResumeBigSection: React.FC<ResumeBigSectionProps> = ({
           style={{
             width: "100%",
             height: 1,
-            backgroundColor: Colors.title,
+            backgroundColor: colorPalette.titleFg,
             borderRadius: 99,
           }}
         />
@@ -188,9 +219,23 @@ const ResumeBigSection: React.FC<ResumeBigSectionProps> = ({
 
 // -- Resume
 
-const Resume: React.FC = () => {
+type ResumeProps = {
+  documentTitle: string;
+
+  withPhoto?: boolean;
+  anonymous?: boolean;
+};
+
+const Resume: React.FC<ResumeProps> = ({
+  documentTitle,
+
+  withPhoto,
+  anonymous,
+}) => {
+  const { colorPalette } = useContext(ResumeContext);
+
   return (
-    <Document title={DOCUMENT_NAME}>
+    <Document title={documentTitle}>
       <Page
         size="A4"
         style={{
@@ -201,12 +246,15 @@ const Resume: React.FC = () => {
           // Header
           style={[
             styles.px,
+            !anonymous
+              ? {
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }
+              : {},
             {
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-
-              backgroundColor: Colors.headerBg,
+              backgroundColor: colorPalette.headerBg,
               color: "white",
 
               fontFamily: titleFont,
@@ -214,48 +262,82 @@ const Resume: React.FC = () => {
             },
           ]}
         >
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              columnGap: 24,
-            }}
-          >
-            <ImagePdf
-              src="/assets/hero-day-1.jpg"
+          {!anonymous ? (
+            <>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  columnGap: 24,
+                  paddingVertical: withPhoto ? 0 : 16,
+                }}
+              >
+                {withPhoto && (
+                  <ImagePdf
+                    src="/assets/hero-day-1.jpg"
+                    style={{
+                      width: 110,
+                      height: 110,
+                    }}
+                  />
+                )}
+                <View>
+                  <Text
+                    style={{
+                      fontSize: 24,
+                      fontWeight: "bold",
+                      marginBottom: 2,
+                    }}
+                  >
+                    Rémi LUX
+                  </Text>
+                  <Text>Full-Stack Engineer</Text>
+                  <Text>React.js / Next.js / Node.js</Text>
+                </View>
+              </View>
+
+              <View
+                style={{
+                  alignItems: "flex-end",
+                }}
+              >
+                <Text>Paris - France</Text>
+                <Text>+33 6 31 20 55 88</Text>
+                <Link
+                  style={{ color: "white" }}
+                  src="email:remiluxpc@gmail.com"
+                >
+                  remiluxpc@gmail.com
+                </Link>
+                <Link style={{ color: "white" }} src="https://remi-lux.dev">
+                  remi-lux.dev
+                </Link>
+              </View>
+            </>
+          ) : (
+            <View
               style={{
-                width: 110,
-                height: 110,
+                paddingVertical: 12,
+                textAlign: "center",
               }}
-            />
-            <View>
+            >
               <Text
                 style={{
                   fontSize: 24,
                   fontWeight: "bold",
-                  marginBottom: 2,
                 }}
               >
-                Rémi LUX
+                Full-Stack Engineer
               </Text>
-              <Text>Ingénieur Full-Stack</Text>
-              <Text>React.js / Next.js / Node.js</Text>
+              <Text
+                style={{
+                  fontSize: 16,
+                }}
+              >
+                React.js / Next.js / Node.js
+              </Text>
             </View>
-          </View>
-          <View
-            style={{
-              alignItems: "flex-end",
-            }}
-          >
-            <Text>Paris - France</Text>
-            <Text>+33 6 31 20 55 88</Text>
-            <Link style={{ color: "white" }} src="email:remiluxpc@gmail.com">
-              remiluxpc@gmail.com
-            </Link>
-            <Link style={{ color: "white" }} src="https://remi-lux.dev">
-              remi-lux.dev
-            </Link>
-          </View>
+          )}
         </View>
 
         <View
@@ -297,47 +379,73 @@ const Resume: React.FC = () => {
           />
         </View>
 
-        <View
-          // Footer
-          style={[
-            styles.px,
-            {
-              flexDirection: "row",
-              justifyContent: "space-evenly",
-              alignItems: "center",
-
-              paddingVertical: 8,
-
-              backgroundColor: Colors.headerBg,
-              color: "white",
-
-              fontFamily: bodyFont,
-              fontSize: 16,
-              fontWeight: "bold",
-            },
-          ]}
-        >
+        {!anonymous && (
           <View
-          //LinkedIn
+            // Footer
+            style={[
+              styles.px,
+              {
+                flexDirection: "row",
+                justifyContent: "space-evenly",
+                alignItems: "center",
+
+                paddingVertical: 8,
+
+                backgroundColor: colorPalette.headerBg,
+                color: "white",
+
+                fontFamily: bodyFont,
+                fontSize: 14,
+                fontWeight: "semibold",
+              },
+            ]}
           >
-            <Link
-              style={{ color: "white" }}
-              src="https://www.linkedin.com/in/remilux/"
+            <View
+              //LinkedIn
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                columnGap: 10,
+              }}
             >
-              Rémi Lux
-            </Link>
-          </View>
-          <View
-          //GitHub
-          >
-            <Link
-              style={{ color: "white" }}
-              src="https://www.github.com/remi2257"
+              <ImagePdf
+                src="/assets/linkedin.png"
+                style={{
+                  width: 20,
+                  height: 20,
+                }}
+              />
+              <Link
+                style={{ color: "white" }}
+                src="https://www.linkedin.com/in/remilux/"
+              >
+                Rémi Lux
+              </Link>
+            </View>
+            <View
+              //GitHub
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                columnGap: 10,
+              }}
             >
-              remi2257
-            </Link>
+              <ImagePdf
+                src="/assets/github.png"
+                style={{
+                  width: 20,
+                  height: 20,
+                }}
+              />
+              <Link
+                style={{ color: "white" }}
+                src="https://www.github.com/remi2257"
+              >
+                remi2257
+              </Link>
+            </View>
           </View>
-        </View>
+        )}
       </Page>
     </Document>
   );
@@ -349,6 +457,23 @@ const ResumeDisplay: React.FC = () => {
   const [isClient, setIsClient] = useState(false);
   useEffect(() => setIsClient(true), []);
 
+  const [withPhoto, setWithPhoto] = useState(true);
+  const [anonymous, setAnonymous] = useState(false);
+
+  const [mainColor, setMainColor] = useState<Color>("blue");
+
+  const documentTitle = !anonymous ? "LUX_REMI_CV" : "FULL_STACK_ENGINEER_CV";
+
+  const PdfDocument = (
+    <ResumeContextProvider colorPalette={colorPaletteMap[mainColor]}>
+      <Resume
+        withPhoto={withPhoto}
+        anonymous={anonymous}
+        documentTitle={documentTitle}
+      />
+    </ResumeContextProvider>
+  );
+
   return (
     <div className="grid grid-cols-2 items-center justify-items-center gap-x-8">
       {isClient && (
@@ -357,14 +482,65 @@ const ResumeDisplay: React.FC = () => {
             className="aspect-[2/3] w-[500px]"
             // showToolbar={false}
           >
-            <Resume />
+            {PdfDocument}
           </PDFViewer>
 
-          <Button asChild>
-            <PDFDownloadLink document={<Resume />} fileName={DOCUMENT_NAME}>
-              Download
-            </PDFDownloadLink>
-          </Button>
+          <div className="flex flex-col items-center gap-y-12">
+            <div className="flex flex-col items-center gap-y-4">
+              <div className="text-center text-2xl">
+                Customise my resume to your needs
+              </div>
+              <div className="flex gap-x-16">
+                <div className="space-y-2">
+                  <div className="text-center text-lg">Identity</div>
+                  <div className="flex items-center space-x-2">
+                    <Switch
+                      id="with-photo"
+                      checked={withPhoto}
+                      onCheckedChange={() => setWithPhoto(v => !v)}
+                      disabled={anonymous}
+                    />
+                    <Label htmlFor="with-photo">Photo</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Switch
+                      id="anonymous"
+                      checked={anonymous}
+                      onCheckedChange={() => setAnonymous(v => !v)}
+                    />
+                    <Label htmlFor="anonymous">Anonymous</Label>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="text-center text-lg">Theme</div>
+                  <RadioGroup
+                    value={mainColor}
+                    onValueChange={(v: Color) => setMainColor(v)}
+                  >
+                    {colorList.map(color => (
+                      <div key={color} className="flex items-center space-x-2">
+                        <RadioGroupItem value={color} id={color} />
+                        <Label
+                          htmlFor={color}
+                          style={{
+                            color: colorPaletteMap[color].headerBg,
+                          }}
+                        >
+                          {colorPaletteMap[color].name}
+                        </Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                </div>
+              </div>
+            </div>
+
+            <Button asChild>
+              <PDFDownloadLink document={PdfDocument} fileName={documentTitle}>
+                Download PDF
+              </PDFDownloadLink>
+            </Button>
+          </div>
         </>
       )}
     </div>

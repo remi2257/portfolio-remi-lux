@@ -12,21 +12,24 @@ export default async function Navbar() {
           <h1 className="font-bold sm:text-lg xl:text-xl">Rémi Lux</h1>
         </Link>
 
-        <div className="hidden md:flex lg:gap-x-4">
-          <Button asChild variant="link">
+        <div className="hidden sm:flex sm:gap-x-2">
+          <Button className="hidden lg:inline-flex" asChild variant="link">
             <Link href="/#about">About</Link>
           </Button>
-          <Button asChild variant="link">
+          <Button className="hidden lg:inline-flex" asChild variant="link">
             <Link href="/#projects">Projects</Link>
           </Button>
-          <Button asChild variant="link">
+          <Button className="hidden lg:inline-flex" asChild variant="link">
             <Link href="/#experiences">Experiences</Link>
           </Button>
-          <Button asChild variant="link">
+          <Button className="hidden lg:inline-flex" asChild variant="link">
             <Link href="/#education">Education</Link>
           </Button>
           <Button asChild variant="outline">
             <Link href="/#contact">Contact Me</Link>
+          </Button>
+          <Button asChild variant="default" className="ml-2">
+            <Link href="/resume">Get my resume</Link>
           </Button>
         </div>
 
