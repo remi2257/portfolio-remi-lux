@@ -26,11 +26,14 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
         expertise, I develop visually engaging websites with enhanced
         functionality.
       </h3>
-      <div className="grid gap-y-4 sm:grid-cols-2 sm:gap-x-10">
+      <div className="grid gap-y-4 sm:grid-cols-3 sm:gap-x-10">
         <Button asChild>
           <Link href="#contact">Contact me</Link>
         </Button>
         <SocialIcons />
+        <Button asChild>
+          <Link href="/resume">Get my resume</Link>
+        </Button>
       </div>
     </section>
   );
