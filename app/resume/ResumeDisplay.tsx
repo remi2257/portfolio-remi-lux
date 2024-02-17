@@ -13,13 +13,14 @@ import {
   View,
 } from "@react-pdf/renderer";
 import { Style } from "@react-pdf/types";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { RiLoader4Fill } from "react-icons/ri";
 
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Switch } from "@/components/ui/switch";
+import { cn } from "@/lib/utils";
 
 import ResumeContextProvider, { ResumeContext } from "./ResumeContext";
 import {
@@ -479,18 +480,20 @@ const ResumeDisplay: React.FC = () => {
 
   const documentTitle = generateDocumentTitle(language, anonymous);
 
-  const PdfDocument = (
-    <ResumeContextProvider
-      colorPalette={colorPaletteMap[mainColor]}
-      language={language}
-    >
-      <Resume
-        withPhoto={withPhoto}
-        anonymous={anonymous}
-        documentTitle={documentTitle}
-      />
-    </ResumeContextProvider>
-  );
+  const PdfDocument = useMemo(() => {
+    return (
+      <ResumeContextProvider
+        colorPalette={colorPaletteMap[mainColor]}
+        language={language}
+      >
+        <Resume
+          withPhoto={withPhoto}
+          anonymous={anonymous}
+          documentTitle={documentTitle}
+        />
+      </ResumeContextProvider>
+    );
+  }, [anonymous, documentTitle, language, mainColor, withPhoto]);
 
   return (
     <div className="grid items-center justify-items-center gap-x-8 sm:grid-cols-2">
@@ -516,7 +519,7 @@ const ResumeDisplay: React.FC = () => {
               <div className="text-center text-2xl">
                 Customize my resume to your needs
               </div>
-              <div className="flex flex-col gap-x-16 gap-y-4 md:flex-row">
+              <div className="flex flex-col gap-x-16 gap-y-4 lg:flex-row">
                 <div
                   // Identity Wrapper
                   className="space-y-2"
@@ -601,18 +604,15 @@ const ResumeDisplay: React.FC = () => {
               </div>
             </div>
 
-            {!loadingPdf ? (
-              <Button asChild>
-                <PDFDownloadLink
-                  document={PdfDocument}
-                  fileName={documentTitle}
-                >
-                  Download PDF
-                </PDFDownloadLink>
-              </Button>
-            ) : (
-              <Button disabled>Generating ...</Button>
-            )}
+            <Button asChild>
+              <PDFDownloadLink
+                className={cn(loadingPdf && "opacity-80 pointer-events-none")}
+                document={PdfDocument}
+                fileName={documentTitle}
+              >
+                Download PDF
+              </PDFDownloadLink>
+            </Button>
           </div>
         </>
       )}
