@@ -498,9 +498,9 @@ const ResumeDisplay: React.FC = () => {
 
   return (
     <div className="grid items-center justify-items-center gap-x-8 sm:grid-cols-2">
-      {isClient && (
-        <>
-          <div className="relative hidden aspect-[2/3] sm:block sm:w-80 md:w-96 lg:w-[480px]">
+      <div className="relative hidden aspect-[2/3] sm:block sm:w-80 md:w-96 lg:w-[480px]">
+        {isClient && (
+          <>
             <PDFViewer
               className="h-full w-full"
               // showToolbar={false} => We show it to allow the user to realize it's a PDF viewer. But the name is the blob name :/
@@ -508,115 +508,113 @@ const ResumeDisplay: React.FC = () => {
               {PdfDocument}
             </PDFViewer>
             {loadingPdf && (
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-y-4 bg-black/50 text-2xl font-semibold text-white backdrop-blur-sm">
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-y-4 rounded bg-black/50 text-2xl font-semibold text-white backdrop-blur-sm">
                 <span>Generating</span>
                 <RiLoader4Fill className="size-8 animate-spin" />
               </div>
             )}
-          </div>
+          </>
+        )}
+      </div>
 
-          <div className="flex flex-col items-center gap-y-16">
-            <div className="flex flex-col items-center gap-y-6">
-              <div className="text-center text-2xl">
-                Customize my resume to your needs
+      <div className="flex flex-col items-center gap-y-16">
+        <div className="flex flex-col items-center gap-y-6">
+          <div className="text-center text-2xl">
+            Customize my resume to your needs
+          </div>
+          <div className="flex flex-col gap-x-16 gap-y-4 lg:flex-row">
+            <div
+              // Identity Wrapper
+              className="space-y-2"
+            >
+              <div className="text-center text-lg">Identity</div>
+              <div className="flex items-center space-x-2">
+                <Switch
+                  id="with-photo"
+                  checked={withPhoto}
+                  onCheckedChange={() => {
+                    setWithPhoto(v => !v);
+                    setLoadingPdf(true);
+                  }}
+                  disabled={anonymous}
+                />
+                <Label htmlFor="with-photo">Photo</Label>
               </div>
-              <div className="flex flex-col gap-x-16 gap-y-4 lg:flex-row">
-                <div
-                  // Identity Wrapper
-                  className="space-y-2"
-                >
-                  <div className="text-center text-lg">Identity</div>
-                  <div className="flex items-center space-x-2">
-                    <Switch
-                      id="with-photo"
-                      checked={withPhoto}
-                      onCheckedChange={() => {
-                        setWithPhoto(v => !v);
-                        setLoadingPdf(true);
-                      }}
-                      disabled={anonymous}
-                    />
-                    <Label htmlFor="with-photo">Photo</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Switch
-                      id="anonymous"
-                      checked={anonymous}
-                      onCheckedChange={() => {
-                        setAnonymous(v => !v);
-                        setLoadingPdf(true);
-                      }}
-                    />
-                    <Label htmlFor="anonymous">Anonymous</Label>
-                  </div>
-                </div>
-                <div
-                  // Theme Wrapper
-                  className="space-y-2"
-                >
-                  <div className="text-center text-lg">Theme</div>
-                  <RadioGroup
-                    value={mainColor}
-                    onValueChange={(v: Color) => {
-                      setMainColor(v);
-                      setLoadingPdf(true);
-                    }}
-                  >
-                    {colorList.map(color => (
-                      <div key={color} className="flex items-center space-x-2">
-                        <RadioGroupItem value={color} id={color} />
-                        <Label
-                          htmlFor={color}
-                          style={{
-                            color: colorPaletteMap[color].headerBg,
-                          }}
-                        >
-                          {colorPaletteMap[color].name}
-                        </Label>
-                      </div>
-                    ))}
-                  </RadioGroup>
-                </div>
-                <div
-                  // Language Wrapper
-                  className="space-y-2"
-                >
-                  <div className="text-center text-lg">Language</div>
-                  <RadioGroup
-                    value={language}
-                    onValueChange={(v: Language) => {
-                      setLanguage(v);
-                      setLoadingPdf(true);
-                    }}
-                  >
-                    {languageList.map(language => (
-                      <div
-                        key={language}
-                        className="flex items-center space-x-2"
-                      >
-                        <RadioGroupItem value={language} id={language} />
-                        <Label htmlFor={language}>
-                          {languageMap[language]}
-                        </Label>
-                      </div>
-                    ))}
-                  </RadioGroup>
-                </div>
+              <div className="flex items-center space-x-2">
+                <Switch
+                  id="anonymous"
+                  checked={anonymous}
+                  onCheckedChange={() => {
+                    setAnonymous(v => !v);
+                    setLoadingPdf(true);
+                  }}
+                />
+                <Label htmlFor="anonymous">Anonymous</Label>
               </div>
             </div>
-
-            <Button asChild>
-              <PDFDownloadLink
-                className={cn(loadingPdf && "opacity-80 pointer-events-none")}
-                document={PdfDocument}
-                fileName={documentTitle}
+            <div
+              // Theme Wrapper
+              className="space-y-2"
+            >
+              <div className="text-center text-lg">Theme</div>
+              <RadioGroup
+                value={mainColor}
+                onValueChange={(v: Color) => {
+                  setMainColor(v);
+                  setLoadingPdf(true);
+                }}
               >
-                Download PDF
-              </PDFDownloadLink>
-            </Button>
+                {colorList.map(color => (
+                  <div key={color} className="flex items-center space-x-2">
+                    <RadioGroupItem value={color} id={color} />
+                    <Label
+                      htmlFor={color}
+                      style={{
+                        color: colorPaletteMap[color].headerBg,
+                      }}
+                    >
+                      {colorPaletteMap[color].name}
+                    </Label>
+                  </div>
+                ))}
+              </RadioGroup>
+            </div>
+            <div
+              // Language Wrapper
+              className="space-y-2"
+            >
+              <div className="text-center text-lg">Language</div>
+              <RadioGroup
+                value={language}
+                onValueChange={(v: Language) => {
+                  setLanguage(v);
+                  setLoadingPdf(true);
+                }}
+              >
+                {languageList.map(language => (
+                  <div key={language} className="flex items-center space-x-2">
+                    <RadioGroupItem value={language} id={language} />
+                    <Label htmlFor={language}>{languageMap[language]}</Label>
+                  </div>
+                ))}
+              </RadioGroup>
+            </div>
           </div>
-        </>
-      )}
+        </div>
+
+        <Button
+          asChild
+          className={cn(loadingPdf && "opacity-80 pointer-events-none")}
+        >
+          {isClient ? (
+            <PDFDownloadLink document={PdfDocument} fileName={documentTitle}>
+              Download PDF
+            </PDFDownloadLink>
+          ) : (
+            <span>Download PDF</span>
+          )}
+        </Button>
+      </div>
     </div>
   );
 };
