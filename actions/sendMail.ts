@@ -1,6 +1,6 @@
 "use server";
 
-import { MAIL_ADDRESS_FROM, resend } from "./resend-utils";
+import { MAIL_ADDRESS_FROM, MAIL_ADDRESS_TO, resend } from "./resend-utils";
 
 export async function sendMail({
   name,
@@ -15,8 +15,7 @@ export async function sendMail({
 }) {
   const { error: emailSendError } = await resend.emails.send({
     from: `Portfolio Contact Form <${MAIL_ADDRESS_FROM}>`,
-    // TODO: use env var
-    to: "remiluxpc@gmail.com",
+    to: MAIL_ADDRESS_TO,
     subject: "New message from portfolio contact form",
     text: [
       "New message received from portfolio contact form",

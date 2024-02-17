@@ -13,3 +13,8 @@ export const MAIL_ADDRESS_FROM = process.env.MAIL_ADDRESS_FROM!;
 if (!MAIL_ADDRESS_FROM) {
   throw new Error("MAIL_ADDRESS_FROM is not defined");
 }
+
+export const MAIL_ADDRESS_TO = process.env.MAIL_ADDRESS_TO!;
+if (!MAIL_ADDRESS_TO) {
+  throw new Error("MAIL_ADDRESS_TO is not defined");
+}
