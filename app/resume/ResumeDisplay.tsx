@@ -322,8 +322,9 @@ const Resume: React.FC<ResumeProps> = ({
           ) : (
             <View
               style={{
-                paddingVertical: 12,
+                paddingVertical: 24,
                 textAlign: "center",
+                rowGap: 4,
               }}
             >
               <Text
@@ -332,7 +333,7 @@ const Resume: React.FC<ResumeProps> = ({
                   fontWeight: "bold",
                 }}
               >
-                Full-Stack Engineer
+                {content.jobTitle}
               </Text>
               <Text
                 style={{
