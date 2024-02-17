@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { FaCar } from "react-icons/fa";
+// TODO : use react-icons/fa
 import { MdGridOn } from "react-icons/md";
 import { SiGithub } from "react-icons/si";
 import { TbPhotoAi, TbTrain } from "react-icons/tb";
 
-import TimelineSection from "@/components/molecules/TimelineSection";
-import { TimelineElement } from "@/components/molecules/VerticalTimeline";
 import { Button } from "@/components/ui/button";
+
+import TimelineSection from "./TimelineSection";
+import { TimelineElement } from "./VerticalTimeline";
 
 const projectList: TimelineElement[] = [
   {

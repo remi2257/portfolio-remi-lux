@@ -15,6 +15,7 @@ export async function sendMail({
 }) {
   const { error: emailSendError } = await resend.emails.send({
     from: `Portfolio Contact Form <${MAIL_ADDRESS_FROM}>`,
+    // TODO: use env var
     to: "remiluxpc@gmail.com",
     subject: "New message from portfolio contact form",
     text: [

@@ -9,6 +9,8 @@ import { useContext } from "react";
 
 import { ResumeContext } from "./ResumeContext";
 
+export type Language = "fr" | "en";
+
 export type SmallSectionData = {
   name: React.ReactNode;
   nameExtra?: React.ReactNode;
@@ -57,6 +59,7 @@ export const educationData: SmallSectionData[] = [
   },
 ];
 
+// TODO : Add Souk
 export const professionalExperienceData: SmallSectionData[] = [
   {
     name: (

@@ -14,6 +14,7 @@ import {
 } from "@react-pdf/renderer";
 import { Style } from "@react-pdf/types";
 import { useContext, useEffect, useState } from "react";
+// TODO : use react-icons/fa
 import { RiLoader4Fill } from "react-icons/ri";
 
 import { Button } from "@/components/ui/button";
@@ -23,11 +24,12 @@ import { Switch } from "@/components/ui/switch";
 
 import ResumeContextProvider, { ResumeContext } from "./ResumeContext";
 import {
-  SmallSectionData,
+  Language,
   educationData,
   personnalProjectsData,
   professionalExperienceData,
   skillsData,
+  type SmallSectionData,
 } from "./data";
 import { Color, colorList, colorPaletteMap } from "./style";
 
@@ -479,6 +481,8 @@ const ResumeDisplay: React.FC = () => {
 
   const [mainColor, setMainColor] = useState<Color>("blue");
 
+  const [language, setLanguage] = useState<Language>("en");
+
   const documentTitle = !anonymous ? "LUX_REMI_CV" : "FULL_STACK_ENGINEER_CV";
 
   const PdfDocument = (
@@ -495,6 +499,7 @@ const ResumeDisplay: React.FC = () => {
     <div className="grid items-center justify-items-center gap-x-8 sm:grid-cols-2">
       {isClient && (
         <>
+          {/* TODO : Can we make it fit at least for Desktop */}
           <div className="relative hidden aspect-[2/3] sm:block sm:w-80 md:w-96 lg:w-[480px]">
             <PDFViewer
               className="h-full w-full"
@@ -566,9 +571,11 @@ const ResumeDisplay: React.FC = () => {
                     ))}
                   </RadioGroup>
                 </div>
+                {/* TODO : Add language */}
               </div>
             </div>
 
+            {/* TODO: Disable while loading */}
             <Button asChild>
               <PDFDownloadLink document={PdfDocument} fileName={documentTitle}>
                 Download PDF

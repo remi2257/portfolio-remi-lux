@@ -76,6 +76,7 @@
 }
 
 @layer utilities {
+  /* TODO : update tailwind */
   .text-balance {
     text-wrap: balance;
   }

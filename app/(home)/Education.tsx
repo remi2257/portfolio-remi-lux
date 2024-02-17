@@ -1,8 +1,9 @@
+// TODO : use react-icons/fa
 import { IoIosSchool } from "react-icons/io";
 import { MdEngineering } from "react-icons/md";
 
-import TimelineSection from "@/components/molecules/TimelineSection";
-import { TimelineElement } from "@/components/molecules/VerticalTimeline";
+import TimelineSection from "./TimelineSection";
+import { TimelineElement } from "./VerticalTimeline";
 
 const timelineeList: TimelineElement[] = [
   {

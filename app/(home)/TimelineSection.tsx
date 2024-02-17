@@ -1,8 +1,7 @@
 import { cn } from "@/lib/utils";
 
+import SectionTitle from "./SectionTitle";
 import VerticalTimeline, { TimelineElement } from "./VerticalTimeline";
-
-import SectionTitle from "../atoms/SectionTitle";
 
 const TimelineSection: React.FC<{
   id?: string;

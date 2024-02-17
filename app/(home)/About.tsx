@@ -19,7 +19,6 @@ import {
   SiVercel,
 } from "react-icons/si";
 
-import SectionTitle from "@/components/atoms/SectionTitle";
 import {
   Tooltip,
   TooltipContent,
@@ -27,6 +26,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+
+import SectionTitle from "./SectionTitle";
 
 const SkillIcon: React.FC<{
   Icon: IconType;
@@ -58,7 +59,7 @@ const About: React.FC<{ index: number; className?: string }> = ({
     <section id="about" className={cn("space-y-6 sm:space-y-10", className)}>
       <SectionTitle index={index} title="About" />
 
-      <div className="text-pretty space-y-3 pb-2 text-center text-base text-muted-foreground sm:space-y-6 sm:text-lg">
+      <div className="space-y-3 text-pretty pb-2 text-center text-base text-muted-foreground sm:space-y-6 sm:text-lg">
         <p className="text-xl font-bold text-foreground sm:text-2xl">
           Hey, I&apos;m Rémi Lux!
         </p>

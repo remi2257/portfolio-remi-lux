@@ -1,4 +1,5 @@
 import Link from "next/link";
+// TODO : use react-icons/fa
 import { BsBank } from "react-icons/bs";
 import { FaBox } from "react-icons/fa";
 import { GiFrance, GiOwl, GiRobotGrab } from "react-icons/gi";
@@ -6,9 +7,10 @@ import { TbSubmarine } from "react-icons/tb";
 import { VscGraphLine } from "react-icons/vsc";
 import { WiMoonAltWaxingCrescent1 } from "react-icons/wi";
 
-import TimelineSection from "@/components/molecules/TimelineSection";
-import { TimelineElement } from "@/components/molecules/VerticalTimeline";
 import { Button } from "@/components/ui/button";
+
+import TimelineSection from "./TimelineSection";
+import { TimelineElement } from "./VerticalTimeline";
 
 const experienceList: TimelineElement[] = [
   {
