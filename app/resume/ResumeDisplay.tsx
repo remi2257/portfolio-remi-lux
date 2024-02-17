@@ -14,7 +14,6 @@ import {
 } from "@react-pdf/renderer";
 import { Style } from "@react-pdf/types";
 import { useContext, useEffect, useState } from "react";
-// TODO : use react-icons/fa
 import { RiLoader4Fill } from "react-icons/ri";
 
 import { Button } from "@/components/ui/button";
@@ -25,12 +24,12 @@ import { Switch } from "@/components/ui/switch";
 import ResumeContextProvider, { ResumeContext } from "./ResumeContext";
 import {
   Language,
-  educationData,
-  personnalProjectsData,
-  professionalExperienceData,
-  skillsData,
-  type SmallSectionData,
-} from "./data";
+  Section,
+  SubSection,
+  generateDocumentTitle,
+  languageList,
+  languageMap,
+} from "./content";
 import { Color, colorList, colorPaletteMap } from "./style";
 
 const titleFont = "Century Gothic";
@@ -83,9 +82,9 @@ const styles = StyleSheet.create({
 
 // ---
 
-type ResumeSmallSectionProps = SmallSectionData;
+type ResumeSubSectionProps = SubSection;
 
-const ResumeSmallSection: React.FC<ResumeSmallSectionProps> = ({
+const ResumeSubSection: React.FC<ResumeSubSectionProps> = ({
   name,
   nameExtra,
   subtitle,
@@ -167,16 +166,13 @@ const ResumeSmallSection: React.FC<ResumeSmallSectionProps> = ({
   );
 };
 
-type ResumeBigSectionProps = {
-  name: string;
-  dataList: SmallSectionData[];
-
+type ResumeSectionProps = Section & {
   style?: Style;
 };
 
-const ResumeBigSection: React.FC<ResumeBigSectionProps> = ({
+const ResumeBigSection: React.FC<ResumeSectionProps> = ({
   name,
-  dataList,
+  subSectionList,
 
   style = {},
 }) => {
@@ -214,11 +210,11 @@ const ResumeBigSection: React.FC<ResumeBigSectionProps> = ({
         />
       </View>
       <View
-        // List of small sections
+        // List of sub sections
         style={{ rowGap: 8 }}
       >
-        {dataList.map((data, i) => (
-          <ResumeSmallSection key={i} {...data} />
+        {subSectionList.map((subsection, index) => (
+          <ResumeSubSection key={index} {...subsection} />
         ))}
       </View>
     </View>
@@ -240,7 +236,7 @@ const Resume: React.FC<ResumeProps> = ({
   withPhoto,
   anonymous,
 }) => {
-  const { colorPalette } = useContext(ResumeContext);
+  const { colorPalette, content } = useContext(ResumeContext);
 
   return (
     <Document title={documentTitle} author="Rémi LUX">
@@ -299,7 +295,7 @@ const Resume: React.FC<ResumeProps> = ({
                   >
                     Rémi LUX
                   </Text>
-                  <Text>Full-Stack Engineer</Text>
+                  <Text>{content.jobTitle}</Text>
                   <Text>React.js / Next.js / Node.js</Text>
                 </View>
               </View>
@@ -370,21 +366,17 @@ const Resume: React.FC<ResumeProps> = ({
                 rowGap: 16,
               }}
             >
-              <ResumeBigSection name="Education" dataList={educationData} />
-              <ResumeBigSection name="Skills" dataList={skillsData} />
+              <ResumeBigSection {...content.education} />
+              <ResumeBigSection {...content.skills} />
             </View>
             <ResumeBigSection
-              name="Professional experience"
               style={{
                 flex: 1,
               }}
-              dataList={professionalExperienceData}
+              {...content.professionalExperience}
             />
           </View>
-          <ResumeBigSection
-            name="Personal projects"
-            dataList={personnalProjectsData}
-          />
+          <ResumeBigSection {...content.personnalProjects} />
         </View>
 
         {!anonymous && (
@@ -464,9 +456,11 @@ const Resume: React.FC<ResumeProps> = ({
 // --- ResumeDisplay
 
 const ResumeDisplay: React.FC = () => {
+  // -- Mandatory to avoid SSR with react-pdf
   const [isClient, setIsClient] = useState(false);
   useEffect(() => setIsClient(true), []);
 
+  // -- We don't know if the PDF is ready to be displayed so we use a loading state
   const [loadingPdf, setLoadingPdf] = useState(true);
 
   useEffect(() => {
@@ -483,10 +477,13 @@ const ResumeDisplay: React.FC = () => {
 
   const [language, setLanguage] = useState<Language>("en");
 
-  const documentTitle = !anonymous ? "LUX_REMI_CV" : "FULL_STACK_ENGINEER_CV";
+  const documentTitle = generateDocumentTitle(language, anonymous);
 
   const PdfDocument = (
-    <ResumeContextProvider colorPalette={colorPaletteMap[mainColor]}>
+    <ResumeContextProvider
+      colorPalette={colorPaletteMap[mainColor]}
+      language={language}
+    >
       <Resume
         withPhoto={withPhoto}
         anonymous={anonymous}
@@ -499,18 +496,17 @@ const ResumeDisplay: React.FC = () => {
     <div className="grid items-center justify-items-center gap-x-8 sm:grid-cols-2">
       {isClient && (
         <>
-          {/* TODO : Can we make it fit at least for Desktop */}
           <div className="relative hidden aspect-[2/3] sm:block sm:w-80 md:w-96 lg:w-[480px]">
             <PDFViewer
               className="h-full w-full"
-              // showToolbar={false}
+              // showToolbar={false} => We show it to allow the user to realize it's a PDF viewer. But the name is the blob name :/
             >
               {PdfDocument}
             </PDFViewer>
             {loadingPdf && (
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-y-2 bg-black/35 text-xl font-bold text-white backdrop-blur-sm">
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-y-4 bg-black/50 text-2xl font-semibold text-white backdrop-blur-sm">
                 <span>Generating</span>
-                <RiLoader4Fill className="size-12 animate-spin" />
+                <RiLoader4Fill className="size-8 animate-spin" />
               </div>
             )}
           </div>
@@ -521,7 +517,10 @@ const ResumeDisplay: React.FC = () => {
                 Customize my resume to your needs
               </div>
               <div className="flex flex-col gap-x-16 gap-y-4 md:flex-row">
-                <div className="space-y-2">
+                <div
+                  // Identity Wrapper
+                  className="space-y-2"
+                >
                   <div className="text-center text-lg">Identity</div>
                   <div className="flex items-center space-x-2">
                     <Switch
@@ -547,7 +546,10 @@ const ResumeDisplay: React.FC = () => {
                     <Label htmlFor="anonymous">Anonymous</Label>
                   </div>
                 </div>
-                <div className="space-y-2">
+                <div
+                  // Theme Wrapper
+                  className="space-y-2"
+                >
                   <div className="text-center text-lg">Theme</div>
                   <RadioGroup
                     value={mainColor}
@@ -571,16 +573,46 @@ const ResumeDisplay: React.FC = () => {
                     ))}
                   </RadioGroup>
                 </div>
-                {/* TODO : Add language */}
+                <div
+                  // Language Wrapper
+                  className="space-y-2"
+                >
+                  <div className="text-center text-lg">Language</div>
+                  <RadioGroup
+                    value={language}
+                    onValueChange={(v: Language) => {
+                      setLanguage(v);
+                      setLoadingPdf(true);
+                    }}
+                  >
+                    {languageList.map(language => (
+                      <div
+                        key={language}
+                        className="flex items-center space-x-2"
+                      >
+                        <RadioGroupItem value={language} id={language} />
+                        <Label htmlFor={language}>
+                          {languageMap[language]}
+                        </Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                </div>
               </div>
             </div>
 
-            {/* TODO: Disable while loading */}
-            <Button asChild>
-              <PDFDownloadLink document={PdfDocument} fileName={documentTitle}>
-                Download PDF
-              </PDFDownloadLink>
-            </Button>
+            {!loadingPdf ? (
+              <Button asChild>
+                <PDFDownloadLink
+                  document={PdfDocument}
+                  fileName={documentTitle}
+                >
+                  Download PDF
+                </PDFDownloadLink>
+              </Button>
+            ) : (
+              <Button disabled>Generating ...</Button>
+            )}
           </div>
         </>
       )}
