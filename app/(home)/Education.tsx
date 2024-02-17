@@ -1,4 +1,3 @@
-// TODO : use react-icons/fa
 import { IoIosSchool } from "react-icons/io";
 import { MdEngineering } from "react-icons/md";
 

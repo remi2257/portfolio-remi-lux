@@ -1,8 +1,6 @@
 import { IconType } from "react-icons";
 
-import { cn } from "@/lib/utils";
-
-import { Badge } from "../../components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -10,7 +8,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../../components/ui/card";
+} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 export type TimelineElement = {
   title: string;

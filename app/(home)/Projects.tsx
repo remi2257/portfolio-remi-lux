@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { FaCar } from "react-icons/fa";
-// TODO : use react-icons/fa
 import { MdGridOn } from "react-icons/md";
 import { SiGithub } from "react-icons/si";
 import { TbPhotoAi, TbTrain } from "react-icons/tb";

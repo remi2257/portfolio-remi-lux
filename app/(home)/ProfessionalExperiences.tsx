@@ -1,5 +1,4 @@
 import Link from "next/link";
-// TODO : use react-icons/fa
 import { BsBank } from "react-icons/bs";
 import { FaBox } from "react-icons/fa";
 import { GiFrance, GiOwl, GiRobotGrab } from "react-icons/gi";
