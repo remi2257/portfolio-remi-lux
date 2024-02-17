@@ -11,8 +11,8 @@ export default function Home() {
       <Hero className="max-w-prose" />
 
       <About className="max-w-prose" index={1} />
-      <Projects index={2} />
-      <ProfessionalExperiences index={3} />
+      <ProfessionalExperiences index={2} />
+      <Projects index={3} />
       <Education index={4} />
 
       <Contact className="max-w-prose" />

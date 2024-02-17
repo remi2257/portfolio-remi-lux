@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BsBank } from "react-icons/bs";
-import { FaBox } from "react-icons/fa";
+import { FaBox, FaTshirt } from "react-icons/fa";
 import { GiFrance, GiOwl, GiRobotGrab } from "react-icons/gi";
 import { TbSubmarine } from "react-icons/tb";
 import { VscGraphLine } from "react-icons/vsc";
@@ -12,6 +12,19 @@ import TimelineSection from "./TimelineSection";
 import { TimelineElement } from "./VerticalTimeline";
 
 const experienceList: TimelineElement[] = [
+  {
+    title: "Souk",
+    subtitle: "CTO as a Service",
+    badges: ["Freelance", "Golang", "AWS", "React Native"],
+    description: `Work on Souk, a high-performance Vinted scraper ensuring users never miss out on best products.
+                  Optimized backend for scalability and speed.
+                  Collaborated closely with designers to create a new branding.
+                  Development of the mobile & desktop apps.
+                  `,
+
+    Icon: FaTshirt,
+    date: "2024",
+  },
   {
     title: "Serendy",
     subtitle: "CTO & Co-founder",

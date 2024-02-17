@@ -1,11 +1,13 @@
 import { IconType } from "react-icons";
 import {
+  SiAmazonaws,
   SiAngularjs,
   SiCplusplus,
   SiCss3,
   SiDocker,
   SiFirebase,
   SiGit,
+  SiGo,
   SiHtml5,
   SiJavascript,
   SiNextdotjs,
@@ -75,8 +77,8 @@ const About: React.FC<{ index: number; className?: string }> = ({
         </p>
 
         <p>
-          With over 2 years of experience, I thrive on challenges and am always
-          eager for opportunities to learn and grow.
+          With over 5 years of experience in Computer Science, I thrive on
+          challenges and am always eager for opportunities to learn and grow.
         </p>
       </div>
 
@@ -85,7 +87,10 @@ const About: React.FC<{ index: number; className?: string }> = ({
           Experience with
         </div>
         <div className="flex flex-col items-center gap-6 sm:gap-8">
-          <div className={skillLineClasses}>
+          <div
+            // General Web Development
+            className={skillLineClasses}
+          >
             <SkillIcon
               Icon={SiHtml5}
               tooltip="HTML"
@@ -112,7 +117,10 @@ const About: React.FC<{ index: number; className?: string }> = ({
               className={"hover:text-blue-700"}
             />
           </div>
-          <div className={skillLineClasses}>
+          <div
+            // Web Frameworks
+            className={skillLineClasses}
+          >
             <SkillIcon
               Icon={SiReact}
               tooltip="React.js"
@@ -129,7 +137,10 @@ const About: React.FC<{ index: number; className?: string }> = ({
               className={"hover:text-red-600"}
             />
           </div>
-          <div className={skillLineClasses}>
+          <div
+            // Database
+            className={skillLineClasses}
+          >
             <SkillIcon
               Icon={SiSupabase}
               tooltip="Supabase"
@@ -146,7 +157,10 @@ const About: React.FC<{ index: number; className?: string }> = ({
               className={"hover:text-amber-500"}
             />
           </div>
-          <div className={skillLineClasses}>
+          <div
+            // Tools
+            className={skillLineClasses}
+          >
             <SkillIcon
               Icon={SiGit}
               tooltip="Git"
@@ -158,16 +172,29 @@ const About: React.FC<{ index: number; className?: string }> = ({
               className={"hover:text-neutral-500"}
             />
             <SkillIcon
+              Icon={SiAmazonaws}
+              tooltip="AWS"
+              className={"hover:text-orange-600"}
+            />
+            <SkillIcon
               Icon={SiDocker}
               tooltip="Docker"
-              className={"hover:text-sky-500"}
+              className={"hover:text-sky-600"}
             />
           </div>
-          <div className={skillLineClasses}>
+          <div
+            // Other languages
+            className={skillLineClasses}
+          >
             <SkillIcon
               Icon={SiNodedotjs}
               tooltip="Node.js"
               className={"hover:text-green-600"}
+            />
+            <SkillIcon
+              Icon={SiGo}
+              tooltip="Go"
+              className={"hover:text-sky-500"}
             />
             <SkillIcon
               Icon={SiPython}

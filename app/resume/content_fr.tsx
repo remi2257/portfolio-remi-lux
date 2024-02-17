@@ -23,10 +23,17 @@ const education: Section = {
   ],
 };
 
-// TODO : Add Souk
 const professionalExperience: Section = {
   name: "Expérience professionnelle",
   subSectionList: [
+    {
+      name: "CTO as a Service | Souk, Paris",
+      subtitle: "Depuis janvier 2024",
+      points: [
+        "Refonte totale de Souk, un scraper Vinted haute performance.",
+        "Golang / AWS / React Native",
+      ],
+    },
     {
       name: (
         <>
@@ -37,7 +44,6 @@ const professionalExperience: Section = {
       subtitle: "Mars 2023 à Novembre 2023",
       points: [
         "Création d'une application de rencontres permettant aux utilisateurs de se rencontrer instantanément dans des lieux chics",
-        "Développement de pipeline CD avec Expo pour publier l'app' sur les deux stores",
         "React Native / Expo / Next.js / Supabase / PostgreSQL",
       ],
     },
@@ -141,6 +147,7 @@ const skills: Section = {
         "Style : TailwindCSS/SCSS",
         "Back-End : Node.js / Nest.js",
         "BDD : PostgreSQL & Firestore",
+        "Déploiement: AWS / Vercel / Docker",
         "Tests: Jest",
       ],
     },
@@ -149,11 +156,11 @@ const skills: Section = {
       points: [
         "Git - Linux",
         "CI/CD : GitHub Action/GitLab CI",
+        "Node.js / Go / Python / C++",
         "UI/UX : Figma",
         "Vision: OpenCV",
         "IA : Tensorflow",
         "Robotics : ROS",
-        "Python / C++",
       ],
     },
   ],
