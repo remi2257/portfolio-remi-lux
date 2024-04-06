@@ -8,9 +8,10 @@ const timelineeList: TimelineElement[] = [
   {
     title: "Master in Signal & Image Processing",
     subtitle: "Grenoble INP - Phelma",
-    description: `The curriculum covered a diverse array of concepts, including general electronics, image processing, machine learning encompassing optimization and classification, telecommunications, and signal processing.
-                  Additionally, it delved into the intricacies of audio, image, and video compression techniques.
-                  `,
+    description: [
+      "The Master covered a broad spectrum, from general electronics to machine learning, focusing particularly on image processing.",
+      "Key projects featured deep learning for noise reduction in speech & creating an Arduino device for air quality assessment with online data integration.",
+    ],
 
     Icon: MdEngineering,
     date: "2016/19",
@@ -18,10 +19,10 @@ const timelineeList: TimelineElement[] = [
   {
     title: "French Scientific Preparatory Class",
     subtitle: "Lycée Fabert, Metz",
-    description: `For 2 years, I prepared for the competitive entrance exam to an engineering school.
-                  It gave me a lot of theoretical knowledge about science, and it also taught me rigor and how to manage a heavy workload.
-                  Curriculum: Physics & Chemistry (PCSI/PC*)
-                  `,
+    description: [
+      "Immersed myself in the Physics & Chemistry preparatory track (PCSI/PC*), setting the stage for competitive engineering school exams.",
+      "It gave me a lot of theoretical knowledge about science, and it also taught me rigor and how to manage a heavy workload.",
+    ],
 
     Icon: IoIosSchool,
     date: "2014/16",

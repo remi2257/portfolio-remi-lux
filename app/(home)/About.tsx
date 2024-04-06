@@ -72,12 +72,12 @@ const About: React.FC<{ index: number; className?: string }> = ({
         </p>
 
         <p>
-          Since 2021, I&apos;ve shifted to Web Development, specializing in the
-          front-end.
+          Motivated by the innovative dynamics of web technology, I transitioned
+          to Web Development in 2021.
         </p>
 
         <p>
-          With over 5 years of experience in Computer Science, I thrive on
+          With over 5 years of experience as a Software Engineer, I thrive on
           challenges and am always eager for opportunities to learn and grow.
         </p>
       </div>

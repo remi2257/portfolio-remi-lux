@@ -84,6 +84,10 @@
     }
   }
 
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+  }
+
   .gradient-colors-1 {
     @apply from-yellow-500 to-orange-500 dark:from-pink-500 dark:to-violet-500;
   }

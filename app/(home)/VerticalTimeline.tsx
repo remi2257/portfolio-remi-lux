@@ -15,7 +15,7 @@ export type TimelineElement = {
   title: string;
   subtitle: string;
   badges?: string[];
-  description: string;
+  description: string[];
   footer?: React.ReactNode;
 
   Icon: IconType;
@@ -55,7 +55,13 @@ const VerticalTimelineElement: React.FC<VerticalTimelineElementProps> = ({
             </div>
           )}
         </CardHeader>
-        <CardContent className="whitespace-pre-line">{description}</CardContent>
+        <CardContent className="space-y-3">
+          {description.map((point, index) => (
+            <p key={index} className="text-pretty">
+              {point}
+            </p>
+          ))}
+        </CardContent>
         {footer && <CardFooter>{footer}</CardFooter>}
       </Card>
       <div className="col-start-1 flex h-max flex-col items-center gap-y-1 bg-background py-4 sm:col-start-2 sm:gap-y-2">

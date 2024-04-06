@@ -12,10 +12,12 @@ import { TimelineElement } from "./VerticalTimeline";
 const projectList: TimelineElement[] = [
   {
     title: "Profile Perfect AI",
-    subtitle: "Next.js, TailwindCSS, Stable Diffusion, GPU Cloud, Stripe",
+    subtitle: "Next.js, Stable Diffusion, GPU Cloud, Stripe",
     badges: ["AI", "Archived"],
-    description: `Profile Perfect AI allows users to create AI-generated photos. All users have to do is upload a few photos of themselves, and the AI will generate a new photo of them.
-                  Whether on LinkedIn, dating apps, or social networks, you can be sure that your profile photo leaves a lasting impression.`,
+    description: [
+      "Profile Perfect AI allows users to create AI-generated photos. All users have to do is upload a few photos of themselves, and the AI will generate a new photo of them.",
+      "Whether on LinkedIn, dating apps, or social networks, you can be sure that your profile photo leaves a lasting impression.",
+    ],
     // footer: (
     //   <Button asChild>
     //     <Link href="https://profile-perfect-ai.remi-lux.dev/" target="_blank">
@@ -30,8 +32,11 @@ const projectList: TimelineElement[] = [
   {
     title: "TGV Max Extra",
     subtitle: "Angular, Firebase, Stripe",
-    description: `TGV Max Extra is a web application enabling TGV Max subscribers to create alerts and be notified when €0 tickets are available.
-                  The application had 500+ users and 1000+ alerts send in less than 3 months.`,
+    description: [
+      "TGV Max Extra is a web application enabling TGV Max subscribers to create alerts and be notified when €0 tickets are available.",
+      "The data comes from a scrapper that uses proxies to retrieve SNCF data.",
+      "The application had 500+ users and 1000+ alerts send in less than 3 months.",
+    ],
     badges: ["Generated money", "Archived"],
 
     Icon: TbTrain,
@@ -40,10 +45,11 @@ const projectList: TimelineElement[] = [
   {
     title: "Sudoku Solver",
     subtitle: "Solve any Sudoku with Computer Vision",
-    badges: ["500+ Stars"],
-    description: `Dynamically resolves the solutions for multiple Sudoku grids in real-time. Once solved, these solutions are showcased through Augmented Reality.
-      This project has garnered more than 500 stars on GitHub.`,
-
+    badges: ["600+ Stars"],
+    description: [
+      "Resolves multiple Sudoku grids in real-time & projects the solution with Augmented Reality.",
+      "This project has garnered more than 600 stars on GitHub.",
+    ],
     Icon: MdGridOn,
     date: "2019",
 
@@ -60,9 +66,10 @@ const projectList: TimelineElement[] = [
     title: "Little Car AI",
     subtitle: "Use AI to teach a car to drive",
     badges: ["AI"],
-    description: `Teaching a car to drive through Reinforcement Learning.
-                  The Neural Net processes LIDAR and speed data, with high-reward agents influencing the next generation, creating a cycle of improvement, mimicking natural selection.
-                  `,
+    description: [
+      "Creation of a simulation environment where a car learns to drive using through Reinforcement Learning",
+      "This project intricately processes inputs from LIDAR and vehicle speed, with a neural network at its core that evolves through iterative improvements, ensuring each generation surpasses the last.",
+    ],
 
     Icon: FaCar,
     date: "2018",
