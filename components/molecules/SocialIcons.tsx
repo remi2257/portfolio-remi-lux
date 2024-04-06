@@ -13,7 +13,7 @@ const SocialIcons: React.FC = () => {
         className="transition-colors hover:text-purple-600"
       >
         <Link href="https://www.instagram.com/remi_lux/" target="_blank">
-          <FaInstagram className="h-8 w-8" />
+          <FaInstagram className="size-8" />
         </Link>
       </Button>
       <Button
@@ -23,7 +23,7 @@ const SocialIcons: React.FC = () => {
         className="transition-colors hover:text-sky-600"
       >
         <Link href="https://www.linkedin.com/in/remi-lux/" target="_blank">
-          <FaLinkedin className="h-8 w-8" />
+          <FaLinkedin className="size-8" />
         </Link>
       </Button>
       <Button
@@ -33,7 +33,7 @@ const SocialIcons: React.FC = () => {
         className="transition-colors hover:text-neutral-500"
       >
         <Link href="https://github.com/remi2257" target="_blank">
-          <FaGithub className="h-8 w-8" />
+          <FaGithub className="size-8" />
         </Link>
       </Button>
       <Button
@@ -46,7 +46,7 @@ const SocialIcons: React.FC = () => {
           href="https://www.youtube.com/channel/UCOurEFFDgU1kD86-YpltL3w"
           target="_blank"
         >
-          <FaYoutube className="h-8 w-8" />
+          <FaYoutube className="size-8" />
         </Link>
       </Button>
     </div>

@@ -65,7 +65,7 @@ const VerticalTimelineElement: React.FC<VerticalTimelineElementProps> = ({
         {footer && <CardFooter>{footer}</CardFooter>}
       </Card>
       <div className="col-start-1 flex h-max flex-col items-center gap-y-1 bg-background py-4 sm:col-start-2 sm:gap-y-2">
-        <Icon className="h-8 w-8 sm:h-12 sm:w-12" />
+        <Icon className="size-8 sm:size-12" />
         <span className="text-sm sm:hidden">{date}</span>
       </div>
       <div

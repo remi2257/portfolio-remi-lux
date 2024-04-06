@@ -159,7 +159,7 @@ const Contact: React.FC<{ className?: string }> = ({ className }) => {
               {mailSendState === "sending" && (
                 <>
                   Sending
-                  <ImSpinner2 className="ml-2 h-4 w-4 animate-spin" />
+                  <ImSpinner2 className="ml-2 size-4 animate-spin" />
                 </>
               )}
               {mailSendState === "sent" && "Sent"}

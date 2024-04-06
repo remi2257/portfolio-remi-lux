@@ -57,7 +57,7 @@ const projectList: TimelineElement[] = [
       <Button asChild>
         <Link href="https://github.com/remi2257/sudoku-solver" target="_blank">
           See on GitHub
-          <SiGithub className="ml-2 h-4 w-4" />
+          <SiGithub className="ml-2 size-4" />
         </Link>
       </Button>
     ),
@@ -78,7 +78,7 @@ const projectList: TimelineElement[] = [
       <Button asChild>
         <Link href="https://github.com/remi2257/little-car-ai" target="_blank">
           See on GitHub
-          <SiGithub className="ml-2 h-4 w-4" />
+          <SiGithub className="ml-2 size-4" />
         </Link>
       </Button>
     ),

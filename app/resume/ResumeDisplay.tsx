@@ -502,7 +502,7 @@ const ResumeDisplay: React.FC = () => {
         {isClient && (
           <>
             <PDFViewer
-              className="h-full w-full"
+              className="size-full"
               // showToolbar={false} => We show it to allow the user to realize it's a PDF viewer. But the name is the blob name :/
             >
               {PdfDocument}
