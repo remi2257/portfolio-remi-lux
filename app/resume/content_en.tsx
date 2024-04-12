@@ -31,7 +31,7 @@ const professionalExperience: Section = {
       subtitle: "Since January 2024",
       points: [
         "Reimagined Souk fully, a high-performance Vinted scraper.",
-        "Golang / AWS / React Native",
+        "Next.js / React Native (Expo) / Golang / AWS",
       ],
     },
     {
@@ -44,13 +44,13 @@ const professionalExperience: Section = {
       subtitle: "March 2023 to November 2023",
       points: [
         "Creation of a dating app' enabling users to meet instantly in chic locations",
-        "React Native / Expo / Next.js / Supabase / PostgreSQL",
+        "React Native (Expo) / Next.js / Supabase / PostgreSQL",
       ],
     },
     {
       name: (
         <>
-          Angular Developer |{" "}
+          Front-end Developer |{" "}
           <Link src="https://www.milleis.fr/">Milleis Banque Privée</Link>,
           Paris
         </>
@@ -77,7 +77,7 @@ const professionalExperience: Section = {
     {
       name: (
         <>
-          Angular Developer |{" "}
+          Front-end Developer |{" "}
           <Link src="https://www.stockly.ai/"> Stockly</Link>, Paris
         </>
       ),
