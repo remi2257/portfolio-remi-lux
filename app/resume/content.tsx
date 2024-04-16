@@ -16,7 +16,20 @@ export const languageMap: Record<Language, string> = {
 };
 
 export function generateDocumentTitle(language: Language, anonymous: boolean) {
-  let title = !anonymous ? "LUX_REMI" : "FULL_STACK_ENGINEER";
+  let title: string;
+
+  if (!anonymous) {
+    title = "LUX_REMI";
+  } else {
+    switch (language) {
+      case "fr":
+        title = "INGENIEUR_FULL_STACK";
+        break;
+      case "en":
+        title = "FULL_STACK_ENGINEER";
+        break;
+    }
+  }
 
   switch (language) {
     case "fr":
