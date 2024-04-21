@@ -27,7 +27,15 @@ const professionalExperience: Section = {
   name: "Professional experience",
   subSectionList: [
     {
-      name: "CTO as a Service | Souk, Paris",
+      name: (
+        <>
+          CTO as a Service |{" "}
+          <Link src="https://apps.apple.com/fr/app/souk-alertes-2nd-main/id6472217012">
+            Souk
+          </Link>
+          , Paris
+        </>
+      ),
       subtitle: "Since January 2024",
       points: [
         "Reimagined Souk fully, a high-performance Vinted scraper.",

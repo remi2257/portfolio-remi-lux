@@ -22,6 +22,16 @@ const experienceList: TimelineElement[] = [
       "Collaborated closely with designers to create a new branding.",
       "Development of both apps for mobile (React Native) & desktop (Next.js).",
     ],
+    footer: (
+      <Button asChild>
+        <Link
+          href="https://apps.apple.com/fr/app/souk-alertes-2nd-main/id6472217012"
+          target="_blank"
+        >
+          See on stores
+        </Link>
+      </Button>
+    ),
 
     Icon: FaTshirt,
     date: "2024",
@@ -37,7 +47,10 @@ const experienceList: TimelineElement[] = [
     ],
     footer: (
       <Button asChild>
-        <Link href="https://serendy.io/" target="_blank">
+        <Link
+          href="https://apps.apple.com/us/app/serendy/id6462817010"
+          target="_blank"
+        >
           See on stores
         </Link>
       </Button>
