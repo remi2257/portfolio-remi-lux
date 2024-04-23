@@ -138,6 +138,9 @@ const professionalExperience: Section = {
             Niryo Ned
           </Link>{" "}
         </>,
+        <>
+          Développement de l&apos;IHM en <Strong>Angular</Strong>
+        </>,
       ],
     },
   ],

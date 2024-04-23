@@ -97,7 +97,7 @@ const experienceList: TimelineElement[] = [
   {
     title: "Forssea Robotics",
     subtitle: "Software Engineer",
-    badges: ["Contract", "Robotics", "Python", "C++"],
+    badges: ["Contract", "Robotics", "Python", "C++", "Angular"],
     description: [
       "Created the architectural blueprint of the NAVCAM, emphasizing a seamless interface between the software and the HMI.",
       "Employed ROS 2 with C++ for the robotic framework, integrated NodeJS and Express for the Back-End, and utilized Angular for the HMI.",
@@ -108,11 +108,11 @@ const experienceList: TimelineElement[] = [
   {
     title: "Niryo",
     subtitle: "Computer Vision & Robotics Engineer",
-    badges: ["Contract", "Robotics", "Python", "C++"],
+    badges: ["Contract", "Robotics", "Python", "C++", "Angular"],
     description: [
       "Directed the software development for Set Vision, a featured product on both robots Niryo One & Niryo Ned.",
       "Led the creation of vision modules for different robots of both educational and industrial sectors, involving decisions from camera selection to guiding the robot's actions with objects.",
-      "Employed Python, ROS, and OpenCV throughout the entire process.",
+      "Employed Python, ROS, and OpenCV for the robotic systems & Angular for the HMI.",
     ],
     footer: (
       <Button asChild>
