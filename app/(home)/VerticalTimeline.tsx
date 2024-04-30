@@ -40,7 +40,8 @@ const VerticalTimelineElement: React.FC<VerticalTimelineElementProps> = ({
   return (
     <>
       <Card
-        className={cn("col-start-2", odd ? "sm:col-start-1" : "sm:col-start-3")}
+        // Right on small screens, alternate on others screens
+        className={cn("col-start-2", odd ? "md:col-start-1" : "md:col-start-3")}
       >
         <CardHeader>
           <CardTitle className="flex items-center justify-between">
@@ -64,13 +65,18 @@ const VerticalTimelineElement: React.FC<VerticalTimelineElementProps> = ({
         </CardContent>
         {footer && <CardFooter>{footer}</CardFooter>}
       </Card>
-      <div className="col-start-1 flex h-max flex-col items-center gap-y-1 bg-background py-4 sm:col-start-2 sm:gap-y-2">
+
+      <div
+        // Middle element : Icon + (date on small screens)
+        className="col-start-1 flex h-max flex-col items-center gap-y-1 bg-background py-4 sm:gap-y-2 md:col-start-2"
+      >
         <Icon className="size-8 sm:size-12" />
-        <span className="text-sm sm:hidden">{date}</span>
+        <span className="text-sm md:hidden">{date}</span>
       </div>
       <div
+        // Date on big screens (opposite side of the card)
         className={cn(
-          "text-xl mt-6 hidden sm:block",
+          "text-xl mt-6 max-md:hidden",
           odd ? "col-start-3" : "col-start-1 justify-self-end"
         )}
       >
@@ -84,10 +90,13 @@ const VerticalTimeline: React.FC<{ elements: TimelineElement[] }> = ({
   elements,
 }) => {
   return (
-    <div className="relative grid grid-flow-dense grid-cols-[auto,1fr] gap-x-2 gap-y-6 py-4 sm:grid-cols-[1fr,auto,1fr] sm:gap-x-8 sm:py-8">
+    <div
+      // 2 columns on small screens, 3 columns on medium screens
+      className="relative grid grid-flow-dense grid-cols-[auto,1fr] gap-x-2 gap-y-6 py-4 sm:gap-x-6 sm:py-8 md:grid-cols-[1fr,auto,1fr] lg:gap-x-8"
+    >
       <div
         // Vertical line
-        className="absolute inset-y-0 -z-10 col-span-1 col-start-1 w-px justify-self-center bg-muted-foreground sm:col-start-2"
+        className="absolute inset-y-0 -z-10 col-span-1 col-start-1 w-px justify-self-center bg-muted-foreground md:col-start-2"
       />
 
       {elements.map((elmt, index) => (
