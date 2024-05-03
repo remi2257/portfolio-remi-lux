@@ -24,11 +24,8 @@ const experienceList: TimelineElement[] = [
     ],
     footer: (
       <Button asChild>
-        <Link
-          href="https://apps.apple.com/fr/app/souk-alertes-2nd-main/id6472217012"
-          target="_blank"
-        >
-          See on stores
+        <Link href="https://souk.to" target="_blank">
+          Visit website
         </Link>
       </Button>
     ),
@@ -47,11 +44,8 @@ const experienceList: TimelineElement[] = [
     ],
     footer: (
       <Button asChild>
-        <Link
-          href="https://apps.apple.com/us/app/serendy/id6462817010"
-          target="_blank"
-        >
-          See on stores
+        <Link href="https://serendy.io/" target="_blank">
+          Visit website
         </Link>
       </Button>
     ),

@@ -29,11 +29,7 @@ const professionalExperience: Section = {
     {
       name: (
         <>
-          CTO as a Service |{" "}
-          <Link src="https://apps.apple.com/fr/app/souk-alertes-2nd-main/id6472217012">
-            Souk
-          </Link>
-          , Paris
+          CTO as a Service | <Link src="https://souk.to">Souk</Link>, Paris
         </>
       ),
       subtitle: "Depuis janvier 2024",
