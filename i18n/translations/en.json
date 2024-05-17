@@ -1,13 +1,59 @@
 {
+  "home": {
+    "hero": {
+      "title": "Experienced <span1>Software Engineer</span1> specialized in <span2>Full-Stack</span2> Development",
+      "subtitle": "From concept to launch, I craft web platforms that are robust, scalable, and designed to engage, powered by the latest in technology trends."
+    },
+    "about": {
+      "title": "About Me",
+      "hey": "Hey, I'm Rémi Lux!",
+      "paragraph1": "I started my software journey in robotics with a focus on Computer Vision from 2019 to 2021, giving robots the gift of sight.",
+      "paragraph2": "Motivated by the innovative dynamics of web technology, I transitioned to Web Development in 2021.",
+      "paragraph3": "With over 5 years of experience as a Software Engineer, I thrive on challenges and am always eager for opportunities to learn and grow.",
+      "experienceWith": "Experience with"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "A question? A project? A partnership? Feel free to contact me!",
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name",
+        "error": "Name is required"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Your email address",
+        "error": "A valid email is required"
+      },
+      "subject": {
+        "label": "Subject",
+        "placeholder": "Subject",
+        "error": "Subject should be at least 8 characters"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Message",
+        "error": "Message should be at least 50 characters"
+      },
+      "button": { "send": "Send", "sending": "Sending", "sent": "Sent" },
+      "emailSentToast": {
+        "title": "Email sent",
+        "description": "I will get back to you as soon as possible."
+      },
+      "emailFailedToast": {
+        "title": "Failed to send email",
+        "description": "Contact me directly on LinkedIn or Instagram if you want to get in touch with me."
+      }
+    }
+  },
+
   "navbar": {
     "about": "About",
-    "projects": "Projects",
     "experiences": "Experiences",
+    "projects": "Projects",
     "education": "Education"
   },
-  "home": {
-    "subtitle": "From concept to launch, I craft web platforms that are robust, scalable, and designed to engage, powered by the latest in technology trends."
-  },
+
   "cta": {
     "contactMe": "Contact Me",
     "getMyResume": "Get my Resume"

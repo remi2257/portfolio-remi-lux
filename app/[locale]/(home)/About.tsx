@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { IconType } from "react-icons";
 import {
   SiAmazonaws,
@@ -54,37 +55,28 @@ const About: React.FC<{ index: number; className?: string }> = ({
   index,
   className,
 }) => {
+  const t = useTranslations("home.about");
+
   const skillLineClasses =
     "flex flex-wrap justify-center items-center gap-3 sm:gap-x-4";
 
   return (
     <section id="about" className={cn("space-y-6 sm:space-y-10", className)}>
-      <SectionTitle index={index} title="About" />
+      <SectionTitle index={index} title={t("title")} />
 
       <div className="space-y-3 text-pretty pb-2 text-center text-base text-muted-foreground sm:space-y-6 sm:text-lg">
         <p className="text-xl font-bold text-foreground sm:text-2xl">
-          Hey, I&apos;m Rémi Lux!
+          {t("hey")}
         </p>
 
-        <p>
-          I started my software journey in robotics with a focus on Computer
-          Vision from 2019 to 2021, giving robots the gift of sight.
-        </p>
-
-        <p>
-          Motivated by the innovative dynamics of web technology, I transitioned
-          to Web Development in 2021.
-        </p>
-
-        <p>
-          With over 5 years of experience as a Software Engineer, I thrive on
-          challenges and am always eager for opportunities to learn and grow.
-        </p>
+        {["paragraph1", "paragraph2", "paragraph3"].map(key => (
+          <p key={key}>{t(key)}</p>
+        ))}
       </div>
 
       <div className="flex flex-col items-center gap-y-6">
         <div className="text-base font-medium uppercase text-muted-foreground sm:text-lg">
-          Experience with
+          {t("experienceWith")}
         </div>
         <div className="flex flex-col items-center gap-6 sm:gap-8">
           <div

@@ -6,7 +6,8 @@ import { ThemeToggleButton } from "@/components/atoms/ThemeToggleButton";
 import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
-  const t = useTranslations();
+  const navbarT = useTranslations("navbar");
+  const ctaT = useTranslations("cta");
 
   return (
     <header className="mb-8 border-b sm:mb-12">
@@ -17,22 +18,22 @@ export default function Navbar() {
 
         <div className="flex gap-x-2 max-sm:hidden">
           <Button className="max-xl:hidden" asChild variant="link">
-            <Link href="/#about">{t("navbar.about")}</Link>
+            <Link href="/#about">{navbarT("about")}</Link>
           </Button>
           <Button className="max-xl:hidden" asChild variant="link">
-            <Link href="/#projects">{t("navbar.projects")}</Link>
+            <Link href="/#experiences">{navbarT("experiences")}</Link>
           </Button>
           <Button className="max-xl:hidden" asChild variant="link">
-            <Link href="/#experiences">{t("navbar.projects")}</Link>
+            <Link href="/#projects">{navbarT("projects")}</Link>
           </Button>
           <Button className="max-xl:hidden" asChild variant="link">
-            <Link href="/#education">{t("navbar.education")}</Link>
+            <Link href="/#education">{navbarT("education")}</Link>
           </Button>
           <Button asChild variant="outline">
-            <Link href="/#contact">{t("cta.contactMe")}</Link>
+            <Link href="/#contact">{ctaT("contactMe")}</Link>
           </Button>
           <Button asChild variant="default" className="ml-2">
-            <Link href="/resume">{t("cta.getMyResume")}</Link>
+            <Link href="/resume">{ctaT("getMyResume")}</Link>
           </Button>
         </div>
 
