@@ -7,11 +7,19 @@ import { getMessages } from "next-intl/server";
 import Footer from "@/components/molecules/Footer";
 import Navbar from "@/components/molecules/Navbar";
 import { Toaster } from "@/components/ui/toaster";
+import { type Locale } from "@/i18n/locale";
 
 import "./globals.css";
+
 import { ThemeProvider } from "./theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
+
+type RootLayoutParams = {
+  locale: Locale;
+};
+
+// TODO: use dynamic metadata
 
 export const metadata: Metadata = {
   title: "Rémi Lux | Full-Stack Engineer",
@@ -22,9 +30,11 @@ export const metadata: Metadata = {
 };
 
 type RootLayoutProps = {
-  params: { locale: string };
+  params: RootLayoutParams;
   children: React.ReactNode;
 };
+
+// TODO: generate static pages for each locale
 
 export default async function RootLayout({
   params: { locale },
