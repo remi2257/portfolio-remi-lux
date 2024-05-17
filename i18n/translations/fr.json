@@ -1,15 +1,244 @@
 {
+  "home": {
+    "hero": {
+      "title": "Ingénieur logiciel <span1>expérimenté</span1> spécialisé en <span2>développement Full-Stack</span2>",
+      "subtitle": "Du concept au lancement, je crée des plateformes web robustes, évolutives et conçues pour engager, alimentées par les dernières tendances technologiques."
+    },
+
+    "about": {
+      "title": "À propos de moi",
+      "hey": "Salut, je suis Rémi Lux!",
+      "description": {
+        "paragraph1": "J'ai commencé mon parcours logiciel en robotique avec un focus sur le traitement d'images de 2019 à 2021, donnant aux robots le don de la vue.",
+        "paragraph2": "Motivé par la dynamique innovante de la technologie web, j'ai fait la transition vers le développement web en 2021.",
+        "paragraph3": "Avec plus de 5 ans d'expérience en tant qu'ingénieur logiciel, je prospère face aux défis et suis toujours avide d'opportunités d'apprendre et de grandir."
+      },
+      "experienceWith": "Expérience avec"
+    },
+
+    "experiences": {
+      "title": "Expériences professionnelles",
+
+      "souk": {
+        "description": {
+          "paragraph1": "Travail sur Souk, un scraper Vinted haute performance assurant que les utilisateurs ne manquent jamais les meilleurs produits.",
+          "paragraph2": "Optimisation du backend en Golang pour l'évolutivité et la vitesse.",
+          "paragraph3": "Collaboration étroite avec les designers pour créer une nouvelle image de marque.",
+          "paragraph4": "Développement des applications mobiles (React Native) et de bureau (Next.js)."
+        }
+      },
+      "serendy": {
+        "job": "CTO & Co-fondateur",
+        "description": {
+          "paragraph1": "Création de Serendy, une application de rencontre qui déplace l'accent des messages interminables vers les rencontres réelles.",
+          "paragraph2": "Les utilisateurs peuvent voir qui est à proximité et proposer une date. Si la demande est acceptée, Serendy choisit un bar local où les utilisateurs se rencontreront en personne.",
+          "paragraph3": "Déploiement de l'application sur l'App Store et le Play Store."
+        }
+      },
+      "milleis": {
+        "job": "Développeur Front-End",
+        "description": {
+          "paragraph1": "Développement d'outils pour les banquiers privés de Milleis, en se concentrant sur des tâches comme la création de fichiers clients et les signatures en ligne.",
+          "paragraph2": "Utilisation d'Angular pour le Front-End de diverses applications, adoptant une configuration mono-repo facilitée par Nx."
+        }
+      },
+      "masa": {
+        "job": "Développeur Full-Stack",
+        "description": {
+          "paragraph1": "Contribution au développement de GEFORA, un outil stratégique permettant à l'armée française de superviser les troupes et les opérations.",
+          "paragraph2": "Utilisation d'un Front-End Angular communiquant avec un Back-End Nest.js.",
+          "paragraph3": "Le tout dans un mono-repo Nx, et la gestion des données facilitée par PostgreSQL et TypeORM."
+        }
+      },
+      "stockly": {
+        "job": "Développeur Front-End",
+        "description": {
+          "paragraph1": "Développement de l'application Back Office, offrant au personnel opérationnel un outil efficace pour l'achat et l'expédition de produits.",
+          "paragraph2": "Utilisation d'Angular pour le Front-End afin de mettre en œuvre le design de Figma."
+        }
+      },
+      "forssea": {
+        "job": "Ingénieur logiciel",
+        "description": {
+          "paragraph1": "Création du plan architectural de NAVCAM, mettant l'accent sur une interface transparente entre le logiciel et l'IHM.",
+          "paragraph2": "Utilisation de ROS 2 avec C++ pour le framework robotique, intégration de NodeJS et Express pour le Back-End, et utilisation d'Angular pour l'IHM."
+        }
+      },
+      "niryo": {
+        "job": "Ingénieur en traitement d'images et robotique",
+        "description": {
+          "paragraph1": "Direction du développement logiciel pour Set Vision, un produit phare sur les robots Niryo One et Niryo Ned.",
+          "paragraph2": "Création de modules de vision pour différents robots des secteurs éducatifs et industriels, impliquant des décisions allant du choix de la caméra à la guidance des actions du robot avec les objets.",
+          "paragraph3": "Utilisation de Python, ROS et OpenCV pour les systèmes robotiques et d'Angular pour l'IHM."
+        }
+      },
+      "bertin": {
+        "job": "Ingénieur en traitement d'images et logiciel",
+        "description": {
+          "paragraph1": "Développement du segment Video Summary de MediaCentric®, une solution qui acquiert des fichiers vidéo de diverses sources comme YouTube, Facebook et Twitter.",
+          "paragraph2": "Mon objectif principal était de fournir une synthèse rapide et complète des vidéos web extraites par la solution.",
+          "paragraph3": "Pour y parvenir, j'ai utilisé des techniques d'apprentissage profond et OpenCV pour détecter les images clés et extraire les visages et les textes."
+        }
+      },
+      "plymouthUni": {
+        "job": "Ingénieur en traitement d'images",
+        "description": {
+          "paragraph1": "Impliqué dans un stage de 10 semaines dédié au robot Owl, un projet de robotique à l'Université de Plymouth.",
+          "paragraph2": "Ma tâche principale était d'affiner l'algorithme de suivi de cible avec OpenCV."
+        }
+      },
+
+      "badges": {
+        "cdi": "CDI",
+        "internship": "Stage",
+        "robotics": "Robotique"
+      }
+    },
+    "projects": {
+      "title": "Projets",
+
+      "profilePerfectAI": {
+        "title": "Profile Perfect AI",
+        "description": {
+          "paragraph1": "Profile Perfect AI permet aux utilisateurs de créer des photos générées par IA. Tout ce que les utilisateurs ont à faire est de télécharger quelques photos d'eux-mêmes, et l'IA générera une nouvelle photo d'eux.",
+          "paragraph2": "Que ce soit sur LinkedIn, les applications de rencontre ou les réseaux sociaux, vous pouvez être sûr que votre photo de profil laissera une impression durable.",
+          "paragraph3": "L'IA fournit également des recommandations personnalisées sur la façon d'améliorer votre profil."
+        }
+      },
+      "tgvMaxExtra": {
+        "title": "TGV Max Extra",
+        "description": {
+          "paragraph1": "TGV Max Extra est une application web permettant aux abonnés TGV Max de créer des alertes et d'être notifiés lorsque des billets à 0€ sont disponibles.",
+          "paragraph2": "Les données proviennent d'un scraper utilisant des proxies pour récupérer les données de la SNCF.",
+          "paragraph3": "L'application comptait plus de 500 utilisateurs et plus de 1000 alertes envoyées en moins de 3 mois."
+        }
+      },
+      "sudokuSolver": {
+        "subtitle": "Résolvez n'importe quel Sudoku grâce au traitement d'images",
+        "description": {
+          "paragraph1": "Résout plusieurs grilles de Sudoku en temps réel et projette la solution en réalité augmentée.",
+          "paragraph2": "Ce projet a recueilli plus de 600 étoiles sur GitHub."
+        }
+      },
+      "littleCarAI": {
+        "subtitle": "Utilisez l'IA pour apprendre à une voiture à conduire",
+        "description": {
+          "paragraph1": "Création d'un environnement de simulation où une voiture apprend à conduire en utilisant l'apprentissage par renforcement.",
+          "paragraph2": "Ce projet traite de manière complexe les entrées du LIDAR et de la vitesse du véhicule, avec un réseau neuronal au cœur qui évolue par améliorations itératives, assurant que chaque génération dépasse la précédente."
+        }
+      },
+
+      "badges": {
+        "ai": "IA",
+        "archived": "Archivé",
+        "generatedMoney": "A généré de l'argent"
+      }
+    },
+
+    "education": {
+      "title": "Formation",
+
+      "phelma": {
+        "title": "Master en traitement du signal et de l'image",
+        "description": {
+          "paragraph1": "Le Master couvrait un large spectre, de l'électronique générale à l'apprentissage automatique, en se concentrant particulièrement sur le traitement d'image.",
+          "paragraph2": "Les projets clés comprenaient l'utilisation de l'apprentissage profond pour la réduction du bruit dans les discours et la création d'un dispositif Arduino pour l'évaluation de la qualité de l'air avec intégration de données en ligne."
+        }
+      },
+      "prepa": {
+        "title": "Classe préparatoire scientifique",
+        "description": {
+          "paragraph1": "Je me suis immergé dans la filière préparatoire physique-chimie (PCSI/PC*), posant les bases pour les concours des écoles d'ingénierie.",
+          "paragraph2": "Cela m'a apporté beaucoup de connaissances théoriques en science, et cela m'a aussi appris la rigueur et comment gérer une charge de travail importante."
+        }
+      }
+    },
+
+    "contact": {
+      "title": "Contact",
+      "description": "Une question ? Un projet ? Un partenariat ? N'hésitez pas à me contacter !",
+      "name": {
+        "label": "Nom",
+        "placeholder": "Votre nom",
+        "error": "Le nom est requis"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Votre adresse email",
+        "error": "Un email valide est requis"
+      },
+      "subject": {
+        "label": "Sujet",
+        "placeholder": "Sujet",
+        "error": "Le sujet doit comporter au moins 8 caractères"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Message",
+        "error": "Le message doit comporter au moins 50 caractères"
+      },
+      "button": {
+        "send": "Envoyer",
+        "sending": "Envoi en cours",
+        "sent": "Envoyé"
+      },
+      "emailSentToast": {
+        "title": "Email envoyé",
+        "description": "Je vous recontacterai dès que possible."
+      },
+      "emailFailedToast": {
+        "title": "Échec de l'envoi de l'email",
+        "description": "Contactez-moi directement sur LinkedIn ou Instagram si vous souhaitez me joindre."
+      }
+    }
+  },
+
+  "resume": {
+    "title": "Personnalisez mon CV selon vos besoins",
+    "generating": "Génération en cours",
+    "download": "Télécharger le PDF",
+
+    "identity": {
+      "title": "Identité",
+      "photo": "Photo",
+      "anonymous": "Anonyme"
+    },
+
+    "theme": {
+      "title": "Thème",
+
+      "blue": "Bleu Français",
+      "green": "Vert Frais",
+      "orange": "Orange Vif",
+      "purple": "Violet Royal",
+      "red": "Rouge Bordeaux"
+    },
+
+    "language": {
+      "title": "Langue",
+
+      "en": "Anglais",
+      "fr": "Français",
+      "es": "Espagnol"
+    }
+  },
+
   "navbar": {
     "about": "À propos",
-    "projects": "Projets",
     "experiences": "Expériences",
-    "education": "Éducation"
+    "projects": "Projets",
+    "education": "Formation"
   },
-  "home": {
-    "subtitle": "Du concept au lancement, je crée des plateformes web robustes, évolutives et conçues pour engager, alimentées par les dernières tendances technologiques."
+
+  "footer": {
+    "madeWith": "Fait avec"
   },
+
   "cta": {
     "contactMe": "Contactez-moi",
-    "getMyResume": "Téléchargez mon CV"
+    "getMyResume": "Télécharger mon CV",
+    "visitWebsite": "Visiter le site",
+    "seeOnWebsite": "Voir sur le site",
+    "seeOnGithub": "Voir sur Github"
   }
 }

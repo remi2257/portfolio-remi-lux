@@ -6,6 +6,8 @@ import { ResumeContext } from "./ResumeContext";
 
 // -- Language
 
+// TODO: Delete
+
 export const languageList = ["fr", "en"] as const;
 export type Language = (typeof languageList)[number];
 

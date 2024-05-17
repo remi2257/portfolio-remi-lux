@@ -13,7 +13,7 @@ export default function Navbar() {
     <header className="mb-8 border-b sm:mb-12">
       <div className="container flex items-center justify-between gap-x-2 py-2 sm:py-4">
         <Link href="/">
-          <h1 className="font-black sm:text-lg xl:text-xl">rémiL.</h1>
+          <div className="font-black sm:text-lg xl:text-xl">rémiL.</div>
         </Link>
 
         <div className="flex gap-x-2 max-sm:hidden">

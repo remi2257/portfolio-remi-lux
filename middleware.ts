@@ -9,13 +9,8 @@ export default createMiddleware({
 });
 
 export const config = {
-  /*
-   * Match all request paths except for the ones starting with:
-   * - _next/static (static files)
-   * - _next/image (image optimization files)
-   * - favicon.ico (favicon file)
-   */ matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
-
-  // Match only internationalized pathnames
-  // matcher: ['/', '/(de|en)/:path*']
+  // (?!...) : négation anticipée. Cela signifie "ne pas correspondre si ce qui suit est ...".
+  // .*\\..* : Correspond à n'importe quel chemin contenant un point (.), ce qui inclut généralement les fichiers (par exemple, .css, .js, .png, etc.).
+  // _next : Correspond à n'importe quel chemin qui commence par _next, utilisé par Next.js pour ses ressources internes.
+  matcher: "/((?!.*\\..*|_next).*)",
 };

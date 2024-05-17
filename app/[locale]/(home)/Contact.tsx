@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { ImSpinner2 } from "react-icons/im";
 import { z } from "zod";
 
+import { sendMail } from "@/actions/sendMail";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -60,11 +61,7 @@ const Contact: React.FC<{ className?: string }> = ({ className }) => {
     try {
       setMailSendState("sending");
 
-      // sleep for 1 second to simulate sending email
-
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      // await sendMail(formData);
+      await sendMail(formData);
       toast({
         title: t("emailSentToast.title"),
         description: t("emailSentToast.description"),

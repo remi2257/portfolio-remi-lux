@@ -13,6 +13,7 @@ import {
   View,
 } from "@react-pdf/renderer";
 import { Style } from "@react-pdf/types";
+import { useTranslations } from "next-intl";
 import { useContext, useEffect, useMemo, useState } from "react";
 import { RiLoader4Fill } from "react-icons/ri";
 
@@ -29,7 +30,6 @@ import {
   SubSection,
   generateDocumentTitle,
   languageList,
-  languageMap,
 } from "./content";
 import { Color, colorList, colorPaletteMap } from "./style";
 
@@ -458,6 +458,8 @@ const Resume: React.FC<ResumeProps> = ({
 // --- ResumeDisplay
 
 const ResumeDisplay: React.FC = () => {
+  const t = useTranslations("resume");
+
   // -- Mandatory to avoid SSR with react-pdf
   const [isClient, setIsClient] = useState(false);
   useEffect(() => setIsClient(true), []);
@@ -509,7 +511,7 @@ const ResumeDisplay: React.FC = () => {
             </PDFViewer>
             {loadingPdf && (
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-y-4 rounded bg-black/50 text-2xl font-semibold text-white backdrop-blur-sm">
-                <span>Generating</span>
+                <span>{t("generating")}</span>
                 <RiLoader4Fill className="size-8 animate-spin" />
               </div>
             )}
@@ -519,15 +521,13 @@ const ResumeDisplay: React.FC = () => {
 
       <div className="flex flex-col items-center gap-y-16">
         <div className="flex flex-col items-center gap-y-6">
-          <div className="text-center text-2xl">
-            Customize my resume to your needs
-          </div>
+          <div className="text-center text-2xl">{t("title")}</div>
           <div className="flex flex-col gap-x-16 gap-y-4 lg:flex-row">
             <div
               // Identity Wrapper
               className="space-y-2"
             >
-              <div className="text-center text-lg">Identity</div>
+              <div className="text-center text-lg">{t("identity.title")}</div>
               <div className="flex items-center space-x-2">
                 <Switch
                   id="with-photo"
@@ -538,7 +538,7 @@ const ResumeDisplay: React.FC = () => {
                   }}
                   disabled={anonymous}
                 />
-                <Label htmlFor="with-photo">Photo</Label>
+                <Label htmlFor="with-photo">{t("identity.photo")}</Label>
               </div>
               <div className="flex items-center space-x-2">
                 <Switch
@@ -549,14 +549,14 @@ const ResumeDisplay: React.FC = () => {
                     setLoadingPdf(true);
                   }}
                 />
-                <Label htmlFor="anonymous">Anonymous</Label>
+                <Label htmlFor="anonymous">{t("identity.anonymous")}</Label>
               </div>
             </div>
             <div
               // Theme Wrapper
               className="space-y-2"
             >
-              <div className="text-center text-lg">Theme</div>
+              <div className="text-center text-lg">{t("theme.title")}</div>
               <RadioGroup
                 value={mainColor}
                 onValueChange={(v: Color) => {
@@ -573,7 +573,7 @@ const ResumeDisplay: React.FC = () => {
                         color: colorPaletteMap[color].headerBg,
                       }}
                     >
-                      {colorPaletteMap[color].name}
+                      {t(`theme.${color}`)}
                     </Label>
                   </div>
                 ))}
@@ -583,7 +583,7 @@ const ResumeDisplay: React.FC = () => {
               // Language Wrapper
               className="space-y-2"
             >
-              <div className="text-center text-lg">Language</div>
+              <div className="text-center text-lg">{t("language.title")}</div>
               <RadioGroup
                 value={language}
                 onValueChange={(v: Language) => {
@@ -594,7 +594,9 @@ const ResumeDisplay: React.FC = () => {
                 {languageList.map(language => (
                   <div key={language} className="flex items-center space-x-2">
                     <RadioGroupItem value={language} id={language} />
-                    <Label htmlFor={language}>{languageMap[language]}</Label>
+                    <Label htmlFor={language}>
+                      {t(`language.${language}`)}
+                    </Label>
                   </div>
                 ))}
               </RadioGroup>
@@ -608,10 +610,10 @@ const ResumeDisplay: React.FC = () => {
         >
           {isClient ? (
             <PDFDownloadLink document={PdfDocument} fileName={documentTitle}>
-              Download PDF
+              {t("download")}
             </PDFDownloadLink>
           ) : (
-            <span>Download PDF</span>
+            <span>{t("download")}</span>
           )}
         </Button>
       </div>

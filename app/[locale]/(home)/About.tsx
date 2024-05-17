@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl";
 import { IconType } from "react-icons";
 import {
   SiAmazonaws,
@@ -29,6 +28,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { useTranslationsWithList } from "@/utils";
 
 import SectionTitle from "./SectionTitle";
 
@@ -55,7 +55,7 @@ const About: React.FC<{ index: number; className?: string }> = ({
   index,
   className,
 }) => {
-  const t = useTranslations("home.about");
+  const [t, tList] = useTranslationsWithList("home.about");
 
   const skillLineClasses =
     "flex flex-wrap justify-center items-center gap-3 sm:gap-x-4";
@@ -69,8 +69,8 @@ const About: React.FC<{ index: number; className?: string }> = ({
           {t("hey")}
         </p>
 
-        {["paragraph1", "paragraph2", "paragraph3"].map(key => (
-          <p key={key}>{t(key)}</p>
+        {tList("description").map((value, index) => (
+          <p key={index}>{value}</p>
         ))}
       </div>
 

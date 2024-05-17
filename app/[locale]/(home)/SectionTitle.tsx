@@ -29,9 +29,9 @@ const SectionTitle: React.FC<{
       <div className="grid size-12 place-items-center rounded-full bg-foreground bg-gradient-to-r font-semibold text-background sm:size-16">
         {index}
       </div>
-      <h4 className="bg-gradient-to-r bg-clip-text text-center font-extrabold text-transparent">
+      <h3 className="bg-gradient-to-r bg-clip-text text-center font-extrabold text-transparent">
         {title}
-      </h4>
+      </h3>
     </div>
   );
 };

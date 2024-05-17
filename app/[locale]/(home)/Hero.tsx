@@ -19,7 +19,7 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
       )}
     >
       <HeroImage />
-      <h2 className="text-pretty text-center text-2xl font-black sm:text-3xl">
+      <h1 className="text-pretty text-center text-2xl font-black sm:text-3xl">
         {heroT.rich("title", {
           span1: children => (
             <span className="gradient-colors-3 text-gradient bg-gradient-to-r">
@@ -32,10 +32,12 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
             </span>
           ),
         })}
-      </h2>
-      <h3 className="text-balance text-center text-muted-foreground sm:text-xl">
+      </h1>
+
+      <h2 className="text-balance text-center text-muted-foreground sm:text-xl">
         {heroT("subtitle")}
-      </h3>
+      </h2>
+
       <div className="grid gap-y-4 sm:grid-cols-3 sm:gap-x-10">
         <Button asChild variant="outline">
           <Link href="/#contact">{ctaT("contactMe")}</Link>
