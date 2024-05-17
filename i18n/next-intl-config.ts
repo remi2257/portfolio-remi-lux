@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation";
 import { getRequestConfig } from "next-intl/server";
 
-import { Locale, locales } from "./locale";
+import { isHandledLocale } from "./locale";
 
 export default getRequestConfig(async ({ locale }) => {
   // TODO: redirect to the default locale if the incoming `locale` parameter is not valid
   // Validate that the incoming `locale` parameter is valid
-  if (!locales.includes(locale as Locale)) {
+  if (!isHandledLocale(locale)) {
     notFound();
   }
 
