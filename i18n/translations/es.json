@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "about": "Acerca de",
+    "projects": "Proyectos",
+    "experiences": "Experiencias",
+    "education": "Educación"
+  },
+  "home": {
+    "subtitle": "Desde el concepto hasta el lanzamiento, creo plataformas web que son robustas, escalables y diseñadas para interactuar, impulsadas por las últimas tendencias en tecnología."
+  },
+  "cta": {
+    "contactMe": "Contáctame",
+    "getMyResume": "Obtén mi currículum"
+  }
+}

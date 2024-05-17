@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "about": "About",
+    "projects": "Projects",
+    "experiences": "Experiences",
+    "education": "Education"
+  },
+  "home": {
+    "subtitle": "From concept to launch, I craft web platforms that are robust, scalable, and designed to engage, powered by the latest in technology trends."
+  },
+  "cta": {
+    "contactMe": "Contact Me",
+    "getMyResume": "Get my Resume"
+  }
+}

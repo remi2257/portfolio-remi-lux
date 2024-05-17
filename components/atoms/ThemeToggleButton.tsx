@@ -5,7 +5,7 @@ import { LuMoon, LuSun } from "react-icons/lu";
 
 import { Button } from "@/components/ui/button";
 
-export function ModeToggleButton() {
+export function ThemeToggleButton() {
   const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");

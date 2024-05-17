@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "about": "À propos",
+    "projects": "Projets",
+    "experiences": "Expériences",
+    "education": "Éducation"
+  },
+  "home": {
+    "subtitle": "Du concept au lancement, je crée des plateformes web robustes, évolutives et conçues pour engager, alimentées par les dernières tendances technologiques."
+  },
+  "cta": {
+    "contactMe": "Contactez-moi",
+    "getMyResume": "Téléchargez mon CV"
+  }
+}

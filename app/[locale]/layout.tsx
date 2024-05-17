@@ -1,6 +1,8 @@
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
 import Footer from "@/components/molecules/Footer";
 import Navbar from "@/components/molecules/Navbar";
@@ -19,20 +21,27 @@ export const metadata: Metadata = {
                 `,
 };
 
-export default function RootLayout({
-  children,
-}: {
+type RootLayoutProps = {
+  params: { locale: string };
   children: React.ReactNode;
-}) {
+};
+
+export default async function RootLayout({
+  params: { locale },
+  children,
+}: RootLayoutProps) {
+  const i18nMessages = await getMessages();
+
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang={locale} className="scroll-smooth">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar />
-          {children}
-          <Footer />
-
-          <Toaster />
+          <NextIntlClientProvider messages={i18nMessages}>
+            <Navbar />
+            {children}
+            <Footer />
+            <Toaster />
+          </NextIntlClientProvider>
         </ThemeProvider>
 
         <Analytics />

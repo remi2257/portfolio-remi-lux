@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";
+import imgHeroDay from "@/public/assets/hero-day-1.jpg";
+import imgHeroNight from "@/public/assets/hero-night-1.jpg";
 
 const HeroImage: React.FC<{ className?: string }> = ({ className }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -18,15 +20,13 @@ const HeroImage: React.FC<{ className?: string }> = ({ className }) => {
     >
       <Image
         priority
-        src="/assets/hero-day-1.jpg"
+        src={imgHeroDay}
         alt="Rémi Lux Day"
-        width={256}
-        height={256}
         className="rounded-full object-cover opacity-100 transition duration-500 dark:pointer-events-none dark:-translate-x-1/2 dark:opacity-0"
         onLoad={() => setImageLoaded(true)}
       />
       <Image
-        src="/assets/hero-night-1.jpg"
+        src={imgHeroNight}
         alt="Rémi Lux Night"
         width={256}
         height={256}

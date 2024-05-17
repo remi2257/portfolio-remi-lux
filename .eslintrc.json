@@ -1,5 +1,5 @@
 {
-  "plugins": ["prettier", "import", "tailwindcss"],
+  "plugins": ["prettier", "import", "unused-imports", "tailwindcss"],
 
   "extends": [
     "next/core-web-vitals",
@@ -29,6 +29,7 @@
           "index"
         ]
       }
-    ]
+    ],
+    "unused-imports/no-unused-imports": "error"
   }
 }
