@@ -1,6 +1,4 @@
-import { Image as ImagePdf, Text, View } from "@react-pdf/renderer";
-
-import { Content, Link, Section, Strong } from "./content";
+import { Content, GithubStars, Section, Strong } from "./content";
 
 const jobTitle = "Full-Stack Engineer";
 
@@ -27,24 +25,15 @@ const professionalExperience: Section = {
   name: "Professional experience",
   subSectionList: [
     {
-      name: (
-        <>
-          CTO as a Service | <Link src="https://souk.to">Souk</Link>, Paris
-        </>
-      ),
-      subtitle: "Since January 2024",
+      name: "CTO as a Service | Souk, Paris",
+      subtitle: "January 2024 to May 2024",
       points: [
         "Reimagined Souk fully, a high-performance Vinted scraper.",
         "Next.js / React Native (Expo) / Golang / AWS",
       ],
     },
     {
-      name: (
-        <>
-          Co-Founder & CTO | <Link src="https://serendy.io/">Serendy</Link>,
-          Paris
-        </>
-      ),
+      name: "Co-Founder & CTO | Serendy, Paris",
       subtitle: "March 2023 to November 2023",
       points: [
         "Creation of a dating app' enabling users to meet instantly in chic locations",
@@ -52,13 +41,7 @@ const professionalExperience: Section = {
       ],
     },
     {
-      name: (
-        <>
-          Front-end Developer |{" "}
-          <Link src="https://www.milleis.fr/">Milleis Banque Privée</Link>,
-          Paris
-        </>
-      ),
+      name: "Front-end Developer | Milleis Banque Privée, Paris",
       subtitle: "March 2023 to June 2023 (Freelance)",
       points: [
         "Development of tools for private bankers (file creation, online signature, etc)",
@@ -66,12 +49,7 @@ const professionalExperience: Section = {
       ],
     },
     {
-      name: (
-        <>
-          Full-Stack Developer |{" "}
-          <Link src="https://www.masasim.com/">MASA Group</Link>, Paris
-        </>
-      ),
+      name: "Full-Stack Developer | MASA Group, Paris",
       subtitle: "July 2022 to November 2022 (Freelance)",
       points: [
         "Development of the management tool for the French army",
@@ -79,12 +57,7 @@ const professionalExperience: Section = {
       ],
     },
     {
-      name: (
-        <>
-          Front-end Developer |{" "}
-          <Link src="https://www.stockly.ai/"> Stockly</Link>, Paris
-        </>
-      ),
+      name: "Front-end Developer | Stockly, Paris",
       subtitle: "February 2022 to July 2022 (Freelance)",
       points: [
         <>
@@ -97,13 +70,7 @@ const professionalExperience: Section = {
       ],
     },
     {
-      name: (
-        <>
-          Robotics Engineer Full-stack |{" "}
-          <Link src="https://forssea-robotics.fr/">Forssea Robotics</Link>,
-          Paris
-        </>
-      ),
+      name: "Robotics Engineer Full-stack| Forssea Robotics, Paris",
       subtitle: "May 2021 to February 2022 (CDI)",
       points: [
         "Architecture design and development of the NAVCAM V5",
@@ -113,27 +80,11 @@ const professionalExperience: Section = {
       ],
     },
     {
-      name: (
-        <>
-          Robotics Engineer – Computer Vision |{" "}
-          <Link src="https://niryo.com/">Niryo</Link>, Lille
-        </>
-      ),
+      name: "Robotics Engineer – Computer Vision | Niryo, Lille",
       subtitle: "September 2019 to April 2021 (CDI)",
       points: [
-        <>
-          Project leader for the{" "}
-          <Link src="https://niryo.com/products-cobots/robot-ned-2/">
-            Vision Set
-          </Link>{" "}
-          for the Niryo One & Niryo Ned
-        </>,
-        <>
-          Software leader for the{" "}
-          <Link src="https://niryo.com/products-cobots/vision-set-ned2/">
-            Niryo Ned
-          </Link>{" "}
-        </>,
+        "Software leader for the Vision Set for the Niryo One & Niryo Ned",
+        "Software leader for the Niryo Ned",
         <>
           Development of the HMI in <Strong>Angular</Strong>
         </>,
@@ -173,7 +124,7 @@ const skills: Section = {
   ],
 };
 
-const personnalProjects: Section = {
+const personalProjects: Section = {
   name: "Personnal projects",
   subSectionList: [
     {
@@ -185,41 +136,7 @@ const personnalProjects: Section = {
     },
     {
       name: "Sudoku Solver | Computer Vision | 2019",
-      nameExtra: (
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            marginTop: 1,
-          }}
-        >
-          <ImagePdf
-            src="/assets/github.png"
-            style={{
-              width: 10,
-              height: 10,
-            }}
-          />
-          <Text
-            style={{
-              fontWeight: "bold",
-              fontSize: 11,
-              marginTop: 1,
-              marginLeft: 4,
-              marginRight: 1,
-            }}
-          >
-            600{" "}
-          </Text>
-          <ImagePdf
-            src="/assets/github_star.png"
-            style={{
-              width: 10,
-              height: 10,
-            }}
-          />
-        </View>
-      ),
+      nameExtra: <GithubStars stars={600} />,
       points: [
         "Extraction, Resolution & Reconstruction of Sudoku grids extracted from a real-time video stream",
       ],
@@ -229,10 +146,11 @@ const personnalProjects: Section = {
 
 const content: Content = {
   jobTitle,
+
   education,
   professionalExperience,
   skills,
-  personnalProjects,
+  personalProjects,
 };
 
 export default content;

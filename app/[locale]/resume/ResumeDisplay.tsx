@@ -378,7 +378,7 @@ const Resume: React.FC<ResumeProps> = ({
               {...content.professionalExperience}
             />
           </View>
-          <ResumeBigSection {...content.personnalProjects} />
+          <ResumeBigSection {...content.personalProjects} />
         </View>
 
         {!anonymous && (

@@ -1,4 +1,9 @@
-import { Link as LinkPdf, Text } from "@react-pdf/renderer";
+import {
+  Image as ImagePdf,
+  Link as LinkPdf,
+  Text,
+  View,
+} from "@react-pdf/renderer";
 import { Style } from "@react-pdf/types";
 import { useContext } from "react";
 
@@ -6,16 +11,8 @@ import { ResumeContext } from "./ResumeContext";
 
 // -- Language
 
-// TODO: Delete
-
-export const languageList = ["fr", "en"] as const;
+export const languageList = ["fr", "en", "es"] as const;
 export type Language = (typeof languageList)[number];
-
-export const languageMap: Record<Language, string> = {
-  fr: "Français",
-  en: "English",
-  // es: "Español",
-};
 
 export function generateDocumentTitle(language: Language, anonymous: boolean) {
   let title: string;
@@ -30,25 +27,33 @@ export function generateDocumentTitle(language: Language, anonymous: boolean) {
       case "en":
         title = "FULL_STACK_ENGINEER";
         break;
+      case "es":
+        title = "INGENIERO_FULL_STACK";
+        break;
     }
   }
 
+  let suffix: string;
+
   switch (language) {
     case "fr":
-      title += "_CV_FR";
+      suffix = "CV_FR";
       break;
     case "en":
-      title += "_RESUME_EN";
+      suffix = "RESUME_EN";
+      break;
+    case "es":
+      suffix = "RESUMEN_ES";
       break;
   }
 
-  return title;
+  return `${title}_${suffix}`;
 }
 
 // -- Types
 
 export type SubSection = {
-  name: React.ReactNode;
+  name: string;
   nameExtra?: React.ReactNode;
   subtitle?: string;
   points: React.ReactNode[];
@@ -60,12 +65,12 @@ export type Section = {
 };
 
 export type Content = {
-  jobTitle: string;
+  jobTitle: string; // Just under Rémi Lux
 
   education: Section;
   professionalExperience: Section;
   skills: Section;
-  personnalProjects: Section;
+  personalProjects: Section;
 };
 
 // -- Components
@@ -92,5 +97,43 @@ export const Strong: React.FC<React.PropsWithChildren<{ style?: Style }>> = ({
     <Text style={[{ fontWeight: "bold" }, style]} {...props}>
       {children}
     </Text>
+  );
+};
+
+export const GithubStars: React.FC<{ stars: number }> = ({ stars }) => {
+  return (
+    <View
+      style={{
+        flexDirection: "row",
+        alignItems: "center",
+        marginTop: 1,
+      }}
+    >
+      <ImagePdf
+        src="/assets/github.png"
+        style={{
+          width: 10,
+          height: 10,
+        }}
+      />
+      <Text
+        style={{
+          fontWeight: "bold",
+          fontSize: 11,
+          marginTop: 1,
+          marginLeft: 4,
+          marginRight: 1,
+        }}
+      >
+        {stars}{" "}
+      </Text>
+      <ImagePdf
+        src="/assets/github_star.png"
+        style={{
+          width: 10,
+          height: 10,
+        }}
+      />
+    </View>
   );
 };

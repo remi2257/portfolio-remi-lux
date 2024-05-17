@@ -4,6 +4,7 @@ import { createContext } from "react";
 
 import { Content, Language } from "./content";
 import contentEn from "./content_en";
+import contentEs from "./content_es";
 import contentFr from "./content_fr";
 import { ColorPalette, colorPaletteMap } from "./style";
 
@@ -30,6 +31,9 @@ const ResumeContextProvider: React.FC<
       break;
     case "en":
       content = contentEn;
+      break;
+    case "es":
+      content = contentEs;
       break;
   }
 
