@@ -2,36 +2,39 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale,
+} from "next-intl/server";
 
 import Footer from "@/components/molecules/Footer";
 import Navbar from "@/components/molecules/Navbar";
 import { Toaster } from "@/components/ui/toaster";
-import { type Locale } from "@/i18n/locale";
-
-import "./globals.css";
+import { locales } from "@/i18n/locale";
+import type { RouteParamsWithLocale } from "@/types";
 
 import { ThemeProvider } from "./theme-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
 
-type RootLayoutParams = {
-  locale: Locale;
-};
+const INTER_FONT = Inter({ subsets: ["latin"] });
+
+type RootLayoutParams = RouteParamsWithLocale;
 
 type RootLayoutProps = {
   params: RootLayoutParams;
 };
+export function generateStaticParams(): Array<RootLayoutParams> {
+  return locales.map(locale => ({
+    locale,
+  }));
+}
 
-// TODO: generate static pages for each locale
-// export function generateStaticParams(): Array<RootLayoutParams> {
-//   return locales.map(locale => ({
-//     locale,
-//   }));
-// }
-
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("metadata");
+export async function generateMetadata({
+  params: { locale },
+}: RootLayoutProps): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
     title: t("title"),
@@ -43,11 +46,14 @@ export default async function RootLayout({
   params: { locale },
   children,
 }: React.PropsWithChildren<RootLayoutProps>) {
+  // Details on https://next-intl-docs.vercel.app/docs/getting-started/app-router/with-i18n-routing#static-rendering
+  unstable_setRequestLocale(locale);
+
   const i18nMessages = await getMessages();
 
   return (
     <html lang={locale} className="scroll-smooth">
-      <body className={inter.className}>
+      <body className={INTER_FONT.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NextIntlClientProvider messages={i18nMessages}>
             <Navbar />
