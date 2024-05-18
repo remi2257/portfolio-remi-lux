@@ -540,7 +540,15 @@ const ResumeDisplay: React.FC = () => {
 
   return (
     <div className="grid items-center justify-items-center gap-x-8 sm:grid-cols-2">
-      <div className="relative hidden aspect-[2/3] sm:block sm:w-80 md:w-96 lg:w-[480px]">
+      <div
+        className={cn(
+          "relative aspect-[2/3] sm:w-80 md:w-96 lg:w-[480px]",
+
+          // TODO: Should be hidden for mobile
+          "max-sm:hidden"
+          // isMobile() && "hidden"
+        )}
+      >
         {isClient && (
           <>
             <PDFViewer
