@@ -18,13 +18,23 @@ import { ThemeProvider } from "./theme-provider";
 
 import "./globals.css";
 
+// -- Font
 const INTER_FONT = Inter({ subsets: ["latin"] });
+
+// -- Types
 
 type RootLayoutParams = RouteParamsWithLocale;
 
 type RootLayoutProps = {
   params: RootLayoutParams;
 };
+
+// -- Let's Work
+
+// Only take into account pre-generated static paths => otherwise, 404
+// https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
+export const dynamicParams = false;
+
 export function generateStaticParams(): Array<RootLayoutParams> {
   return locales.map(locale => ({
     locale,
