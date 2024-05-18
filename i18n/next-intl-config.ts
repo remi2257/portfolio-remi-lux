@@ -10,7 +10,7 @@ export default getRequestConfig(async ({ locale }) => {
     notFound();
   }
 
-  // TODO: merge with the default
+  // TODO: Add prebuild check to ensure the dictionary are healthy
   return {
     messages: (await import(`@/i18n/translations/${locale}.json`)).default,
   };

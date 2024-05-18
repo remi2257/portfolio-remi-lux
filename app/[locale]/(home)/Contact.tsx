@@ -33,6 +33,8 @@ import { cn } from "@/lib/utils";
 const Contact: React.FC<{ className?: string }> = ({ className }) => {
   const t = useTranslations("home.contact");
 
+  const { toast } = useToast();
+
   const FormSchema = z.object({
     name: z.string().min(1, t("name.error")).max(20),
     email: z.string().email(t("email.error")),
@@ -40,12 +42,6 @@ const Contact: React.FC<{ className?: string }> = ({ className }) => {
     message: z.string().min(50, t("message.error")).max(4096),
   });
   type FormInput = z.infer<typeof FormSchema>;
-
-  const { toast } = useToast();
-
-  const [mailSendState, setMailSendState] = useState<"sending" | "sent" | null>(
-    null
-  );
 
   const form = useForm<FormInput>({
     resolver: zodResolver(FormSchema),
@@ -56,6 +52,10 @@ const Contact: React.FC<{ className?: string }> = ({ className }) => {
       message: "",
     },
   });
+
+  const [mailSendState, setMailSendState] = useState<"sending" | "sent" | null>(
+    null
+  );
 
   async function onSubmit(formData: FormInput) {
     try {

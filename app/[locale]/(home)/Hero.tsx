@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import HeroImage from "./HeroImage";
 
 const Hero: React.FC<{ className?: string }> = ({ className }) => {
-  const heroT = useTranslations("home.hero");
+  const t = useTranslations("home.hero");
   const ctaT = useTranslations("cta");
 
   return (
@@ -20,7 +20,7 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
     >
       <HeroImage />
       <h1 className="text-pretty text-center text-2xl font-black sm:text-3xl">
-        {heroT.rich("title", {
+        {t.rich("title", {
           span1: children => (
             <span className="gradient-colors-3 text-gradient bg-gradient-to-r">
               {children}
@@ -35,7 +35,7 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
       </h1>
 
       <h2 className="text-balance text-center text-muted-foreground sm:text-xl">
-        {heroT("subtitle")}
+        {t("subtitle")}
       </h2>
 
       <div className="grid gap-y-4 sm:grid-cols-3 sm:gap-x-10">

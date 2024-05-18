@@ -24,13 +24,6 @@ const Projects: React.FC<{ index: number; className?: string }> = ({
       subtitle: "Next.js, Stable Diffusion, GPU Cloud, Stripe",
       badges: [t("badges.ai"), t("badges.archived")],
       description: tList("profilePerfectAI.description"),
-      // footer: (
-      //   <Button asChild>
-      //     <Link href="https://profile-perfect-ai.remi-lux.dev/" target="_blank">
-      //       Visit website
-      //     </Link>
-      //   </Button>
-      // ),
 
       Icon: TbPhotoAi,
       date: "2023",
@@ -38,8 +31,8 @@ const Projects: React.FC<{ index: number; className?: string }> = ({
     {
       title: "TGV Max Extra",
       subtitle: "Angular, Firebase, Stripe",
-      description: tList("tgvMaxExtra.description"),
       badges: [t("badges.generatedMoney"), t("badges.archived")],
+      description: tList("tgvMaxExtra.description"),
 
       Icon: TbTrain,
       date: "2020",
@@ -49,6 +42,7 @@ const Projects: React.FC<{ index: number; className?: string }> = ({
       subtitle: t("sudokuSolver.subtitle"),
       badges: ["600+ Stars"],
       description: tList("sudokuSolver.description"),
+
       Icon: MdGridOn,
       date: "2019",
 

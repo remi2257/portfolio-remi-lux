@@ -57,9 +57,6 @@ const About: React.FC<{ index: number; className?: string }> = ({
 }) => {
   const [t, tList] = useTranslationsWithList("home.about");
 
-  const skillLineClasses =
-    "flex flex-wrap justify-center items-center gap-3 sm:gap-x-4";
-
   return (
     <section id="about" className={cn("space-y-6 sm:space-y-10", className)}>
       <SectionTitle index={index} title={t("title")} />
@@ -78,10 +75,16 @@ const About: React.FC<{ index: number; className?: string }> = ({
         <div className="text-base font-medium uppercase text-muted-foreground sm:text-lg">
           {t("experienceWith")}
         </div>
-        <div className="flex flex-col items-center gap-6 sm:gap-8">
+        <div
+          className={cn(
+            "flex flex-col items-center gap-6 sm:gap-8",
+
+            // skillLineClasses
+            "*:flex *:flex-wrap *:justify-center *:items-center *:gap-3 *:sm:gap-x-4"
+          )}
+        >
           <div
-            // General Web Development
-            className={skillLineClasses}
+          // General Web Development
           >
             <SkillIcon
               Icon={SiHtml5}
@@ -110,8 +113,7 @@ const About: React.FC<{ index: number; className?: string }> = ({
             />
           </div>
           <div
-            // Web Frameworks
-            className={skillLineClasses}
+          // Web Frameworks
           >
             <SkillIcon
               Icon={SiReact}
@@ -130,8 +132,7 @@ const About: React.FC<{ index: number; className?: string }> = ({
             />
           </div>
           <div
-            // Database
-            className={skillLineClasses}
+          // Database
           >
             <SkillIcon
               Icon={SiSupabase}
@@ -150,8 +151,7 @@ const About: React.FC<{ index: number; className?: string }> = ({
             />
           </div>
           <div
-            // Tools
-            className={skillLineClasses}
+          // Tools
           >
             <SkillIcon
               Icon={SiGit}
@@ -175,8 +175,7 @@ const About: React.FC<{ index: number; className?: string }> = ({
             />
           </div>
           <div
-            // Other languages
-            className={skillLineClasses}
+          // Other languages
           >
             <SkillIcon
               Icon={SiNodedotjs}

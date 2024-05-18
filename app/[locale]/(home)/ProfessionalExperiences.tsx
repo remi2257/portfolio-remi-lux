@@ -26,6 +26,10 @@ const ProfessionalExperiences: React.FC<{
       subtitle: "CTO as a Service",
       badges: ["Freelance", "Next.js", "React Native", "Golang", "AWS"],
       description: tList("souk.description"),
+
+      Icon: FaTshirt,
+      date: "2024",
+
       footer: (
         <Button asChild>
           <Link href="https://souk.to" target="_blank">
@@ -33,15 +37,16 @@ const ProfessionalExperiences: React.FC<{
           </Link>
         </Button>
       ),
-
-      Icon: FaTshirt,
-      date: "2024",
     },
     {
       title: "Serendy",
       subtitle: t("serendy.job"),
       badges: ["React Native", "Next.js", "Supabase", "PostgreSQL"],
       description: tList("serendy.description"),
+
+      Icon: WiMoonAltWaxingCrescent1,
+      date: "2023",
+
       footer: (
         <Button asChild>
           <Link href="https://serendy.io/" target="_blank">
@@ -49,15 +54,13 @@ const ProfessionalExperiences: React.FC<{
           </Link>
         </Button>
       ),
-
-      Icon: WiMoonAltWaxingCrescent1,
-      date: "2023",
     },
     {
       title: "Milleis Banque Privée",
       subtitle: t("milleis.job"),
       badges: ["Freelance", "Angular", "TailwindCSS"],
       description: tList("milleis.description"),
+
       Icon: BsBank,
       date: "2023",
     },
@@ -75,6 +78,7 @@ const ProfessionalExperiences: React.FC<{
       subtitle: t("stockly.job"),
       badges: ["Freelance", "Angular"],
       description: tList("stockly.description"),
+
       Icon: FaBox,
       date: "2022",
     },
@@ -89,6 +93,7 @@ const ProfessionalExperiences: React.FC<{
         "Angular",
       ],
       description: tList("forssea.description"),
+
       Icon: TbSubmarine,
       date: "2021/22",
     },
@@ -104,6 +109,10 @@ const ProfessionalExperiences: React.FC<{
         "Angular",
       ],
       description: tList("niryo.description"),
+
+      Icon: GiRobotGrab,
+      date: "2019/21",
+
       footer: (
         <Button asChild>
           <Link
@@ -114,9 +123,6 @@ const ProfessionalExperiences: React.FC<{
           </Link>
         </Button>
       ),
-
-      Icon: GiRobotGrab,
-      date: "2019/21",
     },
     {
       title: "Bertin IT",

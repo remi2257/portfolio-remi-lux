@@ -14,7 +14,7 @@ import {
 } from "@react-pdf/renderer";
 import { Style } from "@react-pdf/types";
 import { useTranslations } from "next-intl";
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { RiLoader4Fill } from "react-icons/ri";
 
 import { Button } from "@/components/ui/button";
@@ -23,7 +23,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 
-import ResumeContextProvider, { ResumeContext } from "./ResumeContext";
+import ResumeContextProvider, { useResumeContext } from "./ResumeContext";
 import {
   Language,
   Section,
@@ -177,7 +177,7 @@ const ResumeBigSection: React.FC<ResumeSectionProps> = ({
 
   style = {},
 }) => {
-  const { colorPalette } = useContext(ResumeContext);
+  const { colorPalette } = useResumeContext();
 
   return (
     <View style={[{ rowGap: 6 }, style]}>
@@ -237,7 +237,7 @@ const Resume: React.FC<ResumeProps> = ({
   withPhoto,
   anonymous,
 }) => {
-  const { colorPalette, content } = useContext(ResumeContext);
+  const { colorPalette, content } = useResumeContext();
 
   return (
     <Document title={documentTitle} author="Rémi LUX">
@@ -460,6 +460,7 @@ const Resume: React.FC<ResumeProps> = ({
 const ResumeDisplay: React.FC = () => {
   const t = useTranslations("resume");
 
+  // TODO: avoid reloading the image when switching languages
   // -- Mandatory to avoid SSR with react-pdf
   const [isClient, setIsClient] = useState(false);
   useEffect(() => setIsClient(true), []);

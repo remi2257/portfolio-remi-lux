@@ -16,10 +16,11 @@ export type TimelineElement = {
   subtitle: string;
   badges?: string[];
   description: string[];
-  footer?: React.ReactNode;
 
   Icon: IconType;
   date: string;
+
+  footer?: React.ReactNode;
 };
 
 type VerticalTimelineElementProps = TimelineElement & {

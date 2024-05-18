@@ -12,7 +12,7 @@ const Education: React.FC<{
 }> = ({ index, className }) => {
   const [t, tList] = useTranslationsWithList("home.education");
 
-  const timelineeList: TimelineElement[] = [
+  const timelineElmtList: TimelineElement[] = [
     {
       title: t("phelma.title"),
       subtitle: "Grenoble INP - Phelma",
@@ -36,7 +36,7 @@ const Education: React.FC<{
       id="education"
       index={index}
       label={t("title")}
-      timelineElements={timelineeList}
+      timelineElements={timelineElmtList}
       className={className}
     />
   );

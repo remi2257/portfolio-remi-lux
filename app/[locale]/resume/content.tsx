@@ -5,9 +5,8 @@ import {
   View,
 } from "@react-pdf/renderer";
 import { Style } from "@react-pdf/types";
-import { useContext } from "react";
 
-import { ResumeContext } from "./ResumeContext";
+import { useResumeContext } from "./ResumeContext";
 
 // -- Language
 
@@ -64,8 +63,10 @@ export type Section = {
   subSectionList: SubSection[];
 };
 
+// TODO: Add keys to each section to mimic the i18n keys
+
 export type Content = {
-  jobTitle: string; // Just under Rémi Lux
+  jobTitle: string; // Just under Rémi Lux // TODO: rename "title"
 
   education: Section;
   professionalExperience: Section;
@@ -79,7 +80,7 @@ export const Link: React.FC<React.PropsWithChildren<{ src: string }>> = ({
   src,
   children,
 }) => {
-  const { colorPalette } = useContext(ResumeContext);
+  const { colorPalette } = useResumeContext();
 
   return (
     <LinkPdf style={{ color: colorPalette.headerBg }} src={src}>
