@@ -499,7 +499,6 @@ const Resume: React.FC<ResumeProps> = ({
 const ResumeDisplay: React.FC = () => {
   const t = useTranslations("resume");
 
-  // TODO: avoid reloading the image when switching languages
   // -- Mandatory to avoid SSR with react-pdf
   const [isClient, setIsClient] = useState(false);
   useEffect(() => setIsClient(true), []);
@@ -507,8 +506,11 @@ const ResumeDisplay: React.FC = () => {
   // -- We don't know if the PDF is ready to be displayed so we use a loading state
   const [loadingPdf, setLoadingPdf] = useState(true);
 
+  // Effect to clear the loading state after a delay
   useEffect(() => {
-    if (!loadingPdf) return;
+    if (!loadingPdf) {
+      return;
+    }
 
     const timeout = setTimeout(() => setLoadingPdf(false), 1500);
     return () => clearTimeout(timeout);
@@ -543,33 +545,30 @@ const ResumeDisplay: React.FC = () => {
       <div
         className={cn(
           "relative aspect-[2/3] sm:w-80 md:w-96 lg:w-[480px]",
-
-          // TODO: Should be hidden for mobile
+          // IDEA: Chould be hidden for mobile
           "max-sm:hidden"
           // isMobile() && "hidden"
         )}
       >
         {isClient && (
-          <>
-            <PDFViewer
-              className="size-full"
-              // showToolbar={false} => We show it to allow the user to realize it's a PDF viewer. But the name is the blob name :/
-            >
-              {PdfDocument}
-            </PDFViewer>
-            {loadingPdf && (
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-y-4 rounded bg-black/50 text-2xl font-semibold text-white backdrop-blur-sm">
-                <span>{t("generating")}</span>
-                <RiLoader4Fill className="size-8 animate-spin" />
-              </div>
-            )}
-          </>
+          <PDFViewer
+            className="size-full"
+            // showToolbar={false} => We show it to allow the user to realize it's a PDF viewer. But the name is the blob name :/
+          >
+            {PdfDocument}
+          </PDFViewer>
+        )}
+        {loadingPdf && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-y-4 rounded bg-black/50 text-2xl font-semibold text-white backdrop-blur-sm">
+            <span>{t("generating")}</span>
+            <RiLoader4Fill className="size-8 animate-spin" />
+          </div>
         )}
       </div>
 
       <div className="flex flex-col items-center gap-y-16">
         <div className="flex flex-col items-center gap-y-6">
-          <div className="text-center text-2xl">{t("title")}</div>
+          <div className="text-pretty text-center text-2xl">{t("title")}</div>
           <div className="flex flex-col gap-x-16 gap-y-4 lg:flex-row">
             <div
               // Identity Wrapper

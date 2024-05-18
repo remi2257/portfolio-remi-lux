@@ -12,14 +12,14 @@ const HeroImage: React.FC<{ className?: string }> = ({ className }) => {
   const { theme } = useTheme();
   const isLightTheme = theme === "light";
 
-  // TODO: avoid reloading the image when switching languages => check cache or global context ?
+  // IDEA: avoid reloading the image when switching languages => check cache or global context ?
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <div
       className={cn(
-        "mono-grid aspect-square opacity-0 transition-opacity duration-700 h-48 place-items-center sm:h-64",
-        imageLoaded && "opacity-100",
+        "mono-grid aspect-square transition-opacity duration-700 h-48 place-items-center sm:h-64",
+        imageLoaded ? "opacity-100" : "opacity-0",
         className
       )}
     >
@@ -34,8 +34,6 @@ const HeroImage: React.FC<{ className?: string }> = ({ className }) => {
         priority={!isLightTheme}
         src={imgHeroNight}
         alt="Rémi Lux Night"
-        width={256}
-        height={256}
         className="pointer-events-none translate-x-1/2 rounded-full object-cover opacity-0 transition duration-500 dark:pointer-events-auto dark:translate-x-0 dark:opacity-100"
         onLoad={() => setImageLoaded(true)}
       />
