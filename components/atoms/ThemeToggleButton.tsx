@@ -12,7 +12,7 @@ export function ThemeToggleButton() {
 
   return (
     <Button
-      variant="outline"
+      variant="ghost"
       size="icon"
       className="mono-grid place-items-center"
       onClick={toggleTheme}

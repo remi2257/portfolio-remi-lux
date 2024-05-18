@@ -1,10 +1,10 @@
 "use client";
 
-import { useLocale } from "next-intl";
 import { useTransition } from "react";
 
 import { Button } from "@/components/ui/button";
-import { Locale, isHandledLocale, localeInfosList } from "@/i18n/locale";
+import { useHandledLocale } from "@/hooks/useHandledLocale";
+import { Locale, localeInfosList } from "@/i18n/locale";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
@@ -23,13 +23,8 @@ export function LanguageToggleButton() {
   const router = useRouter();
   const [isReloading, startTransition] = useTransition();
   const pathname = usePathname();
-  // const params = useParams();
 
-  const navLocale = useLocale();
-
-  if (!isHandledLocale(navLocale)) {
-    throw new Error(`Unsupported locale: ${navLocale}`);
-  }
+  const navLocale = useHandledLocale();
 
   const currentSelectedLocale = !isReloading
     ? navLocale

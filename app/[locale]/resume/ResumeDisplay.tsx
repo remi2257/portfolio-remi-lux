@@ -21,17 +21,21 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Switch } from "@/components/ui/switch";
+import { useHandledLocale } from "@/hooks/useHandledLocale";
 import { cn } from "@/lib/utils";
 
 import ResumeContextProvider, { useResumeContext } from "./ResumeContext";
+import { Section, SubSection } from "./_content/content.type";
 import {
-  Language,
-  Section,
-  SubSection,
-  generateDocumentTitle,
-  languageList,
-} from "./content";
+  contactEmail,
+  contactPhone,
+  currentLocation,
+  portfolioLink,
+  resumeSubtitle,
+} from "./const";
+import { Language, languageList } from "./resume-lang";
 import { Color, colorList, colorPaletteMap } from "./style";
+import { generateDocumentTitle } from "./utils";
 
 const titleFont = "Century Gothic";
 Font.register({
@@ -167,7 +171,9 @@ const ResumeSubSection: React.FC<ResumeSubSectionProps> = ({
   );
 };
 
-type ResumeSectionProps = Section & {
+type ResumeSectionProps = {
+  name: string;
+  subSectionList: SubSection[];
   style?: Style;
 };
 
@@ -221,6 +227,16 @@ const ResumeBigSection: React.FC<ResumeSectionProps> = ({
     </View>
   );
 };
+
+function transformSectionToResumeBigSection<T extends string>(
+  section: Section<T>,
+  order: T[]
+): Omit<ResumeSectionProps, "style"> {
+  return {
+    name: section.name,
+    subSectionList: order.map(key => section.subSectionRecord[key]),
+  };
+}
 
 // -- Resume
 
@@ -296,8 +312,8 @@ const Resume: React.FC<ResumeProps> = ({
                   >
                     Rémi LUX
                   </Text>
-                  <Text>{content.jobTitle}</Text>
-                  <Text>React.js / Next.js / Node.js</Text>
+                  <Text>{content.professionnalTitle}</Text>
+                  <Text>{resumeSubtitle}</Text>
                 </View>
               </View>
 
@@ -306,16 +322,13 @@ const Resume: React.FC<ResumeProps> = ({
                   alignItems: "flex-end",
                 }}
               >
-                <Text>Paris - France</Text>
-                <Text>+33 6 31 20 55 88</Text>
-                <Link
-                  style={{ color: "white" }}
-                  src="email:remiluxpc@gmail.com"
-                >
-                  remiluxpc@gmail.com
+                <Text>{currentLocation}</Text>
+                <Text>{contactPhone}</Text>
+                <Link style={{ color: "white" }} src={`email:${contactEmail}`}>
+                  {contactEmail}
                 </Link>
-                <Link style={{ color: "white" }} src="https://remi-lux.dev">
-                  remi-lux.dev
+                <Link style={{ color: "white" }} src={portfolioLink}>
+                  {portfolioLink}
                 </Link>
               </View>
             </>
@@ -333,14 +346,14 @@ const Resume: React.FC<ResumeProps> = ({
                   fontWeight: "bold",
                 }}
               >
-                {content.jobTitle}
+                {content.professionnalTitle}
               </Text>
               <Text
                 style={{
                   fontSize: 16,
                 }}
               >
-                React.js / Next.js / Node.js
+                {resumeSubtitle}
               </Text>
             </View>
           )}
@@ -368,17 +381,43 @@ const Resume: React.FC<ResumeProps> = ({
                 rowGap: 16,
               }}
             >
-              <ResumeBigSection {...content.education} />
-              <ResumeBigSection {...content.skills} />
+              <ResumeBigSection
+                {...transformSectionToResumeBigSection(content.education, [
+                  "phelma",
+                  "prepa",
+                ])}
+              />
+              <ResumeBigSection
+                {...transformSectionToResumeBigSection(content.skills, [
+                  "web",
+                  "misc",
+                ])}
+              />
             </View>
             <ResumeBigSection
               style={{
                 flex: 1,
               }}
-              {...content.professionalExperience}
+              {...transformSectionToResumeBigSection(
+                content.professionalExperience,
+                [
+                  "souk",
+                  "serendy",
+                  "milleis",
+                  "masa",
+                  "stockly",
+                  "forssea",
+                  "niryo",
+                ]
+              )}
             />
           </View>
-          <ResumeBigSection {...content.personalProjects} />
+          <ResumeBigSection
+            {...transformSectionToResumeBigSection(content.personalProjects, [
+              "tgvMaxExtra",
+              "sudokuSolver",
+            ])}
+          />
         </View>
 
         {!anonymous && (
@@ -480,7 +519,7 @@ const ResumeDisplay: React.FC = () => {
 
   const [mainColor, setMainColor] = useState<Color>("blue");
 
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguage] = useState<Language>(useHandledLocale());
 
   const documentTitle = generateDocumentTitle(language, anonymous);
 

@@ -2,10 +2,11 @@
 
 import { createContext, useContext } from "react";
 
-import { Content, Language } from "./content";
-import contentEn from "./content_en";
-import contentEs from "./content_es";
-import contentFr from "./content_fr";
+import { Content } from "./_content/content.type";
+import contentEn from "./_content/en";
+import contentEs from "./_content/es";
+import contentFr from "./_content/fr";
+import { Language } from "./resume-lang";
 import { ColorPalette } from "./style";
 
 interface ResumeContextType {

@@ -1,11 +1,20 @@
-import { Content, GithubStars, Section, Strong } from "./content";
+import {
+  Content,
+  EducationSection,
+  PersonalProjectsSection,
+  ProfessionalExperienceSection,
+  SkillsSection,
+} from "./content.type";
 
-const jobTitle = "Ingénieur Full-Stack";
+import { GithubStars } from "../_components/GithubStars";
+import { Strong } from "../_components/Strong";
 
-const education: Section = {
+const professionnalTitle = "Ingénieur Full-Stack";
+
+const education: EducationSection = {
   name: "Éducation",
-  subSectionList: [
-    {
+  subSectionRecord: {
+    phelma: {
       name: "Ingénieur Computer Vision & IA\nGrenoble INP Phelma",
       subtitle: "Septembre 2016 à Septembre 2019",
       points: [
@@ -13,18 +22,18 @@ const education: Section = {
         "Spécialité : Computer Vision",
       ],
     },
-    {
+    prepa: {
       name: "Classe préparatoire scientifique\nLycée Fabert, Metz",
       subtitle: "Septembre 2014 à Septembre 2016",
       points: ["PCSI/PC* (Physique/Chimie)"],
     },
-  ],
+  },
 };
 
-const professionalExperience: Section = {
+const professionalExperience: ProfessionalExperienceSection = {
   name: "Expérience professionnelle",
-  subSectionList: [
-    {
+  subSectionRecord: {
+    souk: {
       name: "CTO as a Service | Souk, Paris",
       subtitle: "Janvier 2024 à Mai 2024",
       points: [
@@ -32,7 +41,7 @@ const professionalExperience: Section = {
         "Next.js / React Native (Expo) / Golang / AWS",
       ],
     },
-    {
+    serendy: {
       name: "Co-Fondateur & CTO | Serendy, Paris",
       subtitle: "Mars 2023 à Novembre 2023",
       points: [
@@ -40,7 +49,7 @@ const professionalExperience: Section = {
         "React Native (Expo) / Next.js / Supabase / PostgreSQL",
       ],
     },
-    {
+    milleis: {
       name: "Développeur Front-end | Milleis Banque Privée, Paris",
       subtitle: "Mars 2023 à Juin 2023 (Freelance)",
       points: [
@@ -48,7 +57,7 @@ const professionalExperience: Section = {
         "Angular 15 / Nx / TailwindCSS / PostgreSQL",
       ],
     },
-    {
+    masa: {
       name: "Développeur Full-Stack | MASA Group, Paris",
       subtitle: "Juillet 2022 à Novembre 2022 (Freelance)",
       points: [
@@ -56,7 +65,7 @@ const professionalExperience: Section = {
         "Angular 13 / Nest.js / Nx / PostgreSQL / TypeORM",
       ],
     },
-    {
+    stockly: {
       name: "Développeur Front-end | Stockly, Paris",
       subtitle: "Février 2022 à Juillet 2022 (Freelance)",
       points: [
@@ -69,7 +78,7 @@ const professionalExperience: Section = {
         </>,
       ],
     },
-    {
+    forssea: {
       name: "Ingénieur Robotique Full-stack | Forssea Robotics, Paris",
       subtitle: "Mai 2021 à Février 2022 (CDI)",
       points: [
@@ -79,7 +88,7 @@ const professionalExperience: Section = {
         </>,
       ],
     },
-    {
+    niryo: {
       name: "Ingénieur Robotique – Computer Vision | Niryo, Lille",
       subtitle: "Septembre 2019 à Avril 2021 (CDI)",
       points: [
@@ -90,13 +99,13 @@ const professionalExperience: Section = {
         </>,
       ],
     },
-  ],
+  },
 };
 
-const skills: Section = {
+const skills: SkillsSection = {
   name: "Compétences",
-  subSectionList: [
-    {
+  subSectionRecord: {
+    web: {
       name: "Stack Web",
       points: [
         "React.js / Next.js / Angular",
@@ -109,7 +118,7 @@ const skills: Section = {
         "Tests: Jest",
       ],
     },
-    {
+    misc: {
       name: "Divers",
       points: [
         "Git - Linux",
@@ -121,31 +130,31 @@ const skills: Section = {
         "Robotics : ROS",
       ],
     },
-  ],
+  },
 };
 
-const personalProjects: Section = {
+const personalProjects: PersonalProjectsSection = {
   name: "Projets personnels",
-  subSectionList: [
-    {
+  subSectionRecord: {
+    tgvMaxExtra: {
       name: "TGV Max Extra | SaaS | Août 2021 – Février 2022",
       points: [
         "Système d'alerte notifiant les utilisateurs lorsque de nouveaux trains TGV Max sont disponibles",
         "500+ abonnés, 1000+ alertes envoyées",
       ],
     },
-    {
+    sudokuSolver: {
       name: "Sudoku Solver | Computer Vision | 2019",
       nameExtra: <GithubStars stars={600} />,
       points: [
         "Extraction, Résolution & Reconstruction de grilles de Sudoku extraites d'un flux vidéo en temps réel",
       ],
     },
-  ],
+  },
 };
 
 const content: Content = {
-  jobTitle,
+  professionnalTitle,
 
   education,
   professionalExperience,

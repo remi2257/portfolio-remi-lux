@@ -1,11 +1,20 @@
-import { Content, GithubStars, Section, Strong } from "./content";
+import {
+  Content,
+  EducationSection,
+  PersonalProjectsSection,
+  ProfessionalExperienceSection,
+  SkillsSection,
+} from "./content.type";
 
-const jobTitle = "Full-Stack Engineer";
+import { GithubStars } from "../_components/GithubStars";
+import { Strong } from "../_components/Strong";
 
-const education: Section = {
+const professionnalTitle = "Full-Stack Engineer";
+
+const education: EducationSection = {
   name: "Education",
-  subSectionList: [
-    {
+  subSectionRecord: {
+    phelma: {
       name: "Computer Vision & AI Engineer\nGrenoble INP Phelma",
       subtitle: "September 2016 to September 2019",
       points: [
@@ -13,18 +22,18 @@ const education: Section = {
         "Specialty: Computer Vision",
       ],
     },
-    {
+    prepa: {
       name: "Scientific preparatory class\nLycée Fabert, Metz",
       subtitle: "September 2014 to September 2016",
       points: ["PCSI/PC* (Physics/Chemistry)"],
     },
-  ],
+  },
 };
 
-const professionalExperience: Section = {
+const professionalExperience: ProfessionalExperienceSection = {
   name: "Professional experience",
-  subSectionList: [
-    {
+  subSectionRecord: {
+    souk: {
       name: "CTO as a Service | Souk, Paris",
       subtitle: "January 2024 to May 2024",
       points: [
@@ -32,7 +41,7 @@ const professionalExperience: Section = {
         "Next.js / React Native (Expo) / Golang / AWS",
       ],
     },
-    {
+    serendy: {
       name: "Co-Founder & CTO | Serendy, Paris",
       subtitle: "March 2023 to November 2023",
       points: [
@@ -40,7 +49,7 @@ const professionalExperience: Section = {
         "React Native (Expo) / Next.js / Supabase / PostgreSQL",
       ],
     },
-    {
+    milleis: {
       name: "Front-end Developer | Milleis Banque Privée, Paris",
       subtitle: "March 2023 to June 2023 (Freelance)",
       points: [
@@ -48,7 +57,7 @@ const professionalExperience: Section = {
         "Angular 15 / Nx / TailwindCSS / PostgreSQL",
       ],
     },
-    {
+    masa: {
       name: "Full-Stack Developer | MASA Group, Paris",
       subtitle: "July 2022 to November 2022 (Freelance)",
       points: [
@@ -56,7 +65,7 @@ const professionalExperience: Section = {
         "Angular 13 / Nest.js / Nx / PostgreSQL / TypeORM",
       ],
     },
-    {
+    stockly: {
       name: "Front-end Developer | Stockly, Paris",
       subtitle: "February 2022 to July 2022 (Freelance)",
       points: [
@@ -69,7 +78,7 @@ const professionalExperience: Section = {
         </>,
       ],
     },
-    {
+    forssea: {
       name: "Robotics Engineer Full-stack| Forssea Robotics, Paris",
       subtitle: "May 2021 to February 2022 (CDI)",
       points: [
@@ -79,7 +88,7 @@ const professionalExperience: Section = {
         </>,
       ],
     },
-    {
+    niryo: {
       name: "Robotics Engineer – Computer Vision | Niryo, Lille",
       subtitle: "September 2019 to April 2021 (CDI)",
       points: [
@@ -90,13 +99,13 @@ const professionalExperience: Section = {
         </>,
       ],
     },
-  ],
+  },
 };
 
-const skills: Section = {
+const skills: SkillsSection = {
   name: "Skills",
-  subSectionList: [
-    {
+  subSectionRecord: {
+    web: {
       name: "Web Stack",
       points: [
         "React.js / Next.js / Angular",
@@ -109,7 +118,7 @@ const skills: Section = {
         "Testing: Jest",
       ],
     },
-    {
+    misc: {
       name: "Miscellaneous",
       points: [
         "Git - Linux",
@@ -121,31 +130,31 @@ const skills: Section = {
         "Robotics: ROS",
       ],
     },
-  ],
+  },
 };
 
-const personalProjects: Section = {
+const personalProjects: PersonalProjectsSection = {
   name: "Personnal projects",
-  subSectionList: [
-    {
+  subSectionRecord: {
+    tgvMaxExtra: {
       name: "TGV Max Extra | SaaS | August 2021 – February 2022",
       points: [
         "Alert system notifying users when new TGV Max trains are available",
         "500+ subscribers, 1000+ alerts sent",
       ],
     },
-    {
+    sudokuSolver: {
       name: "Sudoku Solver | Computer Vision | 2019",
       nameExtra: <GithubStars stars={600} />,
       points: [
         "Extraction, Resolution & Reconstruction of Sudoku grids extracted from a real-time video stream",
       ],
     },
-  ],
+  },
 };
 
 const content: Content = {
-  jobTitle,
+  professionnalTitle,
 
   education,
   professionalExperience,
