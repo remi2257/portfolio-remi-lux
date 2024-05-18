@@ -238,5 +238,10 @@
     "visitWebsite": "Visit Website",
     "seeOnWebsite": "See on Website",
     "seeOnGithub": "See on Github"
+  },
+
+  "metadata": {
+    "title": "Rémi Lux | Full-Stack Engineer",
+    "description": "Passionate and skilled Full-Stack Engineer based in Paris, France. Specializing in Front-End, with a focus on React/Next. Dedicated to creating innovative solutions and striving to become the best version of myself."
   }
 }

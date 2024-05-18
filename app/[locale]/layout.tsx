@@ -2,7 +2,7 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 
 import Footer from "@/components/molecules/Footer";
 import Navbar from "@/components/molecules/Navbar";
@@ -19,27 +19,30 @@ type RootLayoutParams = {
   locale: Locale;
 };
 
-// TODO: use dynamic metadata
-
-export const metadata: Metadata = {
-  title: "Rémi Lux | Full-Stack Engineer",
-  description: `Passionate and skilled Full-Stack Engineer based in Paris, France.
-                Specializing in Front-End, with a focus on React/Next.
-                Dedicated to creating innovative solutions and striving to become the best version of myself.
-                `,
-};
-
 type RootLayoutProps = {
   params: RootLayoutParams;
-  children: React.ReactNode;
 };
 
 // TODO: generate static pages for each locale
+// export function generateStaticParams(): Array<RootLayoutParams> {
+//   return locales.map(locale => ({
+//     locale,
+//   }));
+// }
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("metadata");
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default async function RootLayout({
   params: { locale },
   children,
-}: RootLayoutProps) {
+}: React.PropsWithChildren<RootLayoutProps>) {
   const i18nMessages = await getMessages();
 
   return (

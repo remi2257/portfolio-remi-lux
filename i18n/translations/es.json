@@ -237,5 +237,10 @@
     "visitWebsite": "Visitar el sitio web",
     "seeOnWebsite": "Ver en el sitio web",
     "seeOnGithub": "Ver en Github"
+  },
+
+  "metadata": {
+    "title": "Rémi Lux | Ingeniero Full-Stack",
+    "description": "Ingeniero Full-Stack apasionado y capacitado con sede en París, Francia. Especializado en Front-End, con un enfoque en React/Next. Dedicado a crear soluciones innovadoras y esforzándose por ser la mejor versión de mí mismo."
   }
 }
