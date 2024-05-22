@@ -1,17 +1,17 @@
 {
   "home": {
     "hero": {
-      "title": "Experienced <span1>Software Engineer</span1> specialized in <span2>Full-Stack</span2> Development",
-      "subtitle": "From concept to launch, I craft web platforms that are robust, scalable, and designed to engage, powered by the latest in technology trends."
+      "title": "<span1>Full-Stack</span1> Engineer with <span1>5 years</span1> of experience",
+      "subtitle": "From concept to scaling, I create all types of web applications."
     },
 
     "about": {
       "title": "About Me",
-      "hey": "Hey, I'm Rémi Lux!",
+      "hey": "Hello World, I'm Rémi!",
       "description": {
-        "paragraph1": "I started my software journey in robotics with a focus on Computer Vision from 2019 to 2021, giving robots the gift of sight.",
-        "paragraph2": "Motivated by the innovative dynamics of web technology, I transitioned to Web Development in 2021.",
-        "paragraph3": "With over 5 years of experience as a Software Engineer, I thrive on challenges and am always eager for opportunities to learn and grow."
+        "paragraph1": "I started programming in 2019. At that time, I was working in robotics where my goal was to give sight to robots.",
+        "paragraph2": "In 2021, I decided to focus exclusively on web development to work on a greater variety of projects and to get closer to the product aspect.",
+        "paragraph3": "With over 5 years of experience, I am capable of handling every part of development to provide a solution in an efficient and elegant manner."
       },
       "experienceWith": "Experience with"
     },
@@ -21,112 +21,97 @@
 
       "souk": {
         "description": {
-          "paragraph1": "Work on Souk, a high-performance Vinted scraper ensuring users never miss out on best products.",
-          "paragraph2": "Optimized Golang backend for scalability and speed.",
-          "paragraph3": "Collaborated closely with designers to create a new branding.",
-          "paragraph4": "Development of both apps for mobile (React Native) & desktop (Next.js)."
+          "paragraph1": "Scaling Souk, a Vinted scraper allowing resellers to be the first on the best products.",
+          "paragraph2": "Creating a new brand image.",
+          "paragraph3": "Developing mobile and web applications.",
+          "paragraph4": "Optimizing the scraper in terms of cost and stability."
         }
       },
       "serendy": {
         "job": "CTO & Co-founder",
         "description": {
-          "paragraph1": "Creation of Serendy, an dating app that shifts the focus from endless messaging to real-life connections.",
-          "paragraph2": "Users can see who is nearby and propose a date. If the request is accepted, Serendy chooses a local bar where users will meet in real life.",
-          "paragraph3": "Deployment of the application on both App Store and Play Store."
+          "paragraph1": "Creating Serendy, a dating app focusing on real-life encounters.",
+          "paragraph2": "Each user can see who is active nearby and propose a date. If the request is accepted, a meeting point is given at a local bar where users meet directly in person.",
+          "paragraph3": "Deploying the app on the App Store and Play Store."
         }
       },
       "milleis": {
         "job": "Front-End Developer",
         "description": {
-          "paragraph1": "Development of tools for Milleis private bankers, focusing on tasks like client file creation and online signatures",
-          "paragraph2": "Used Angular for the Front-End of various applications, embracing a mono-repo setup facilitated by Nx."
+          "paragraph1": "Developing tools for Milleis private bankers: creating client files, online signatures, ..."
         }
       },
       "masa": {
         "job": "Full-Stack Developer",
         "description": {
-          "paragraph1": "Contributed to the development of GEFORA, a strategic tool empowering the French army in troop and operations oversight.",
-          "paragraph2": "Used an Angular Front-End with communicated with a Nest.js Back-End.",
-          "paragraph3": "All was inside a Nx mono-repo, and data management was facilitated with PostgreSQL and TypeORM."
+          "paragraph1": "Developing GEFORA, a strategic tool allowing the French army to supervise troops and operations."
         }
       },
       "stockly": {
         "job": "Front-End Developer",
         "description": {
-          "paragraph1": "Development of the Back Office application, offering operational staff an efficient tool for purchasing and shipping products.",
-          "paragraph2": "Employed Angular for the Front-End to implement design from Figma."
+          "paragraph1": "Developing the Back Office application, providing Ops with an efficient tool for managing product purchases and shipments."
         }
       },
       "forssea": {
         "job": "Software Engineer",
         "description": {
-          "paragraph1": "Created the architectural blueprint of the NAVCAM, emphasizing a seamless interface between the software and the HMI.",
-          "paragraph2": "Employed ROS 2 with C++ for the robotic framework, integrated NodeJS and Express for the Back-End, and utilized Angular for the HMI."
+          "paragraph1": "Creating the architecture of NAVCAM, focusing on a harmonious interface between robotics and the HMI."
         }
       },
       "niryo": {
-        "job": "Computer Vision & Robotics Engineer",
+        "job": "Image Processing and Robotics Engineer",
         "description": {
-          "paragraph1": "Directed the software development for Set Vision, a featured product on both robots Niryo One & Niryo Ned.",
-          "paragraph2": "Led the creation of vision modules for different robots of both educational and industrial sectors, involving decisions from camera selection to guiding the robot's actions with objects.",
-          "paragraph3": "Employed Python, ROS, and OpenCV for the robotic systems & Angular for the HMI."
+          "paragraph1": "Responsible for developing the Vision Kit: a flagship product for Niryo One and Niryo Ned robots.",
+          "paragraph2": "Designing the vision architecture and fully developing the Niryo Ned.",
+          "paragraph3": "Creating vision modules for educational and industrial robots, involving responsibilities ranging from camera selection to robot movement control."
         }
       },
       "bertin": {
-        "job": "Computer Vision & Software Engineer",
+        "job": "Image Processing and Software Engineer",
         "description": {
-          "paragraph1": "Built to the Video Summary segment of MediaCentric®, a solution that acquires video files from diverse sources like YouTube, Facebook, and Twitter.",
-          "paragraph2": "My primary objective was to provide a rapid and comprehensive synthesis of web videos extracted by the solution.",
-          "paragraph3": "To achieve this, I used deep learning techniques and OpenCV to detect keyframes, and extract faces & texts."
+          "paragraph1": "Developing the Video Summary feature for MediaCentric®, which provides a quick and comprehensive summary of videos by extracting key images as well as faces and texts."
         }
       },
       "plymouthUni": {
-        "job": "Computer Vision Engineer",
+        "job": "Image Processing Engineer",
         "description": {
-          "paragraph1": "Immersed myself in a 10-week internship dedicated to the Owl Robot, a robotics project at the University of Plymouth.",
-          "paragraph2": "My primary task was to refine the target tracking algorithm with OpenCV."
+          "paragraph1": "Developing the target tracking algorithm on a robot developed by the University of Plymouth: the Owl robot."
         }
       },
 
       "badges": {
-        "cdi": "Contract",
+        "cdi": "Permanent",
         "internship": "Internship",
-
         "robotics": "Robotics"
       }
     },
-
     "projects": {
       "title": "Projects",
 
       "profilePerfectAI": {
         "title": "Profile Perfect AI",
         "description": {
-          "paragraph1": "Profile Perfect AI allows users to create AI-generated photos. All users have to do is upload a few photos of themselves, and the AI will generate a new photo of them.",
-          "paragraph2": "Whether on LinkedIn, dating apps, or social networks, you can be sure that your profile photo leaves a lasting impression.",
-          "paragraph3": "The AI also provides personalized recommendations on how to improve your profile."
+          "paragraph1": "Creating Profile Perfect AI, a SaaS allowing users to create AI-generated photos.",
+          "paragraph2": "All users have to do is upload a few photos of themselves, and the AI will generate a new photo of them."
         }
       },
       "tgvMaxExtra": {
         "title": "TGV Max Extra",
         "description": {
-          "paragraph1": "TGV Max Extra is a web application enabling TGV Max subscribers to create alerts and be notified when €0 tickets are available.",
-          "paragraph2": "The data comes from a scrapper that uses proxies to retrieve SNCF data.",
-          "paragraph3": "The application had 500+ users and 1000+ alerts send in less than 3 months."
+          "paragraph1": "Creating TGV Max Extra, a web application allowing TGV Max subscribers to create alerts and be notified when €0 tickets are available.",
+          "paragraph2": "The application had over 500 users and more than 1000 alerts sent in less than 3 months."
         }
       },
       "sudokuSolver": {
-        "subtitle": "Solve any Sudoku with Computer Vision",
         "description": {
-          "paragraph1": "Resolves multiple Sudoku grids in real-time & projects the solution with Augmented Reality.",
-          "paragraph2": "This project has garnered more than 600 stars on GitHub."
+          "paragraph1": "Solving multiple Sudoku grids in real-time with a projection of the solution in augmented reality.",
+          "paragraph2": "This project has over 600 stars on GitHub."
         }
       },
       "littleCarAI": {
-        "subtitle": "Use AI to teach a car to drive",
         "description": {
-          "paragraph1": "Creation of a simulation environment where a car learns to drive using through Reinforcement Learning",
-          "paragraph2": "This project intricately processes inputs from LIDAR and vehicle speed, with a neural network at its core that evolves through iterative improvements, ensuring each generation surpasses the last."
+          "paragraph1": "Creating a simulation environment where a car learns to drive using reinforcement learning."
         }
       },
 
@@ -141,17 +126,17 @@
       "title": "Education",
 
       "phelma": {
-        "title": "Master in Signal & Image Processing",
+        "title": "Master's in Signal and Image Processing",
         "description": {
-          "paragraph1": "The Master covered a broad spectrum, from general electronics to machine learning, focusing particularly on image processing.",
-          "paragraph2": "Key projects featured deep learning for noise reduction in speech & creating an Arduino device for air quality assessment with online data integration."
+          "paragraph1": "Attended courses on various subjects, ranging from general electronics to artificial intelligence, with a particular focus on image processing.",
+          "paragraph2": "Key projects included developing a speech denoising algorithm using Deep Learning and creating a device measuring air quality with online data integration."
         }
       },
       "prepa": {
-        "title": "French Scientific Preparatory Class",
+        "title": "Scientific Preparatory Class",
         "description": {
-          "paragraph1": "Immersed myself in the Physics & Chemistry preparatory track (PCSI/PC*), setting the stage for competitive engineering school exams.",
-          "paragraph2": "It gave me a lot of theoretical knowledge about science, and it also taught me rigor and how to manage a heavy workload."
+          "paragraph1": "Studied in the physics-chemistry preparatory course (PCSI/PC*) to prepare for engineering school competitions.",
+          "paragraph2": "In addition to theoretical knowledge in science, it also taught me rigor."
         }
       }
     },

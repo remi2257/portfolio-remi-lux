@@ -28,7 +28,7 @@ function deepCompare(obj1, obj2, path = "", success = true) {
   for (const key of keys1) {
     if (!keys2.includes(key)) {
       success = false;
-      console.info("Missing key:", chalk.red(`${path}${key}`));
+      console.error("Missing key:", chalk.red(`${path}${key}`));
     } else if (
       typeof obj1[key] === "object" &&
       obj1[key] !== null &&
@@ -43,7 +43,7 @@ function deepCompare(obj1, obj2, path = "", success = true) {
   for (const key of keys2) {
     if (!keys1.includes(key)) {
       success = false;
-      console.info("Extra key:", chalk.red(`${path}${key}`));
+      console.error("Extra key:", chalk.red(`${path}${key}`));
     }
   }
 
@@ -66,6 +66,8 @@ const translationErrors = [];
 for (const lang of Object.keys(translations)) {
   const translation = translations[lang];
 
+  console.info(`[${chalk.blue(lang)}]`, "Checking translation...");
+
   const success = deepCompare(reference, translation);
   if (success) {
     console.info(
@@ -74,14 +76,17 @@ for (const lang of Object.keys(translations)) {
     );
   } else {
     translationErrors.push(lang);
-    console.info(`[${chalk.blue(lang)}]`, chalk.red("Translation has errors!"));
+    console.error(
+      `[${chalk.blue(lang)}]`,
+      chalk.red("Translation has errors!")
+    );
   }
 }
 
 if (translationErrors.length === 0) {
   console.info(chalk.green("\nAll translations are healthy!"));
 } else {
-  console.info(
+  console.error(
     chalk.red(
       `\nSome translations have errors: ${translationErrors.join(", ")}`
     )

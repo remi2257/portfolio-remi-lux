@@ -1,17 +1,17 @@
 {
   "home": {
     "hero": {
-      "title": "Ingeniero de software <span1>experimentado</span1> especializado en <span2>desarrollo Full-Stack</span2>",
-      "subtitle": "Desde el concepto hasta el lanzamiento, creo plataformas web que son robustas, escalables y diseñadas para atraer, impulsadas por las últimas tendencias tecnológicas."
+      "title": "Ingeniero <span1>Full-Stack</span1> con <span2>5 años</span2> de experiencia",
+      "subtitle": "Desde el concepto hasta el escalado, creo todo tipo de aplicaciones web."
     },
 
     "about": {
-      "title": "Sobre mí",
-      "hey": "¡Hola, soy Rémi Lux!",
+      "title": "Sobre Mí",
+      "hey": "¡Hola Mundo, soy Rémi!",
       "description": {
-        "paragraph1": "Comencé mi viaje en el software en la robótica con un enfoque en la visión por computadora desde 2019 hasta 2021, dándole a los robots el don de la vista.",
-        "paragraph2": "Motivado por la dinámica innovadora de la tecnología web, hice la transición al desarrollo web en 2021.",
-        "paragraph3": "Con más de 5 años de experiencia como ingeniero de software, prospero frente a los desafíos y siempre estoy ansioso por oportunidades para aprender y crecer."
+        "paragraph1": "Comencé el desarrollo informático en 2019. En ese momento, trabajaba en robótica donde mi objetivo era dar visión a los robots.",
+        "paragraph2": "En 2021, decidí centrarme exclusivamente en el desarrollo web para poder trabajar en una mayor variedad de proyectos y acercarme más al aspecto del producto.",
+        "paragraph3": "Con más de 5 años de experiencia, soy capaz de manejar cada parte del desarrollo para proporcionar una solución de manera eficiente y elegante."
       },
       "experienceWith": "Experiencia con"
     },
@@ -21,118 +21,104 @@
 
       "souk": {
         "description": {
-          "paragraph1": "Trabajo en Souk, un scraper de Vinted de alto rendimiento que asegura que los usuarios nunca se pierdan los mejores productos.",
-          "paragraph2": "Optimización del backend en Golang para escalabilidad y velocidad.",
-          "paragraph3": "Colaboración estrecha con diseñadores para crear una nueva marca.",
-          "paragraph4": "Desarrollo de aplicaciones móviles (React Native) y de escritorio (Next.js)."
+          "paragraph1": "Escalado de Souk, un scraper de Vinted que permite a los revendedores ser los primeros en los mejores productos.",
+          "paragraph2": "Creación de una nueva imagen de marca.",
+          "paragraph3": "Desarrollo de aplicaciones móviles y web.",
+          "paragraph4": "Optimización del scraper en términos de costo y estabilidad."
         }
       },
       "serendy": {
-        "job": "CTO y Co-fundador",
+        "job": "CTO y Cofundador",
         "description": {
-          "paragraph1": "Creación de Serendy, una aplicación de citas que cambia el enfoque de los mensajes interminables a las conexiones en la vida real.",
-          "paragraph2": "Los usuarios pueden ver quién está cerca y proponer una cita. Si la solicitud es aceptada, Serendy elige un bar local donde los usuarios se reunirán en persona.",
-          "paragraph3": "Despliegue de la aplicación tanto en App Store como en Play Store."
+          "paragraph1": "Creación de Serendy, una aplicación de citas que se enfoca en encuentros reales.",
+          "paragraph2": "Cada usuario puede ver quién está activo cerca y proponer una cita. Si la solicitud es aceptada, se proporciona un punto de encuentro en un bar local donde los usuarios se encuentran directamente en persona.",
+          "paragraph3": "Despliegue de la aplicación en la App Store y Play Store."
         }
       },
       "milleis": {
         "job": "Desarrollador Front-End",
         "description": {
-          "paragraph1": "Desarrollo de herramientas para los banqueros privados de Milleis, centrándose en tareas como la creación de archivos de clientes y firmas en línea.",
-          "paragraph2": "Uso de Angular para el Front-End de varias aplicaciones, adoptando una configuración mono-repo facilitada por Nx."
+          "paragraph1": "Desarrollo de herramientas para los banqueros privados de Milleis: creación de archivos de clientes, firmas en línea, ..."
         }
       },
       "masa": {
         "job": "Desarrollador Full-Stack",
         "description": {
-          "paragraph1": "Contribución al desarrollo de GEFORA, una herramienta estratégica que empodera al ejército francés en la supervisión de tropas y operaciones.",
-          "paragraph2": "Uso de un Front-End Angular que se comunica con un Back-End Nest.js.",
-          "paragraph3": "Todo estaba dentro de un mono-repo Nx, y la gestión de datos fue facilitada con PostgreSQL y TypeORM."
+          "paragraph1": "Desarrollo de GEFORA, una herramienta estratégica que permite al ejército francés supervisar tropas y operaciones."
         }
       },
       "stockly": {
         "job": "Desarrollador Front-End",
         "description": {
-          "paragraph1": "Desarrollo de la aplicación de Back Office, ofreciendo al personal operativo una herramienta eficiente para la compra y envío de productos.",
-          "paragraph2": "Uso de Angular para el Front-End para implementar el diseño de Figma."
+          "paragraph1": "Desarrollo de la aplicación Back Office, proporcionando a Ops una herramienta eficiente para la gestión de compras y envíos de productos."
         }
       },
       "forssea": {
         "job": "Ingeniero de Software",
         "description": {
-          "paragraph1": "Creación del plano arquitectónico del NAVCAM, enfatizando una interfaz perfecta entre el software y la HMI.",
-          "paragraph2": "Uso de ROS 2 con C++ para el marco robótico, integración de NodeJS y Express para el Back-End, y uso de Angular para la HMI."
+          "paragraph1": "Creación de la arquitectura de NAVCAM, centrándose en una interfaz armoniosa entre la robótica y la HMI."
         }
       },
       "niryo": {
-        "job": "Ingeniero en Visión por Computadora y Robótica",
+        "job": "Ingeniero en Procesamiento de Imágenes y Robótica",
         "description": {
-          "paragraph1": "Dirigí el desarrollo de software para Set Vision, un producto destacado en los robots Niryo One y Niryo Ned.",
-          "paragraph2": "Lideré la creación de módulos de visión para diferentes robots de los sectores educativo e industrial, implicando decisiones desde la selección de la cámara hasta la guía de las acciones del robot con objetos.",
-          "paragraph3": "Uso de Python, ROS y OpenCV para los sistemas robóticos y Angular para la HMI."
+          "paragraph1": "Responsable del desarrollo del Kit de Visión: un producto insignia de los robots Niryo One y Niryo Ned.",
+          "paragraph2": "Diseño de la arquitectura de visión y desarrollo completo del Niryo Ned.",
+          "paragraph3": "Creación de módulos de visión para robots educativos e industriales, implicando responsabilidades que van desde la selección de la cámara hasta el control de movimiento del robot."
         }
       },
       "bertin": {
-        "job": "Ingeniero en Visión por Computadora y Software",
+        "job": "Ingeniero en Procesamiento de Imágenes y Software",
         "description": {
-          "paragraph1": "Construcción del segmento de Resumen de Video de MediaCentric®, una solución que adquiere archivos de video de diversas fuentes como YouTube, Facebook y Twitter.",
-          "paragraph2": "Mi objetivo principal era proporcionar una síntesis rápida y completa de los videos web extraídos por la solución.",
-          "paragraph3": "Para lograr esto, utilicé técnicas de aprendizaje profundo y OpenCV para detectar fotogramas clave y extraer rostros y textos."
+          "paragraph1": "Desarrollo de la funcionalidad Video Summary de MediaCentric®, que proporciona un resumen rápido y completo de los videos extrayendo las imágenes clave así como los rostros y textos."
         }
       },
       "plymouthUni": {
-        "job": "Ingeniero en Visión por Computadora",
+        "job": "Ingeniero en Procesamiento de Imágenes",
         "description": {
-          "paragraph1": "Me sumergí en una pasantía de 10 semanas dedicada al Robot Owl, un proyecto de robótica en la Universidad de Plymouth.",
-          "paragraph2": "Mi tarea principal era perfeccionar el algoritmo de seguimiento de objetivos con OpenCV."
+          "paragraph1": "Desarrollo del algoritmo de seguimiento de objetivos en un robot desarrollado por la Universidad de Plymouth: el robot Owl."
         }
       },
 
       "badges": {
-        "cdi": "Contrato",
+        "cdi": "Permanente",
         "internship": "Pasantía",
         "robotics": "Robótica"
       }
     },
-
     "projects": {
       "title": "Proyectos",
 
       "profilePerfectAI": {
         "title": "Profile Perfect AI",
         "description": {
-          "paragraph1": "Profile Perfect AI permite a los usuarios crear fotos generadas por IA. Todo lo que los usuarios tienen que hacer es subir algunas fotos de sí mismos, y la IA generará una nueva foto de ellos.",
-          "paragraph2": "Ya sea en LinkedIn, aplicaciones de citas o redes sociales, puedes estar seguro de que tu foto de perfil dejará una impresión duradera.",
-          "paragraph3": "La IA también proporciona recomendaciones personalizadas sobre cómo mejorar tu perfil."
+          "paragraph1": "Creación de Profile Perfect AI, un SaaS que permite a los usuarios crear fotos generadas por IA.",
+          "paragraph2": "Todo lo que los usuarios deben hacer es subir algunas fotos de sí mismos, y la IA generará una nueva foto de ellos."
         }
       },
       "tgvMaxExtra": {
         "title": "TGV Max Extra",
         "description": {
-          "paragraph1": "TGV Max Extra es una aplicación web que permite a los suscriptores de TGV Max crear alertas y ser notificados cuando hay billetes de 0€ disponibles.",
-          "paragraph2": "Los datos provienen de un scraper que utiliza proxies para recuperar los datos de la SNCF.",
-          "paragraph3": "La aplicación tenía más de 500 usuarios y más de 1000 alertas enviadas en menos de 3 meses."
+          "paragraph1": "Creación de TGV Max Extra, una aplicación web que permite a los suscriptores de TGV Max crear alertas y ser notificados cuando hay billetes de 0€ disponibles.",
+          "paragraph2": "La aplicación tenía más de 500 usuarios y más de 1000 alertas enviadas en menos de 3 meses."
         }
       },
       "sudokuSolver": {
-        "subtitle": "Resuelve cualquier Sudoku con Visión por Computadora",
         "description": {
-          "paragraph1": "Resuelve múltiples sudokus en tiempo real y proyecta la solución con Realidad Aumentada.",
-          "paragraph2": "Este proyecto ha ganado más de 600 estrellas en GitHub."
+          "paragraph1": "Resolución de múltiples tableros de Sudoku en tiempo real con una proyección de la solución en realidad aumentada.",
+          "paragraph2": "Este proyecto tiene más de 600 estrellas en GitHub."
         }
       },
       "littleCarAI": {
-        "subtitle": "Usa IA para enseñar a un coche a conducir",
         "description": {
-          "paragraph1": "Creación de un entorno de simulación donde un coche aprende a conducir utilizando el Aprendizaje por Refuerzo.",
-          "paragraph2": "Este proyecto procesa de manera intrincada las entradas del LIDAR y la velocidad del vehículo, con una red neuronal en su núcleo que evoluciona a través de mejoras iterativas, asegurando que cada generación supere a la anterior."
+          "paragraph1": "Creación de un entorno de simulación donde un coche aprende a conducir utilizando el aprendizaje por refuerzo."
         }
       },
 
       "badges": {
         "ai": "IA",
         "archived": "Archivado",
-        "generatedMoney": "Generó dinero"
+        "generatedMoney": "Generó Dinero"
       }
     },
 
@@ -140,17 +126,17 @@
       "title": "Educación",
 
       "phelma": {
-        "title": "Máster en Procesamiento de Señales e Imágenes",
+        "title": "Máster en Procesamiento de Señal e Imagen",
         "description": {
-          "paragraph1": "El Máster abarcaba un amplio espectro, desde la electrónica general hasta el aprendizaje automático, centrándose especialmente en el procesamiento de imágenes.",
-          "paragraph2": "Los proyectos clave incluían el uso del aprendizaje profundo para la reducción de ruido en el habla y la creación de un dispositivo Arduino para la evaluación de la calidad del aire con integración de datos en línea."
+          "paragraph1": "Asistencia a cursos sobre varios temas, desde electrónica general hasta inteligencia artificial, con un enfoque particular en el procesamiento de imágenes.",
+          "paragraph2": "Los proyectos clave incluyeron el desarrollo de un algoritmo de eliminación de ruido en el habla utilizando Deep Learning y la creación de un dispositivo que mide la calidad del aire con integración de datos en línea."
         }
       },
       "prepa": {
-        "title": "Clase Preparatória Científica Francesa",
+        "title": "Clase Preparativa Científica",
         "description": {
-          "paragraph1": "Me sumergí en la pista preparatoria de Física y Química (PCSI/PC*), estableciendo la base para los exámenes competitivos de las escuelas de ingeniería.",
-          "paragraph2": "Me proporcionó muchos conocimientos teóricos sobre ciencia, y también me enseñó rigor y cómo manejar una carga de trabajo pesada."
+          "paragraph1": "Estudié en el curso preparativo de física-química (PCSI/PC*) para preparar los concursos de escuelas de ingeniería.",
+          "paragraph2": "Además de conocimientos teóricos en ciencia, también me enseñó rigor."
         }
       }
     },
