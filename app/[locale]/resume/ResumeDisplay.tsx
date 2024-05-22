@@ -496,7 +496,11 @@ const Resume: React.FC<ResumeProps> = ({
 
 // --- ResumeDisplay
 
-const ResumeDisplay: React.FC = () => {
+type ResumeDisplayProps = {
+  showPdf: boolean;
+};
+
+const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ showPdf }) => {
   const t = useTranslations("resume");
 
   // -- Mandatory to avoid SSR with react-pdf
@@ -541,31 +545,30 @@ const ResumeDisplay: React.FC = () => {
   }, [anonymous, documentTitle, language, mainColor, withPhoto]);
 
   return (
-    <div className="grid items-center justify-items-center gap-x-8 sm:grid-cols-2">
-      <div
-        className={cn(
-          "relative aspect-[2/3] sm:w-80 md:w-96 lg:w-[480px]",
-          // IDEA: Chould be hidden for mobile
-          "max-sm:hidden"
-          // isMobile() && "hidden"
-        )}
-      >
-        {isClient && (
-          <PDFViewer
-            className="size-full"
-            // showToolbar={false} => We show it to allow the user to realize it's a PDF viewer. But the name is the blob name :/
-          >
-            {PdfDocument}
-          </PDFViewer>
-        )}
-        {loadingPdf && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-y-4 rounded bg-black/50 text-2xl font-semibold text-white backdrop-blur-sm">
-            <span>{t("generating")}</span>
-            <RiLoader4Fill className="size-8 animate-spin" />
-          </div>
-        )}
-      </div>
-
+    <div
+      className={cn(
+        "grid items-center justify-items-center gap-8",
+        showPdf && "sm:grid-cols-2"
+      )}
+    >
+      {showPdf && (
+        <div className="relative aspect-[2/3] sm:w-80 md:w-96 lg:w-[480px]">
+          {isClient && (
+            <PDFViewer
+              className="size-full"
+              // showToolbar={false} => We show it to allow the user to realize it's a PDF viewer. But the name is the blob name :/
+            >
+              {PdfDocument}
+            </PDFViewer>
+          )}
+          {loadingPdf && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-y-4 rounded bg-black/50 text-2xl font-semibold text-white backdrop-blur-sm">
+              <span>{t("generating")}</span>
+              <RiLoader4Fill className="size-8 animate-spin" />
+            </div>
+          )}
+        </div>
+      )}
       <div className="flex flex-col items-center gap-y-16">
         <div className="flex flex-col items-center gap-y-6">
           <div className="text-pretty text-center text-2xl">{t("title")}</div>
