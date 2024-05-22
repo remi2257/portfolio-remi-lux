@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 
 export type TimelineElement = {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   badges?: string[];
   description: string[];
 
@@ -48,7 +48,7 @@ const VerticalTimelineElement: React.FC<VerticalTimelineElementProps> = ({
           <CardTitle className="flex items-center justify-between">
             {title}
           </CardTitle>
-          <CardDescription>{subtitle}</CardDescription>
+          {subtitle && <CardDescription>{subtitle}</CardDescription>}
           {!!badges?.length && (
             <div className="flex flex-wrap gap-1.5">
               {badges.map((badge, index) => (

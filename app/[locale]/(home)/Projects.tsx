@@ -39,8 +39,8 @@ const Projects: React.FC<{ index: number; className?: string }> = ({
     },
     {
       title: "Sudoku Solver",
-      subtitle: t("sudokuSolver.subtitle"),
-      badges: ["600+ Stars"],
+      subtitle: "Python, OpenCV, TensorFlow",
+      badges: ["Computer Vision", t("badges.ai")],
       description: tList("sudokuSolver.description"),
 
       Icon: MdGridOn,
@@ -60,7 +60,7 @@ const Projects: React.FC<{ index: number; className?: string }> = ({
     },
     {
       title: "Little Car AI",
-      subtitle: t("littleCarAI.subtitle"),
+      subtitle: "Python, TensorFlow",
       badges: [t("badges.ai")],
       description: tList("littleCarAI.description"),
 
