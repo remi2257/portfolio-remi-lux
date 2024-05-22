@@ -16,7 +16,7 @@ export default function Home({
   unstable_setRequestLocale(locale);
 
   return (
-    <main className="container flex flex-col items-center gap-y-24 overflow-x-hidden py-8">
+    <main className="container flex flex-col items-center gap-y-16 overflow-x-hidden py-2 sm:gap-y-24 sm:py-8">
       <Hero className="max-w-prose" />
 
       <About className="max-w-prose" index={1} />

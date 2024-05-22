@@ -14,29 +14,30 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <section
       className={cn(
-        "flex flex-col items-center gap-y-4 max-w-prose",
+        "flex flex-col items-center gap-y-4 max-w-prose sm:gap-y-6",
         className
       )}
     >
       <HeroImage />
-      <h1 className="text-pretty text-center text-2xl font-black sm:text-3xl">
-        {t.rich("title", {
-          span1: children => (
-            <span className="gradient-colors-3 text-gradient bg-gradient-to-r">
-              {children}
-            </span>
-          ),
-          span2: children => (
-            <span className="gradient-colors-1 text-gradient bg-gradient-to-r">
-              {children}
-            </span>
-          ),
-        })}
-      </h1>
-
-      <h2 className="text-balance text-center text-muted-foreground sm:text-xl">
-        {t("subtitle")}
-      </h2>
+      <div className="space-y-1 sm:space-y-2">
+        <h1 className="text-balance text-center text-2xl font-black sm:text-3xl">
+          {t.rich("title", {
+            span1: children => (
+              <span className="gradient-colors-3 text-gradient bg-gradient-to-r">
+                {children}
+              </span>
+            ),
+            span2: children => (
+              <span className="gradient-colors-1 text-gradient bg-gradient-to-r">
+                {children}
+              </span>
+            ),
+          })}
+        </h1>
+        <h2 className="text-pretty text-center text-muted-foreground sm:text-xl">
+          {t("subtitle")}
+        </h2>
+      </div>
 
       <div className="grid gap-y-4 sm:grid-cols-3 sm:gap-x-10">
         <Button asChild variant="outline">
