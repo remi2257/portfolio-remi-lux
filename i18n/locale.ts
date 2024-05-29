@@ -1,3 +1,9 @@
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+
+import flagEn from "@/assets/images/en.svg";
+import flagEs from "@/assets/images/es.svg";
+import flagFr from "@/assets/images/fr.svg";
+
 export const locales = ["fr", "en", "es"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "fr";
@@ -8,14 +14,14 @@ export function isHandledLocale(str: string): str is Locale {
   return locales.includes(str as Locale);
 }
 
-type LocaleInfo = { flag: string; name: string };
+type LocaleInfo = { flag: StaticImport; name: string };
 
-export const localeInfosMap: Map<Locale, LocaleInfo> = new Map([
-  ["fr", { flag: "🇫🇷", name: "Français" }],
-  ["en", { flag: "🇬🇧", name: "English" }],
-  ["es", { flag: "🇪🇸", name: "Español" }],
+const LOCALE_INFOS_MAP: Map<Locale, LocaleInfo> = new Map([
+  ["fr", { flag: flagFr, name: "Français" }],
+  ["en", { flag: flagEn, name: "English" }],
+  ["es", { flag: flagEs, name: "Español" }],
 ]);
 
-export const localeInfosList = Array.from(localeInfosMap.entries()).map(
+export const LOCALE_INFOS_LIST = Array.from(LOCALE_INFOS_MAP.entries()).map(
   ([locale, { flag, name }]) => ({ locale, flag, name })
 );
