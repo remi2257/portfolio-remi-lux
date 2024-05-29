@@ -1,9 +1,9 @@
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 import { LanguageToggleButton } from "@/components/atoms/LanguageToggleButton";
 import { ThemeToggleButton } from "@/components/atoms/ThemeToggleButton";
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 
 export default function Navbar() {
   const navbarT = useTranslations("navbar");

@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 import SocialIcons from "@/components/molecules/SocialIcons";
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 import HeroImage from "./HeroImage";
