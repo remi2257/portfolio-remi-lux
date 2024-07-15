@@ -8,7 +8,11 @@
   ],
 
   "settings": {
-    "import/internal-regex": "^@/.*"
+    "import/internal-regex": "^@/.*",
+
+    "tailwindcss": {
+      "callees": ["cn"]
+    }
   },
 
   "rules": {

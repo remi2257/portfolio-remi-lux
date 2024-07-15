@@ -16,14 +16,14 @@ const SectionTitle: React.FC<{
   return (
     <div
       className={cn(
-        "flex flex-col items-center gap-y-2 sm:gap-y-4 text-xl sm:text-3xl",
+        "flex flex-col items-center gap-y-2 text-xl sm:gap-y-4 sm:text-3xl",
         gradientClass,
         className
       )}
     >
       <div
         // Separator
-        className={cn("h-12 sm:h-20 w-px bg-gradient-to-r", gradientClass)}
+        className={cn("h-12 w-px bg-gradient-to-r sm:h-20", gradientClass)}
       />
 
       <div className="grid size-12 place-items-center rounded-full bg-foreground bg-gradient-to-r font-semibold text-background sm:size-16">

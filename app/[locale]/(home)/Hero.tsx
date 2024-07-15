@@ -14,7 +14,7 @@ const Hero: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <section
       className={cn(
-        "flex flex-col items-center gap-y-4 max-w-prose sm:gap-y-6",
+        "flex max-w-prose flex-col items-center gap-y-4 sm:gap-y-6",
         className
       )}
     >

@@ -77,7 +77,7 @@ const VerticalTimelineElement: React.FC<VerticalTimelineElementProps> = ({
       <div
         // Date on big screens (opposite side of the card)
         className={cn(
-          "text-xl mt-6 max-md:hidden",
+          "mt-6 text-xl max-md:hidden",
           odd ? "col-start-3" : "col-start-1 justify-self-end"
         )}
       >

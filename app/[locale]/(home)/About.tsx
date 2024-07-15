@@ -41,9 +41,7 @@ const SkillIcon: React.FC<{
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger>
-          <Icon
-            className={cn("h-10 w-10 sm:h-12 sm:w-12 transition", className)}
-          />
+          <Icon className={cn("size-10 transition sm:size-12", className)} />
         </TooltipTrigger>
         <TooltipContent>{tooltip}</TooltipContent>
       </Tooltip>
@@ -80,7 +78,7 @@ const About: React.FC<{ index: number; className?: string }> = ({
             "flex flex-col items-center gap-6 sm:gap-8",
 
             // skillLineClasses
-            "*:flex *:flex-wrap *:justify-center *:items-center *:gap-3 *:sm:gap-x-4"
+            "*:flex *:flex-wrap *:items-center *:justify-center *:gap-3 *:sm:gap-x-4"
           )}
         >
           <div

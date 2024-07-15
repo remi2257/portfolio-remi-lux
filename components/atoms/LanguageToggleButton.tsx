@@ -46,7 +46,7 @@ export function LanguageToggleButton() {
           key={locale}
           className={cn(
             "absolute transition",
-            currentSelectedLocale !== locale && "opacity-0 -rotate-90"
+            currentSelectedLocale !== locale && "-rotate-90 opacity-0"
           )}
           width={16}
           height={16}

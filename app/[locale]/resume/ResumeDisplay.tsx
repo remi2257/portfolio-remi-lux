@@ -656,7 +656,7 @@ const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ showPdf }) => {
 
         <Button
           asChild
-          className={cn(loadingPdf && "opacity-80 pointer-events-none")}
+          className={cn(loadingPdf && "pointer-events-none opacity-80")}
         >
           {isClient ? (
             <PDFDownloadLink document={PdfDocument} fileName={documentTitle}>

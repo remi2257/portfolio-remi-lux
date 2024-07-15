@@ -18,7 +18,7 @@ const HeroImage: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <div
       className={cn(
-        "mono-grid aspect-square transition-opacity duration-700 h-48 place-items-center sm:h-64",
+        "mono-grid aspect-square h-48 place-items-center transition-opacity duration-700 sm:h-64",
         imageLoaded ? "opacity-100" : "opacity-0",
         className
       )}
