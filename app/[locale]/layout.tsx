@@ -66,9 +66,11 @@ export default async function RootLayout({
       <body className={INTER_FONT.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NextIntlClientProvider messages={i18nMessages}>
-            <Navbar />
-            {children}
-            <Footer />
+            <div className="flex min-h-screen flex-col justify-between">
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
             <Toaster />
           </NextIntlClientProvider>
         </ThemeProvider>

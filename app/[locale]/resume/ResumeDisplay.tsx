@@ -552,7 +552,7 @@ const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ showPdf }) => {
       )}
     >
       {showPdf && (
-        <div className="relative aspect-[2/3] sm:w-80 md:w-96 lg:w-[480px]">
+        <div className="relative aspect-[2/3] sm:w-80 md:w-96 lg:w-[480px] 3xl:w-[560px]">
           {isClient && (
             <PDFViewer
               className="size-full"
