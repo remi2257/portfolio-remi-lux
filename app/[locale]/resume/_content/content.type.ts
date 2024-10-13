@@ -12,7 +12,14 @@ export type Section<T extends string> = {
 
 export type EducationSection = Section<"phelma" | "prepa">;
 export type ProfessionalExperienceSection = Section<
-  "souk" | "serendy" | "milleis" | "masa" | "stockly" | "forssea" | "niryo"
+  | "meero"
+  | "souk"
+  | "serendy"
+  | "milleis"
+  | "masa"
+  | "stockly"
+  | "forssea"
+  | "niryo"
 >;
 export type SkillsSection = Section<"web" | "misc">;
 export type PersonalProjectsSection = Section<"tgvMaxExtra" | "sudokuSolver">;

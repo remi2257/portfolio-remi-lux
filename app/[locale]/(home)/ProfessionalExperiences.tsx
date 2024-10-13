@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { BsBank } from "react-icons/bs";
-import { FaBox, FaTshirt } from "react-icons/fa";
+import { FaBox, FaImages, FaTshirt } from "react-icons/fa";
 import { GiFrance, GiOwl, GiRobotGrab } from "react-icons/gi";
 import { TbSubmarine } from "react-icons/tb";
 import { VscGraphLine } from "react-icons/vsc";
@@ -21,6 +21,26 @@ const ProfessionalExperiences: React.FC<{
   const ctaT = useTranslations("cta");
 
   const experienceList: TimelineElement[] = [
+    {
+      title: "Meero",
+      subtitle: t("meero.job"),
+      badges: [t("badges.cdi"), "WebComponents", "NPM", "Next.js"],
+      description: tList("meero.description"),
+
+      Icon: FaImages,
+      date: "2024",
+
+      footer: (
+        <Button asChild>
+          <Link
+            href="https://carcutter.github.io/cars-webplayer-js/"
+            target="_blank"
+          >
+            {ctaT("seeDocumentation")}
+          </Link>
+        </Button>
+      ),
+    },
     {
       title: "Souk",
       subtitle: "CTO as a Service",

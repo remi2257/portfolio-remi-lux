@@ -19,6 +19,14 @@
     "experiences": {
       "title": "Professional Experiences",
 
+      "meero": {
+        "job": "Senior Front-end Engineer",
+        "description": {
+          "paragraph1": "Development of the WebPlayer, a WebComponent enabling car dealers to integrate their photos directly on their website.",
+          "paragraph2": "Deployment of the package on NPM with different adapters (React, Next.js, Vue, ...).",
+          "paragraph3": "Development of the Cockpit application, an internal tool allowing clients to manage their photo pipelines."
+        }
+      },
       "souk": {
         "description": {
           "paragraph1": "Scaling Souk, a Vinted scraper allowing resellers to be the first on the best products.",
@@ -221,6 +229,7 @@
     "contactMe": "Contact Me",
     "getMyResume": "Get my Resume",
     "visitWebsite": "Visit Website",
+    "seeDocumentation": "See Documentation",
     "seeOnWebsite": "See on Website",
     "seeOnGithub": "See on Github"
   },
