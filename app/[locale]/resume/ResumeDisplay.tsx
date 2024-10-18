@@ -140,11 +140,9 @@ const ResumeSubSection: React.FC<ResumeSubSectionProps> = ({
         )}
       </View>
       <View
-        style={
-          {
-            // rowGap: 2,
-          }
-        }
+        style={{
+          rowGap: 1,
+        }}
       >
         {points.map((point, i) => (
           <View
@@ -177,7 +175,7 @@ type ResumeSectionProps = {
   style?: Style;
 };
 
-const ResumeBigSection: React.FC<ResumeSectionProps> = ({
+const ResumeSection: React.FC<ResumeSectionProps> = ({
   name,
   subSectionList,
 
@@ -228,7 +226,7 @@ const ResumeBigSection: React.FC<ResumeSectionProps> = ({
   );
 };
 
-function transformSectionToResumeBigSection<T extends string>(
+function sectionToResumeSection<T extends string>(
   section: Section<T>,
   order: T[]
 ): Omit<ResumeSectionProps, "style"> {
@@ -376,48 +374,45 @@ const Resume: React.FC<ResumeProps> = ({
             }}
           >
             <View
+              // Left column
               style={{
                 width: "33%",
                 rowGap: 16,
               }}
             >
-              <ResumeBigSection
-                {...transformSectionToResumeBigSection(content.education, [
+              <ResumeSection
+                {...sectionToResumeSection(content.education, [
                   "phelma",
                   "prepa",
                 ])}
               />
-              <ResumeBigSection
-                {...transformSectionToResumeBigSection(content.skills, [
-                  "web",
-                  "misc",
+              <ResumeSection
+                {...sectionToResumeSection(content.skills, ["web", "misc"])}
+              />
+              <ResumeSection
+                {...sectionToResumeSection(content.personalProjects, [
+                  "tgvMaxExtra",
+                  "sudokuSolver",
                 ])}
               />
             </View>
-            <ResumeBigSection
+            <ResumeSection
+              // Right column
               style={{
                 flex: 1,
               }}
-              {...transformSectionToResumeBigSection(
-                content.professionalExperience,
-                [
-                  "souk",
-                  "serendy",
-                  "milleis",
-                  "masa",
-                  "stockly",
-                  "forssea",
-                  "niryo",
-                ]
-              )}
+              {...sectionToResumeSection(content.professionalExperience, [
+                "meero",
+                "souk",
+                "serendy",
+                "milleis",
+                "masa",
+                "stockly",
+                "forssea",
+                "niryo",
+              ])}
             />
           </View>
-          <ResumeBigSection
-            {...transformSectionToResumeBigSection(content.personalProjects, [
-              "tgvMaxExtra",
-              "sudokuSolver",
-            ])}
-          />
         </View>
 
         {!anonymous && (

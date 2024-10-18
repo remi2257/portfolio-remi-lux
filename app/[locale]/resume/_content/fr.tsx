@@ -33,6 +33,15 @@ const education: EducationSection = {
 const professionalExperience: ProfessionalExperienceSection = {
   name: "Expérience professionnelle",
   subSectionRecord: {
+    meero: {
+      name: "Ingénieur Front-end Sénior | Meero, Paris",
+      subtitle: "Depuis Juin 2024 (CDI)",
+      points: [
+        "Création du WebPlayer, un Web Component permettant aux concessionnaires automobiles d'intégrer les médias traités par Meero directement sur leur site web.",
+        "Déploiement du package sur NPM avec différents adaptateurs (React, Vue, ...).",
+        "React / TailwindCSS / Web Components / TurboRepo",
+      ],
+    },
     souk: {
       name: "CTO as a Service | Souk, Paris",
       subtitle: "Janvier 2024 à Mai 2024",
@@ -109,9 +118,8 @@ const skills: SkillsSection = {
       name: "Stack Web",
       points: [
         "React.js / Next.js / Angular",
-        "HMTL/CSS - JavaScript/TypeScript",
+        "TypeScript - TailwindCSS",
         "Mobile : React Native / Expo",
-        "Style : TailwindCSS/SCSS",
         "Back-End : Node.js / Nest.js",
         "BDD : PostgreSQL & Firestore",
         "Déploiement: AWS / Vercel / Docker",
@@ -123,7 +131,8 @@ const skills: SkillsSection = {
       points: [
         "Git - Linux",
         "CI/CD : GitHub Action/GitLab CI",
-        "Node.js / Go / Python / C++",
+        "Go / Python / C++",
+        "Scraping",
         "UI/UX : Figma",
         "Vision: OpenCV",
         "IA : Tensorflow",
@@ -137,18 +146,16 @@ const personalProjects: PersonalProjectsSection = {
   name: "Projets personnels",
   subSectionRecord: {
     tgvMaxExtra: {
-      name: "TGV Max Extra | SaaS | Août 2021 – Février 2022",
+      name: "TGV Max Extra | SaaS | 2021/22",
       points: [
-        "Système d'alerte notifiant les utilisateurs lorsque de nouveaux trains TGV Max sont disponibles",
+        "Alerte les utilisateurs lorsque de nouveaux billets TGV Max sont disponibles à 0€",
         "500+ abonnés, 1000+ alertes envoyées",
       ],
     },
     sudokuSolver: {
-      name: "Sudoku Solver | Computer Vision | 2019",
+      name: "Sudoku Solver | 2019",
       nameExtra: <GithubStars stars={600} />,
-      points: [
-        "Extraction, Résolution & Reconstruction de grilles de Sudoku extraites d'un flux vidéo en temps réel",
-      ],
+      points: ["Résolution de Sudokus en temps réel"],
     },
   },
 };

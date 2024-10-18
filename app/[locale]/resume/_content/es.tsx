@@ -33,6 +33,15 @@ const education: EducationSection = {
 const professionalExperience: ProfessionalExperienceSection = {
   name: "Experiencia profesional",
   subSectionRecord: {
+    meero: {
+      name: "Ingeniero Front-end Senior | Meero, París",
+      subtitle: "Desde junio 2024 (Contrato)",
+      points: [
+        "Desarrollo del WebPlayer, un Web Component que permite a los concesionarios de automóviles integrar los medios procesados por Meero en su sitio web.",
+        "Despliegue del paquete en NPM con varios adaptadores (React, Vue, ...).",
+        "React / TailwindCSS / Web Components / TurboRepo",
+      ],
+    },
     souk: {
       name: "CTO como Servicio | Souk, París",
       subtitle: "Enero 2024 a Mayo 2024",
@@ -80,7 +89,7 @@ const professionalExperience: ProfessionalExperienceSection = {
     },
     forssea: {
       name: "Ingeniero Robótico Full-stack | Forssea Robotics, París",
-      subtitle: "Mayo 2021 a Febrero 2022 (CDI)",
+      subtitle: "Mayo 2021 a Febrero 2022 (Contrato)",
       points: [
         "Diseño y desarrollo de la arquitectura del NAVCAM V5",
         <>
@@ -90,7 +99,7 @@ const professionalExperience: ProfessionalExperienceSection = {
     },
     niryo: {
       name: "Ingeniero Robótico – Visión por Computadora | Niryo, Lille",
-      subtitle: "Septiembre 2019 a Abril 2021 (CDI)",
+      subtitle: "Septiembre 2019 a Abril 2021 (Contrato)",
       points: [
         "Jefe de proyecto para el Vision Set para el Niryo One y el Niryo Ned",
         "Responsable de software para el Niryo Ned",
@@ -109,9 +118,8 @@ const skills: SkillsSection = {
       name: "Stack Web",
       points: [
         "React.js / Next.js / Angular",
-        "HTML/CSS - JavaScript/TypeScript",
+        "TypeScript - TailwindCSS",
         "Móvil: React Native / Expo",
-        "Estilo: TailwindCSS/SCSS",
         "Back-End: Node.js / Nest.js",
         "BDD: PostgreSQL & Firestore",
         "Despliegue: AWS / Vercel / Docker",
@@ -123,7 +131,8 @@ const skills: SkillsSection = {
       points: [
         "Git - Linux",
         "CI/CD: GitHub Action/GitLab CI",
-        "Node.js / Go / Python / C++",
+        "Scraping",
+        "Go / Python / C++",
         "UI/UX: Figma",
         "Visión: OpenCV",
         "IA: Tensorflow",
@@ -137,18 +146,16 @@ const personalProjects: PersonalProjectsSection = {
   name: "Proyectos personales",
   subSectionRecord: {
     tgvMaxExtra: {
-      name: "TGV Max Extra | SaaS | Agosto 2021 – Febrero 2022",
+      name: "TGV Max Extra | SaaS | 2021/22",
       points: [
-        "Sistema de alerta que notifica a los usuarios cuando nuevos trenes TGV Max están disponibles",
+        "Notifica a los usuarios cuando nuevos trenes TGV Max están disponibles a 0€",
         "500+ suscriptores, 1000+ alertas enviadas",
       ],
     },
     sudokuSolver: {
-      name: "Sudoku Solver | Visión por Computadora | 2019",
+      name: "Sudoku Solver | 2019",
       nameExtra: <GithubStars stars={600} />,
-      points: [
-        "Extracción, Resolución y Reconstrucción de rejillas de Sudoku extraídas de un flujo de video en tiempo real",
-      ],
+      points: ["Resolución de Sudokus en tiempo real"],
     },
   },
 };
