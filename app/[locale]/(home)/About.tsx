@@ -60,10 +60,6 @@ const About: React.FC<{ index: number; className?: string }> = ({
       <SectionTitle index={index} title={t("title")} />
 
       <div className="space-y-3 text-pretty pb-2 text-center text-base text-muted-foreground sm:space-y-6 sm:text-lg">
-        <p className="text-xl font-bold text-foreground sm:text-2xl">
-          {t("hey")}
-        </p>
-
         {tList("description").map((value, index) => (
           <p key={index}>{value}</p>
         ))}

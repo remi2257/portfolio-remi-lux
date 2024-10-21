@@ -9,7 +9,7 @@ import {
 import { GithubStars } from "../_components/GithubStars";
 import { Strong } from "../_components/Strong";
 
-const professionnalTitle = "Full-Stack Engineer";
+const headerSubtitle = "5+ years of experience";
 
 const education: EducationSection = {
   name: "Education",
@@ -34,78 +34,61 @@ const professionalExperience: ProfessionalExperienceSection = {
   name: "Professional experience",
   subSectionRecord: {
     meero: {
-      name: "Senior Front-end Engineer | Meero, Paris",
+      name: "Senior Front-End Engineer | Meero, Paris",
       subtitle: "Since June 2024 (Contract)",
       points: [
-        "Development of the WebPlayer, a Web Component allowing car dealerships to integrate media processed by Meero directly on their website.",
-        "Deployment of the package on NPM with various adapters (React, Vue, ...).",
-        "React / TailwindCSS / Web Components / TurboRepo",
+        "Development of the WebPlayer, a Web Component allowing car dealerships to embed media processed by Meero directly on their website → React / TailwindCSS",
+        "Deployment of the package on NPM with various adapters (Next.js, Vue, ...)",
       ],
     },
-    souk: {
-      name: "CTO as a Service | Souk, Paris",
-      subtitle: "January 2024 to May 2024",
-      points: [
-        "Reimagined Souk fully, a high-performance Vinted scraper.",
-        "Next.js / React Native (Expo) / Golang / AWS",
-      ],
-    },
-    serendy: {
-      name: "Co-Founder & CTO | Serendy, Paris",
-      subtitle: "March 2023 to November 2023",
-      points: [
-        "Creation of a dating app' enabling users to meet instantly in chic locations",
-        "React Native (Expo) / Next.js / Supabase / PostgreSQL",
-      ],
-    },
-    milleis: {
-      name: "Front-end Developer | Milleis Banque Privée, Paris",
-      subtitle: "March 2023 to June 2023 (Freelance)",
-      points: [
-        "Development of tools for private bankers (file creation, online signature, etc)",
-        "Angular 15 / Nx / TailwindCSS / PostgreSQL",
-      ],
-    },
-    masa: {
-      name: "Full-Stack Developer | MASA Group, Paris",
-      subtitle: "July 2022 to November 2022 (Freelance)",
-      points: [
-        "Development of the management tool for the French army",
-        "Angular 13 / Nest.js / Nx / PostgreSQL / TypeORM",
-      ],
-    },
-    stockly: {
-      name: "Front-end Developer | Stockly, Paris",
-      subtitle: "February 2022 to July 2022 (Freelance)",
+    freelance: {
+      name: "Freelance Full-Stack Engineer | Paris",
+      subtitle: "February 2022 to May 2024",
       points: [
         <>
-          Development in <Strong>Angular</Strong> of the Back Office enabling
-          operational staff to purchase and ship products
+          <Strong>Souk</Strong>: Rebranded & scaled a high-performance Vinted
+          scraper. Published mobile applications on both stores & deployed Web
+          app.
+          {"\n"}→ Next.js / React Native (Expo) / Golang
         </>,
         <>
-          Collaboration with the UI/UX designer on <Strong>Figma</Strong>
+          <Strong>Serendy</Strong>: Creation of a dating app enabling users to
+          meet instantly in chic locations. Published on both App Store and Play
+          Store.
+          {"\n"}→ React Native (Expo) / Next.js / PostgreSQL
+        </>,
+        <>
+          <Strong>Milleis Private Bank</Strong>: Development of tools for
+          private bankers (creating & managing customer records, online
+          signatures, ...)
+          {"\n"}→ React / TailwindCSS
+        </>,
+        <>
+          <Strong>MASA Group</Strong>: Development of a management tool for the
+          French army
+          {"\n"}→ Angular / Nest.js / PostgreSQL
+        </>,
+        <>
+          <Strong>Stockly</Strong>: Development of the Back Office enabling
+          operational staff to purchase and ship products
+          {"\n"}→ Angular
         </>,
       ],
     },
     forssea: {
-      name: "Robotics Engineer Full-stack| Forssea Robotics, Paris",
+      name: "Software Engineer | Forssea Robotics, Paris",
       subtitle: "May 2021 to February 2022 (Contract)",
       points: [
-        "Architecture design and development of the NAVCAM V5",
-        <>
-          Development of the HMI in <Strong>Angular</Strong>
-        </>,
+        "Architecture and development of the NAVCAM → C++",
+        "NAVCAM's GUI development → Angular",
       ],
     },
     niryo: {
-      name: "Robotics Engineer – Computer Vision | Niryo, Lille",
+      name: "Software Engineer | Niryo, Lille",
       subtitle: "September 2019 to April 2021 (Contract)",
       points: [
-        "Software leader for the Vision Set for the Niryo One & Niryo Ned",
-        "Software leader for the Niryo Ned",
-        <>
-          Development of the HMI in <Strong>Angular</Strong>
-        </>,
+        "Architecture and development of the Niryo Ned & its Vision Set → Python",
+        "Development of the Niryo Studio GUI → Angular",
       ],
     },
   },
@@ -117,13 +100,10 @@ const skills: SkillsSection = {
     web: {
       name: "Web Stack",
       points: [
-        "React.js / Next.js / Angular",
+        "React.js / Next.js",
         "TypeScript - TailwindCSS",
         "Mobile: React Native / Expo",
-        "Back-End: Node.js / Nest.js",
-        "DB: PostgreSQL & Firestore",
-        "Deployment: AWS / Vercel / Docker",
-        "Testing: Jest",
+        "Back-End: Node.js / PostgreSQL",
       ],
     },
     misc: {
@@ -131,12 +111,8 @@ const skills: SkillsSection = {
       points: [
         "Git - Linux",
         "CI/CD: GitHub Action/GitLab CI",
-        "Scraping",
         "Go / Python / C++",
         "UI/UX: Figma",
-        "Vision: OpenCV",
-        "AI: Tensorflow",
-        "Robotics: ROS",
       ],
     },
   },
@@ -161,7 +137,7 @@ const personalProjects: PersonalProjectsSection = {
 };
 
 const content: Content = {
-  professionnalTitle,
+  headerSubtitle,
 
   education,
   professionalExperience,

@@ -23,8 +23,8 @@ const ProfessionalExperiences: React.FC<{
   const experienceList: TimelineElement[] = [
     {
       title: "Meero",
-      subtitle: t("meero.job"),
-      badges: [t("badges.cdi"), "WebComponents", "NPM", "Next.js"],
+      subtitle: "Senior Front-End Engineer",
+      badges: [t("badges.cdi"), "React.js", "TailwindCSS"],
       description: tList("meero.description"),
 
       Icon: FaImages,
@@ -43,8 +43,8 @@ const ProfessionalExperiences: React.FC<{
     },
     {
       title: "Souk",
-      subtitle: "CTO as a Service",
-      badges: ["Freelance", "Next.js", "React Native", "Golang", "AWS"],
+      subtitle: "Full-Stack Engineer",
+      badges: ["Freelance", "Next.js", "React Native", "Go"],
       description: tList("souk.description"),
 
       Icon: FaTshirt,
@@ -60,8 +60,8 @@ const ProfessionalExperiences: React.FC<{
     },
     {
       title: "Serendy",
-      subtitle: t("serendy.job"),
-      badges: ["React Native", "Next.js", "Supabase", "PostgreSQL"],
+      subtitle: "Full-Stack Engineer",
+      badges: ["Freelance", "React Native", "Next.js", "PostgreSQL"],
       description: tList("serendy.description"),
 
       Icon: WiMoonAltWaxingCrescent1,
@@ -77,8 +77,8 @@ const ProfessionalExperiences: React.FC<{
     },
     {
       title: "Milleis Banque Privée",
-      subtitle: t("milleis.job"),
-      badges: ["Freelance", "Angular", "TailwindCSS"],
+      subtitle: "Front-End Engineer",
+      badges: ["Freelance", "React", "TailwindCSS"],
       description: tList("milleis.description"),
 
       Icon: BsBank,
@@ -86,8 +86,8 @@ const ProfessionalExperiences: React.FC<{
     },
     {
       title: "MASA Group",
-      subtitle: t("masa.job"),
-      badges: ["Freelance", "Angular", "PostgreSQL", "Nest.js"],
+      subtitle: "Full-Stack Engineer",
+      badges: ["Freelance", "Angular", "PostgreSQL"],
       description: tList("masa.description"),
 
       Icon: GiFrance,
@@ -95,7 +95,7 @@ const ProfessionalExperiences: React.FC<{
     },
     {
       title: "Stockly",
-      subtitle: t("stockly.job"),
+      subtitle: "Front-End Engineer",
       badges: ["Freelance", "Angular"],
       description: tList("stockly.description"),
 
@@ -104,14 +104,8 @@ const ProfessionalExperiences: React.FC<{
     },
     {
       title: "Forssea Robotics",
-      subtitle: t("forssea.job"),
-      badges: [
-        t("badges.cdi"),
-        t("badges.robotics"),
-        "Python",
-        "C++",
-        "Angular",
-      ],
+      subtitle: "Software Engineer",
+      badges: [t("badges.cdi"), "Computer Vision", "C++", "Angular"],
       description: tList("forssea.description"),
 
       Icon: TbSubmarine,
@@ -119,13 +113,12 @@ const ProfessionalExperiences: React.FC<{
     },
     {
       title: "Niryo",
-      subtitle: t("niryo.job"),
+      subtitle: "Software Engineer",
       badges: [
         t("badges.cdi"),
         t("badges.robotics"),
         "Computer Vision",
         "Python",
-        "C++",
         "Angular",
       ],
       description: tList("niryo.description"),

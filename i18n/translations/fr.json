@@ -1,90 +1,79 @@
 {
   "home": {
     "hero": {
-      "title": "Ingénieur <span1>Full-Stack</span1> avec <span2>5 ans</span2> d'expérience",
+      "title": "Ingénieur <span1>Front-End</span1> avec <span2>5 ans</span2> d'expérience",
       "subtitle": "Du concept au scaling, je crée tout type d'application web."
     },
 
     "about": {
       "title": "À propos de moi",
-      "hey": "Hello World, moi c'est Rémi !",
       "description": {
-        "paragraph1": "J'ai commencé le développement informatique en 2019. À cette époque, je travaillais en robotique où mon objectif était de donner la vue aux robots.",
-        "paragraph2": "En 2021, je décide de me consacrer exclusivement en développement web afin de pouvoir toucher à une plus grande variété de projets ainsi que de me rapprocher de l'aspect produit.",
-        "paragraph3": "Avec plus de 5 ans d'expérience, je suis capable de prendre en charge chaque partie du développement afin d'apporter une solution manière efficace et élégante."
+        "paragraph1": "Ingénieur Front-End avec une approche centrée sur le produit, je suis expert dans le développement de SaaS et d'applications mobiles (React.js, Next.js, React Native).",
+        "paragraph2": "Je combine compétences techniques, sensibilité UI/UX et esprit entrepreneurial pour créer des expériences web attractives qui optimisent à la fois l'expérience utilisateur et la croissance de l'entreprise."
       },
       "experienceWith": "Expérience avec"
     },
 
     "experiences": {
-      "title": "Expériences professionnelles",
+      "title": "Expérience professionnelle",
 
       "meero": {
-        "job": "Ingénieur Front-end Sénior",
         "description": {
-          "paragraph1": "Développement du WebPlayer, un WebComponent permettant aux concessionnaires automobiles d'intégrer leurs photos directement sur leur site web.",
-          "paragraph2": "Déploiement du package sur NPM avec différents adaptateurs (React, Next.js, Vue, ...).",
-          "paragraph3": "Développement de l'application Cockpit, un outil interne permettant aux clients de gérer leurs pipelines de photos."
+          "paragraph1": "Création du WebPlayer, un Web Component permettant aux concessionnaires automobiles d'intégrer les médias traités par Meero directement sur leur site web.",
+          "paragraph2": "Pulication du package sur NPM avec différents adaptateurs (Next.js, Vue.js, Vanilla JS, ...)."
         }
       },
       "souk": {
         "description": {
-          "paragraph1": "Scaling de Souk, un scraper Vinted permettant aux resellers d'être premiers sur les meilleurs produits.",
+          "paragraph1": "Refonte et Scaling d'un scraper Vinted haute performance.",
           "paragraph2": "Création d'une nouvelle image de marque.",
-          "paragraph3": "Développement des applications mobile et web.",
+          "paragraph3": "Publication de l'application mobile sur les deux stores et déploiement de l'application Web.",
           "paragraph4": "Optimisation du scrapper en termes de coûts et stabilité."
         }
       },
       "serendy": {
-        "job": "CTO & Co-fondateur",
         "description": {
-          "paragraph1": "Création de Serendy, une application de rencontres qui met l'accent sur des rencontres réelles.",
-          "paragraph2": "Chaque utilisateur peuvent voir qui est actif à proximité et proposer un date. Si la demande est acceptée, un point de rendez-vous est donné un bar local où les utilisateurs se rencontrent directement en personne.",
-          "paragraph3": "Déploiement de l'application sur l'App Store et le Play Store."
+          "paragraph1": "Création d'une application de rencontres permettant des rencontres instantanées.",
+          "paragraph2": "Publication sur l'App Store et le Play Store."
         }
       },
       "milleis": {
-        "job": "Développeur Front-End",
         "description": {
-          "paragraph1": "Développement d'outils pour les banquiers privés de Milleis: création de fichiers clients, signatures en ligne, ..."
+          "paragraph1": "Développement d'outils pour les banquiers : création de fichiers clients, signatures en ligne, ..."
         }
       },
       "masa": {
-        "job": "Développeur Full-Stack",
         "description": {
           "paragraph1": "Développement de GEFORA, un outil stratégique permettant à l'armée française de superviser les troupes et les opérations."
         }
       },
       "stockly": {
-        "job": "Développeur Front-End",
         "description": {
-          "paragraph1": "Développement de l'application Back Office, offrant aux Ops un outil efficace pour la gestion des achats et expéditions de produits."
+          "paragraph1": "Développement du Back Office permettant au personnel opérationnel de suivre les achats et envois de produits."
         }
       },
       "forssea": {
-        "job": "Ingénieur logiciel",
         "description": {
-          "paragraph1": "Création de l'architecture de NAVCAM, mettant l'accent sur une interface harmonieuse entre la robotique et l'IHM."
+          "paragraph1": "Architecture et développement de la NAVCAM.",
+          "paragraph2": "Développement de l'IHM de la NAVCAM."
         }
       },
       "niryo": {
-        "job": "Ingénieur en traitement d'images et robotique",
         "description": {
-          "paragraph1": "Reponsable du développement du Kit Vision: un produit phare des robots Niryo One et Niryo Ned.",
-          "paragraph2": "Élaboration de l'architecture de la vision et développement intégral du Niryo Ned.",
-          "paragraph3": "Création de modules de vision pour des robots éducatifs et industriels, impliquant des responsabilités allant du choix de la caméra à la commande des mouvements du robot."
+          "paragraph1": "Architecture et développement du Niryo Ned et de son Vision Set.",
+          "paragraph2": "Développement de l'IHM Niryo Studio."
         }
       },
       "bertin": {
-        "job": "Ingénieur en traitement d'images et logiciel",
+        "job": "Software Engineer (Stage)",
         "description": {
-          "paragraph1": "Développement de la fonctionnalité Video Summary de MediaCentric®, qui permet de fournir une synthèse rapide et complète des vidéos en extrayant les images clés ainsi que les visages et les textes."
+          "paragraph1": "Développement de la fonctionnalité Video Summary de MediaCentric."
         }
       },
       "plymouthUni": {
-        "job": "Ingénieur en traitement d'images",
+        "job": "Software Engineer (Stage)",
         "description": {
-          "paragraph1": "Développement de l'algorithme de suivi de cible sur un robot développé par l'Université de Plymouth: le Owl robot."
+          "paragraph1": "Développement de l'algorithme de suivi de cible."
         }
       },
 
@@ -143,8 +132,7 @@
       "prepa": {
         "title": "Classe préparatoire scientifique",
         "description": {
-          "paragraph1": "J'ai étudié dans la filière préparatoire physique-chimie (PCSI/PC*) afin de préparer les concours des écoles d'ingénieurs.",
-          "paragraph2": "En plus de connaissances théoriques en science, cela m'a également appris la rigueur."
+          "paragraph1": "J'ai étudié dans la filière préparatoire physique-chimie (PCSI/PC*) afin de préparer les concours des écoles d'ingénieurs."
         }
       }
     },
@@ -191,7 +179,7 @@
   "resume": {
     "title": "Personnalisez mon CV selon vos besoins",
     "generating": "Génération en cours",
-    "download": "Télécharger le PDF",
+    "download": "Télécharger mon CV",
 
     "identity": {
       "title": "Identité",

@@ -9,7 +9,7 @@ import {
 import { GithubStars } from "../_components/GithubStars";
 import { Strong } from "../_components/Strong";
 
-const professionnalTitle = "Ingénieur Full-Stack";
+const headerSubtitle = "5+ années d'expérience";
 
 const education: EducationSection = {
   name: "Éducation",
@@ -34,78 +34,63 @@ const professionalExperience: ProfessionalExperienceSection = {
   name: "Expérience professionnelle",
   subSectionRecord: {
     meero: {
-      name: "Ingénieur Front-end Sénior | Meero, Paris",
+      name: "Ingénieur Front-End Sénior | Meero, Paris",
       subtitle: "Depuis Juin 2024 (CDI)",
       points: [
-        "Création du WebPlayer, un Web Component permettant aux concessionnaires automobiles d'intégrer les médias traités par Meero directement sur leur site web.",
-        "Déploiement du package sur NPM avec différents adaptateurs (React, Vue, ...).",
-        "React / TailwindCSS / Web Components / TurboRepo",
+        "Création du WebPlayer, un Web Component permettant aux concessionnaires automobiles d'intégrer les médias traités par Meero directement sur leur site web → React / TailwindCSS",
+        "Pulication du package sur NPM avec différents adaptateurs (Next.js, Vue, ...)",
       ],
     },
-    souk: {
-      name: "CTO as a Service | Souk, Paris",
-      subtitle: "Janvier 2024 à Mai 2024",
-      points: [
-        "Refonte totale de Souk, un scraper Vinted haute performance.",
-        "Next.js / React Native (Expo) / Golang / AWS",
-      ],
-    },
-    serendy: {
-      name: "Co-Fondateur & CTO | Serendy, Paris",
-      subtitle: "Mars 2023 à Novembre 2023",
-      points: [
-        "Création d'une application de rencontres permettant aux utilisateurs de se rencontrer instantanément dans des lieux chics",
-        "React Native (Expo) / Next.js / Supabase / PostgreSQL",
-      ],
-    },
-    milleis: {
-      name: "Développeur Front-end | Milleis Banque Privée, Paris",
-      subtitle: "Mars 2023 à Juin 2023 (Freelance)",
-      points: [
-        "Développement d'outils pour les banquiers privés (signature en ligne, etc)",
-        "Angular 15 / Nx / TailwindCSS / PostgreSQL",
-      ],
-    },
-    masa: {
-      name: "Développeur Full-Stack | MASA Group, Paris",
-      subtitle: "Juillet 2022 à Novembre 2022 (Freelance)",
-      points: [
-        "Développement de l'outil de gestion pour l'armée française",
-        "Angular 13 / Nest.js / Nx / PostgreSQL / TypeORM",
-      ],
-    },
-    stockly: {
-      name: "Développeur Front-end | Stockly, Paris",
-      subtitle: "Février 2022 à Juillet 2022 (Freelance)",
+    freelance: {
+      name: "Ingénieur Full-Stack Freelance | Paris",
+      subtitle: "Février 2022 à Mai 2024",
       points: [
         <>
-          Développement en <Strong>Angular</Strong> du Back Office permettant
-          aux Ops&apos; d&apos;acheter et d&apos;expédier des produits
+          <Strong>Souk</Strong> : Refonte et Scaling d&apos;un scraper Vinted
+          haute performance. Création d&apos;une nouvelle image de marque.
+          Publication de l&apos;application mobile sur les deux stores et
+          déploiement de l&apos;application Web.
+          {"\n"}→ Next.js / React Native (Expo) / Golang
         </>,
         <>
-          Collaboration avec le designer UI/UX sur <Strong>Figma</Strong>
+          <Strong>Serendy</Strong> : Création d&apos;une application de
+          rencontres permettant des rencontres instantanées. Publication sur
+          l&apos;App Store et le Play Store.
+          {"\n"}→ React Native (Expo) / Next.js / PostgreSQL
+        </>,
+        <>
+          <Strong>Milleis Banque Privée</Strong> : Développement d&apos;outils
+          pour les banquiers : création de fichiers clients, signatures en
+          ligne, ...
+          {"\n"}→ React / TailwindCSS
+        </>,
+        <>
+          <Strong>MASA Group</Strong> : Développement de GEFORA, un outil
+          stratégique permettant à l&apos;armée française de superviser les
+          troupes et les opérations
+          {"\n"}→ Angular / Nest.js / PostgreSQL
+        </>,
+        <>
+          <Strong>Stockly</Strong> : Développement du Back Office permettant au
+          personnel opérationnel de suivre les achats et envois de produits
+          {"\n"}→ Angular
         </>,
       ],
     },
     forssea: {
-      name: "Ingénieur Robotique Full-stack | Forssea Robotics, Paris",
+      name: "Ingénieur Logiciel | Forssea Robotics, Paris",
       subtitle: "Mai 2021 à Février 2022 (CDI)",
       points: [
-        "Conception et développement de l'architecture du NAVCAM V5",
-        <>
-          Développement de l&apos;IHM en <Strong>Angular</Strong>
-        </>,
+        "Architecture et développement de la NAVCAM → C++",
+        "Développement de l'IHM de la NAVCAM → Angular",
       ],
     },
     niryo: {
-      name: "Ingénieur Robotique – Computer Vision | Niryo, Lille",
+      name: "Ingénieur Logiciel | Niryo, Lille",
       subtitle: "Septembre 2019 à Avril 2021 (CDI)",
       points: [
-        "Chef de projet pour le Vision Set pour le Niryo One & Niryo Ned",
-        "Responsable logiciel pour le Niryo Ned",
-        <>
-          Développement de l&apos;IHM en <Strong>Angular</Strong>
-        </>,
+        "Architecture et développement du Niryo Ned et de son Vision Set → Python",
+        "Développement de l'IHM Niryo Studio → Angular",
       ],
     },
   },
@@ -117,13 +102,10 @@ const skills: SkillsSection = {
     web: {
       name: "Stack Web",
       points: [
-        "React.js / Next.js / Angular",
+        "React.js / Next.js",
         "TypeScript - TailwindCSS",
         "Mobile : React Native / Expo",
-        "Back-End : Node.js / Nest.js",
-        "BDD : PostgreSQL & Firestore",
-        "Déploiement: AWS / Vercel / Docker",
-        "Tests: Jest",
+        "Back-End : Node.js / PostgreSQL",
       ],
     },
     misc: {
@@ -132,11 +114,7 @@ const skills: SkillsSection = {
         "Git - Linux",
         "CI/CD : GitHub Action/GitLab CI",
         "Go / Python / C++",
-        "Scraping",
         "UI/UX : Figma",
-        "Vision: OpenCV",
-        "IA : Tensorflow",
-        "Robotics : ROS",
       ],
     },
   },
@@ -148,7 +126,7 @@ const personalProjects: PersonalProjectsSection = {
     tgvMaxExtra: {
       name: "TGV Max Extra | SaaS | 2021/22",
       points: [
-        "Alerte les utilisateurs lorsque de nouveaux billets TGV Max sont disponibles à 0€",
+        "Alerte les utilisateurs lorsque de nouveaux billets à 0€ sont disponibles",
         "500+ abonnés, 1000+ alertes envoyées",
       ],
     },
@@ -161,7 +139,7 @@ const personalProjects: PersonalProjectsSection = {
 };
 
 const content: Content = {
-  professionnalTitle,
+  headerSubtitle,
 
   education,
   professionalExperience,

@@ -27,11 +27,12 @@ import { cn } from "@/lib/utils";
 import ResumeContextProvider, { useResumeContext } from "./ResumeContext";
 import { Section, SubSection } from "./_content/content.type";
 import {
+  candidateName,
   contactEmail,
   contactPhone,
   currentLocation,
   portfolioLink,
-  resumeSubtitle,
+  professionalTitle,
 } from "./const";
 import { Language, languageList } from "./resume-lang";
 import { Color, colorList, colorPaletteMap } from "./style";
@@ -100,7 +101,7 @@ const ResumeSubSection: React.FC<ResumeSubSectionProps> = ({
       style={{
         fontFamily: bodyFont,
 
-        rowGap: 2,
+        rowGap: 3,
       }}
     >
       <View
@@ -118,7 +119,7 @@ const ResumeSubSection: React.FC<ResumeSubSectionProps> = ({
         >
           <Text
             style={{
-              fontSize: 12,
+              fontSize: 13,
               fontWeight: "bold",
               lineHeight: 1.2,
             }}
@@ -130,7 +131,7 @@ const ResumeSubSection: React.FC<ResumeSubSectionProps> = ({
         {subtitle && (
           <Text
             style={{
-              fontSize: 10,
+              fontSize: 11,
               fontStyle: "italic",
               color: "hsl(0, 0%, 20%)",
             }}
@@ -141,7 +142,9 @@ const ResumeSubSection: React.FC<ResumeSubSectionProps> = ({
       </View>
       <View
         style={{
-          rowGap: 1,
+          rowGap: 4,
+          fontSize: 11,
+          lineHeight: 1.25,
         }}
       >
         {points.map((point, i) => (
@@ -149,19 +152,11 @@ const ResumeSubSection: React.FC<ResumeSubSectionProps> = ({
             key={i}
             style={{
               flexDirection: "row",
-              columnGap: 1,
-              fontSize: 10,
+              columnGap: 3,
             }}
           >
             {points.length > 1 && <Text>•</Text>}
-            <Text
-              style={{
-                marginLeft: 2,
-                lineHeight: 1.15,
-              }}
-            >
-              {point}
-            </Text>
+            <Text>{point}</Text>
           </View>
         ))}
       </View>
@@ -184,7 +179,7 @@ const ResumeSection: React.FC<ResumeSectionProps> = ({
   const { colorPalette } = useResumeContext();
 
   return (
-    <View style={[{ rowGap: 6 }, style]}>
+    <View style={[{ rowGap: 8 }, style]}>
       <View
         // Title & Separator
         style={{
@@ -194,7 +189,7 @@ const ResumeSection: React.FC<ResumeSectionProps> = ({
         <Text
           style={{
             fontFamily: titleFont,
-            fontSize: 14,
+            fontSize: 16,
             fontWeight: "bold",
 
             color: colorPalette.titleFg,
@@ -205,6 +200,7 @@ const ResumeSection: React.FC<ResumeSectionProps> = ({
           {name}
         </Text>
         <View
+          // Separator
           style={{
             width: "100%",
             height: 1,
@@ -216,7 +212,7 @@ const ResumeSection: React.FC<ResumeSectionProps> = ({
       </View>
       <View
         // List of sub sections
-        style={{ rowGap: 8 }}
+        style={{ rowGap: 12 }}
       >
         {subSectionList.map((subsection, index) => (
           <ResumeSubSection key={index} {...subsection} />
@@ -295,8 +291,8 @@ const Resume: React.FC<ResumeProps> = ({
                   <ImagePdf
                     src="/assets/hero-day-1.jpg"
                     style={{
-                      width: 110,
-                      height: 110,
+                      width: 120,
+                      height: 120,
                     }}
                   />
                 )}
@@ -308,10 +304,10 @@ const Resume: React.FC<ResumeProps> = ({
                       marginBottom: 2,
                     }}
                   >
-                    Rémi LUX
+                    {candidateName}
                   </Text>
-                  <Text>{content.professionnalTitle}</Text>
-                  <Text>{resumeSubtitle}</Text>
+                  <Text>{professionalTitle}</Text>
+                  <Text>{content.headerSubtitle}</Text>
                 </View>
               </View>
 
@@ -344,14 +340,14 @@ const Resume: React.FC<ResumeProps> = ({
                   fontWeight: "bold",
                 }}
               >
-                {content.professionnalTitle}
+                {professionalTitle}
               </Text>
               <Text
                 style={{
                   fontSize: 16,
                 }}
               >
-                {resumeSubtitle}
+                {content.headerSubtitle}
               </Text>
             </View>
           )}
@@ -361,58 +357,48 @@ const Resume: React.FC<ResumeProps> = ({
           // Body
           style={[
             styles.px,
-
             {
-              rowGap: 16,
+              flexDirection: "row",
+              columnGap: 24,
             },
           ]}
         >
           <View
+            // Left column
             style={{
-              flexDirection: "row",
-              columnGap: 28,
+              width: "34%",
+              rowGap: 16,
             }}
           >
-            <View
-              // Left column
-              style={{
-                width: "33%",
-                rowGap: 16,
-              }}
-            >
-              <ResumeSection
-                {...sectionToResumeSection(content.education, [
-                  "phelma",
-                  "prepa",
-                ])}
-              />
-              <ResumeSection
-                {...sectionToResumeSection(content.skills, ["web", "misc"])}
-              />
-              <ResumeSection
-                {...sectionToResumeSection(content.personalProjects, [
-                  "tgvMaxExtra",
-                  "sudokuSolver",
-                ])}
-              />
-            </View>
             <ResumeSection
-              // Right column
-              style={{
-                flex: 1,
-              }}
-              {...sectionToResumeSection(content.professionalExperience, [
-                "meero",
-                "souk",
-                "serendy",
-                "milleis",
-                "masa",
-                "stockly",
-                "forssea",
-                "niryo",
+              {...sectionToResumeSection(content.education, [
+                "phelma",
+                "prepa",
+              ])}
+            />
+            <ResumeSection
+              {...sectionToResumeSection(content.skills, ["web", "misc"])}
+            />
+            <ResumeSection
+              {...sectionToResumeSection(content.personalProjects, [
+                "tgvMaxExtra",
+                "sudokuSolver",
               ])}
             />
           </View>
+
+          <ResumeSection
+            // Right column
+            style={{
+              flex: 1,
+            }}
+            {...sectionToResumeSection(content.professionalExperience, [
+              "meero",
+              "freelance",
+              "forssea",
+              "niryo",
+            ])}
+          />
         </View>
 
         {!anonymous && (
@@ -427,13 +413,13 @@ const Resume: React.FC<ResumeProps> = ({
                 justifyContent: "space-evenly",
                 alignItems: "center",
 
-                paddingVertical: 8,
+                paddingVertical: 10,
 
                 backgroundColor: colorPalette.headerBg,
                 color: "white",
 
                 fontFamily: bodyFont,
-                fontSize: 14,
+                fontSize: 16,
                 fontWeight: "semibold",
               },
             ]}

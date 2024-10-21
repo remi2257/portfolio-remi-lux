@@ -1,17 +1,15 @@
 {
   "home": {
     "hero": {
-      "title": "<span1>Full-Stack</span1> Engineer with <span1>5 years</span1> of experience",
+      "title": "<span1>Front-End</span1> Engineer with <span1>5 years</span1> of experience",
       "subtitle": "From concept to scaling, I create all types of web applications."
     },
 
     "about": {
       "title": "About Me",
-      "hey": "Hello World, I'm Rémi!",
       "description": {
-        "paragraph1": "I started programming in 2019. At that time, I was working in robotics where my goal was to give sight to robots.",
-        "paragraph2": "In 2021, I decided to focus exclusively on web development to work on a greater variety of projects and to get closer to the product aspect.",
-        "paragraph3": "With over 5 years of experience, I am capable of handling every part of development to provide a solution in an efficient and elegant manner."
+        "paragraph1": "Versatile Front-end Engineer with a product-driven approach, I am experienced in developing SaaS platforms and mobile applications using React.js, Next.js, and React Native.",
+        "paragraph2": "My unique blend of technical skills, UI/UX sensibility, and entrepreneurial mindset enables me to craft user-centric web experiences that not only look great but also drive business growth."
       },
       "experienceWith": "Experience with"
     },
@@ -20,71 +18,62 @@
       "title": "Professional Experiences",
 
       "meero": {
-        "job": "Senior Front-end Engineer",
         "description": {
-          "paragraph1": "Development of the WebPlayer, a WebComponent enabling car dealers to integrate their photos directly on their website.",
-          "paragraph2": "Deployment of the package on NPM with different adapters (React, Next.js, Vue, ...).",
-          "paragraph3": "Development of the Cockpit application, an internal tool allowing clients to manage their photo pipelines."
+          "paragraph1": "Development of the WebPlayer, a Web Component allowing car dealerships to embed media processed by Meero directly on their website.",
+          "paragraph2": "Deployment of the package on NPM with various adapters (Next.js, Vue, ...)."
         }
       },
       "souk": {
         "description": {
-          "paragraph1": "Scaling Souk, a Vinted scraper allowing resellers to be the first on the best products.",
+          "paragraph1": "Rebranded & scaled a high-performance Vinted scraper.",
           "paragraph2": "Creating a new brand image.",
-          "paragraph3": "Developing mobile and web applications.",
+          "paragraph3": "Published mobile applications on both stores & deployed Web app.",
           "paragraph4": "Optimizing the scraper in terms of cost and stability."
         }
       },
       "serendy": {
-        "job": "CTO & Co-founder",
         "description": {
-          "paragraph1": "Creating Serendy, a dating app focusing on real-life encounters.",
-          "paragraph2": "Each user can see who is active nearby and propose a date. If the request is accepted, a meeting point is given at a local bar where users meet directly in person.",
-          "paragraph3": "Deploying the app on the App Store and Play Store."
+          "paragraph1": "Creation of a dating app enabling users to meet instantly in chic locations.",
+          "paragraph2": "Published on both App Store and Play Store."
         }
       },
       "milleis": {
-        "job": "Front-End Developer",
         "description": {
-          "paragraph1": "Developing tools for Milleis private bankers: creating client files, online signatures, ..."
+          "paragraph1": "Development of tools for private bankers (creating & managing customer records, online signatures, ...)."
         }
       },
       "masa": {
-        "job": "Full-Stack Developer",
         "description": {
-          "paragraph1": "Developing GEFORA, a strategic tool allowing the French army to supervise troops and operations."
+          "paragraph1": "Development of a management tool for the French army."
         }
       },
       "stockly": {
-        "job": "Front-End Developer",
         "description": {
-          "paragraph1": "Developing the Back Office application, providing Ops with an efficient tool for managing product purchases and shipments."
+          "paragraph1": "Development of the Back Office enabling operational staff to purchase and ship products."
         }
       },
       "forssea": {
-        "job": "Software Engineer",
         "description": {
-          "paragraph1": "Creating the architecture of NAVCAM, focusing on a harmonious interface between robotics and the HMI."
+          "paragraph1": "Architecture and development of the NAVCAM.",
+          "paragraph2": "NAVCAM's GUI development."
         }
       },
       "niryo": {
-        "job": "Image Processing and Robotics Engineer",
         "description": {
-          "paragraph1": "Responsible for developing the Vision Kit: a flagship product for Niryo One and Niryo Ned robots.",
-          "paragraph2": "Designing the vision architecture and fully developing the Niryo Ned.",
-          "paragraph3": "Creating vision modules for educational and industrial robots, involving responsibilities ranging from camera selection to robot movement control."
+          "paragraph1": "Architecture and development of the Niryo Ned & its Vision Set.",
+          "paragraph2": "Development of the Niryo Studio GUI."
         }
       },
       "bertin": {
-        "job": "Image Processing and Software Engineer",
+        "job": "Software Engineer (Internship)",
         "description": {
-          "paragraph1": "Developing the Video Summary feature for MediaCentric®, which provides a quick and comprehensive summary of videos by extracting key images as well as faces and texts."
+          "paragraph1": "Developing the Video Summary feature for MediaCentric."
         }
       },
       "plymouthUni": {
-        "job": "Image Processing Engineer",
+        "job": "Software Engineer (Internship)",
         "description": {
-          "paragraph1": "Developing the target tracking algorithm on a robot developed by the University of Plymouth: the Owl robot."
+          "paragraph1": "Developing a target tracking algorithm."
         }
       },
 
@@ -143,8 +132,7 @@
       "prepa": {
         "title": "Scientific Preparatory Class",
         "description": {
-          "paragraph1": "Studied in the physics-chemistry preparatory course (PCSI/PC*) to prepare for engineering school competitions.",
-          "paragraph2": "In addition to theoretical knowledge in science, it also taught me rigor."
+          "paragraph1": "Studied in the physics-chemistry preparatory course (PCSI/PC*) to prepare for engineering school competitions."
         }
       }
     },
