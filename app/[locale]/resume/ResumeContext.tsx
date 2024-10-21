@@ -4,7 +4,6 @@ import { createContext, useContext } from "react";
 
 import { Content } from "./_content/content.type";
 import contentEn from "./_content/en";
-import contentEs from "./_content/es";
 import contentFr from "./_content/fr";
 import { Language } from "./resume-lang";
 import { ColorPalette } from "./style";
@@ -39,9 +38,6 @@ const ResumeContextProvider: React.FC<
       break;
     case "en":
       content = contentEn;
-      break;
-    case "es":
-      content = contentEs;
       break;
   }
 

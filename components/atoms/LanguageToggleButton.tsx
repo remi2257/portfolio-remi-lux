@@ -14,8 +14,6 @@ function getNextLocale(locale: Locale): Locale {
     case "fr":
       return "en";
     case "en":
-      return "es";
-    case "es":
       return "fr";
   }
 }

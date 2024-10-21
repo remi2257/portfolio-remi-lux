@@ -8,13 +8,10 @@ export function generateDocumentTitle(language: Language, anonymous: boolean) {
   } else {
     switch (language) {
       case "fr":
-        title = "INGENIEUR_FULL_STACK";
+        title = "INGENIEUR_FRONT_END";
         break;
       case "en":
-        title = "FULL_STACK_ENGINEER";
-        break;
-      case "es":
-        title = "INGENIERO_FULL_STACK";
+        title = "FRONT_END_ENGINEER";
         break;
     }
   }
@@ -27,9 +24,6 @@ export function generateDocumentTitle(language: Language, anonymous: boolean) {
       break;
     case "en":
       suffix = "RESUME_EN";
-      break;
-    case "es":
-      suffix = "RESUMEN_ES";
       break;
   }
 
