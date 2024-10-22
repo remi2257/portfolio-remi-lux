@@ -39,6 +39,7 @@ const professionalExperience: ProfessionalExperienceSection = {
       points: [
         "Création du WebPlayer, un Web Component permettant aux concessionnaires automobiles d'intégrer les médias traités par Meero directement sur leur site web → React / TailwindCSS",
         "Pulication du package sur NPM avec différents adaptateurs (Next.js, Vue, ...)",
+        "Développement de l'application Back-Office → Next.js",
       ],
     },
     freelance: {
@@ -49,13 +50,13 @@ const professionalExperience: ProfessionalExperienceSection = {
           <Strong>Souk</Strong> : Refonte et Scaling d&apos;un scraper Vinted
           haute performance. Création d&apos;une nouvelle image de marque.
           Publication de l&apos;application mobile sur les deux stores et
-          déploiement de l&apos;application Web.
+          déploiement de l&apos;application Web
           {"\n"}→ Next.js / React Native (Expo) / Golang
         </>,
         <>
           <Strong>Serendy</Strong> : Création d&apos;une application de
           rencontres permettant des rencontres instantanées. Publication sur
-          l&apos;App Store et le Play Store.
+          l&apos;App Store et le Play Store
           {"\n"}→ React Native (Expo) / Next.js / PostgreSQL
         </>,
         <>

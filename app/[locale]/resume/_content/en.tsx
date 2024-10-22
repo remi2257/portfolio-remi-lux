@@ -37,8 +37,9 @@ const professionalExperience: ProfessionalExperienceSection = {
       name: "Senior Front-End Engineer | Meero, Paris",
       subtitle: "Since June 2024 (Contract)",
       points: [
-        "Development of the WebPlayer, a Web Component allowing car dealerships to embed media processed by Meero directly on their website → React / TailwindCSS",
+        "Development of the WebPlayer, a customisable Web Component enabling car dealerships to showcase Meero-processed media directly on their sites → React / TailwindCSS",
         "Deployment of the package on NPM with various adapters (Next.js, Vue, ...)",
+        "Development of the Back-Office application → Next.js",
       ],
     },
     freelance: {
@@ -46,15 +47,15 @@ const professionalExperience: ProfessionalExperienceSection = {
       subtitle: "February 2022 to May 2024",
       points: [
         <>
-          <Strong>Souk</Strong>: Rebranded & scaled a high-performance Vinted
-          scraper. Published mobile applications on both stores & deployed Web
-          app.
+          <Strong>Souk</Strong>: Rebranding & scaling of a high-performance
+          Vinted scraper. Publication of the mobile application on both stores &
+          the Web app
           {"\n"}→ Next.js / React Native (Expo) / Golang
         </>,
         <>
           <Strong>Serendy</Strong>: Creation of a dating app enabling users to
           meet instantly in chic locations. Published on both App Store and Play
-          Store.
+          Store
           {"\n"}→ React Native (Expo) / Next.js / PostgreSQL
         </>,
         <>
@@ -69,8 +70,8 @@ const professionalExperience: ProfessionalExperienceSection = {
           {"\n"}→ Angular / Nest.js / PostgreSQL
         </>,
         <>
-          <Strong>Stockly</Strong>: Development of the Back Office enabling
-          operational staff to purchase and ship products
+          <Strong>Stockly</Strong>: Development of the Back-Office application
+          enabling operational staff to purchase and ship products
           {"\n"}→ Angular
         </>,
       ],
