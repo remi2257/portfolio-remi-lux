@@ -27,6 +27,17 @@ const Projects: React.FC<{ index: number; className?: string }> = ({
 
       Icon: TbPhotoAi,
       date: "2023",
+
+      footer: (
+        <Button asChild>
+          <Link
+            href="https://www.youtube.com/watch?v=Pky0sTclNic"
+            target="_blank"
+          >
+            {ctaT("watchOnYoutube")}
+          </Link>
+        </Button>
+      ),
     },
     {
       title: "TGV Max Extra",

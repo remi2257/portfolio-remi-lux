@@ -78,7 +78,7 @@
       },
 
       "badges": {
-        "cdi": "Permanent",
+        "cdi": "Contract",
         "internship": "Internship",
         "robotics": "Robotics"
       }
@@ -215,10 +215,11 @@
   "cta": {
     "contactMe": "Contact Me",
     "getMyResume": "Get my Resume",
-    "visitWebsite": "Visit Website",
     "seeDocumentation": "See Documentation",
+    "seeOnGithub": "See on Github",
     "seeOnWebsite": "See on Website",
-    "seeOnGithub": "See on Github"
+    "visitWebsite": "Visit Website",
+    "watchOnYoutube": "Watch on YouTube"
   },
 
   "metadata": {

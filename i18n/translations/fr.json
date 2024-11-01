@@ -219,10 +219,11 @@
   "cta": {
     "contactMe": "Contactez-moi",
     "getMyResume": "Télécharger mon CV",
-    "visitWebsite": "Visiter le site",
     "seeDocumentation": "Voir la documentation",
+    "seeOnGithub": "Voir sur Github",
     "seeOnWebsite": "Voir sur le site",
-    "seeOnGithub": "Voir sur Github"
+    "visitWebsite": "Visiter le site",
+    "watchOnYoutube": "Regarder sur YouTube"
   },
 
   "metadata": {
