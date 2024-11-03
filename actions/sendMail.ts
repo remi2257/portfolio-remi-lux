@@ -19,9 +19,11 @@ export async function sendMail({
     subject: "New message from portfolio contact form",
     text: [
       "New message received from portfolio contact form",
+      "",
       "Name: " + name,
       "Subject: " + subject,
       "Email: " + email,
+      "",
       message,
     ].join("\n"),
   });
