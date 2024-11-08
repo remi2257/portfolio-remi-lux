@@ -20,7 +20,7 @@
       "meero": {
         "description": {
           "paragraph1": "Création du WebPlayer, un Web Component permettant aux concessionnaires automobiles d'intégrer les médias traités par Meero directement sur leur site web.",
-          "paragraph2": "Pulication du package sur NPM avec différents adaptateurs (Next.js, Vue.js, Vanilla JS, ...)."
+          "paragraph2": "Publication du package sur NPM avec différents adaptateurs (Next.js, Vue.js, Vanilla JS, ...)."
         }
       },
       "souk": {

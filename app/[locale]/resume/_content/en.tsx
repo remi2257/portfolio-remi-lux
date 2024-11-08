@@ -16,7 +16,7 @@ const education: EducationSection = {
   subSectionRecord: {
     phelma: {
       name: "Computer Vision & AI Engineer\nGrenoble INP Phelma",
-      subtitle: "September 2016 to September 2019",
+      subtitle: "From Sept. 2016 to Sept. 2019",
       points: [
         "SICOM Master: Signal, Image, Communication & Multimedia",
         "Specialty: Computer Vision",
@@ -24,7 +24,7 @@ const education: EducationSection = {
     },
     prepa: {
       name: "Scientific preparatory class\nLycée Fabert, Metz",
-      subtitle: "September 2014 to September 2016",
+      subtitle: "From Sept. 2014 to Sept. 2016",
       points: ["PCSI/PC* (Physics/Chemistry)"],
     },
   },
@@ -38,13 +38,13 @@ const professionalExperience: ProfessionalExperienceSection = {
       subtitle: "Since June 2024 (Contract)",
       points: [
         "Development of the WebPlayer, a customisable Web Component enabling car dealerships to showcase Meero-processed media directly on their sites → React / TailwindCSS",
-        "Deployment of the package on NPM with various adapters (Next.js, Vue, ...)",
+        "Publication on NPM with various adapters (Next.js, Vue, ...)",
         "Development of the Back-Office application → Next.js",
       ],
     },
     freelance: {
       name: "Freelance Full-Stack Engineer | Paris",
-      subtitle: "February 2022 to May 2024",
+      subtitle: "From February 2022 to May 2024",
       points: [
         <>
           <Strong>Souk</Strong>: Rebranding & scaling of a high-performance
@@ -78,7 +78,7 @@ const professionalExperience: ProfessionalExperienceSection = {
     },
     forssea: {
       name: "Software Engineer | Forssea Robotics, Paris",
-      subtitle: "May 2021 to February 2022 (Contract)",
+      subtitle: "From May 2021 to February 2022 (Contract)",
       points: [
         "Architecture and development of the NAVCAM → C++",
         "NAVCAM's GUI development → Angular",
@@ -86,7 +86,7 @@ const professionalExperience: ProfessionalExperienceSection = {
     },
     niryo: {
       name: "Software Engineer | Niryo, Lille",
-      subtitle: "September 2019 to April 2021 (Contract)",
+      subtitle: "From Sept. 2019 to April 2021 (Contract)",
       points: [
         "Architecture and development of the Niryo Ned & its Vision Set → Python",
         "Development of the Niryo Studio GUI → Angular",
@@ -111,7 +111,7 @@ const skills: SkillsSection = {
       name: "Miscellaneous",
       points: [
         "Git - Linux",
-        "CI/CD: GitHub Action/GitLab CI",
+        "CI/CD: GitHub Actions/GitLab CI",
         "Go / Python / C++",
         "UI/UX: Figma",
       ],

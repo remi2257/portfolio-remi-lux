@@ -543,9 +543,9 @@ const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ showPdf }) => {
             </PDFViewer>
           )}
           {loadingPdf && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-y-4 rounded bg-black/50 text-2xl font-semibold text-white backdrop-blur-sm">
+            <div className="absolute inset-0 flex flex-col items-center justify-center rounded bg-black/50 text-lg font-semibold text-white backdrop-blur-sm lg:gap-y-4 lg:text-xl">
               <span>{t("generating")}</span>
-              <RiLoader4Fill className="size-8 animate-spin" />
+              <RiLoader4Fill className="size-6 animate-spin lg:size-8" />
             </div>
           )}
         </div>

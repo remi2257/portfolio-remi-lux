@@ -16,7 +16,7 @@ const education: EducationSection = {
   subSectionRecord: {
     phelma: {
       name: "Ingénieur Computer Vision & IA\nGrenoble INP Phelma",
-      subtitle: "Septembre 2016 à Septembre 2019",
+      subtitle: "De Sept. 2016 à Sept. 2019",
       points: [
         "Master SICOM : Signal, Image, Communication & Multimédia",
         "Spécialité : Computer Vision",
@@ -24,7 +24,7 @@ const education: EducationSection = {
     },
     prepa: {
       name: "Classe préparatoire scientifique\nLycée Fabert, Metz",
-      subtitle: "Septembre 2014 à Septembre 2016",
+      subtitle: "De Sept. 2014 à Sept. 2016",
       points: ["PCSI/PC* (Physique/Chimie)"],
     },
   },
@@ -38,13 +38,13 @@ const professionalExperience: ProfessionalExperienceSection = {
       subtitle: "Depuis Juin 2024 (CDI)",
       points: [
         "Création du WebPlayer, un Web Component permettant aux concessionnaires automobiles d'intégrer les médias traités par Meero directement sur leur site web → React / TailwindCSS",
-        "Pulication du package sur NPM avec différents adaptateurs (Next.js, Vue, ...)",
+        "Publication sur NPM avec différents adaptateurs (Next.js, Vue, ...)",
         "Développement de l'application Back-Office → Next.js",
       ],
     },
     freelance: {
       name: "Ingénieur Full-Stack Freelance | Paris",
-      subtitle: "Février 2022 à Mai 2024",
+      subtitle: "De Février 2022 à Mai 2024",
       points: [
         <>
           <Strong>Souk</Strong> : Refonte et Scaling d&apos;un scraper Vinted
@@ -80,7 +80,7 @@ const professionalExperience: ProfessionalExperienceSection = {
     },
     forssea: {
       name: "Ingénieur Logiciel | Forssea Robotics, Paris",
-      subtitle: "Mai 2021 à Février 2022 (CDI)",
+      subtitle: "De Mai 2021 à Février 2022 (CDI)",
       points: [
         "Architecture et développement de la NAVCAM → C++",
         "Développement de l'IHM de la NAVCAM → Angular",
@@ -88,7 +88,7 @@ const professionalExperience: ProfessionalExperienceSection = {
     },
     niryo: {
       name: "Ingénieur Logiciel | Niryo, Lille",
-      subtitle: "Septembre 2019 à Avril 2021 (CDI)",
+      subtitle: "De Sept. 2019 à Avril 2021 (CDI)",
       points: [
         "Architecture et développement du Niryo Ned et de son Vision Set → Python",
         "Développement de l'IHM Niryo Studio → Angular",
@@ -113,7 +113,7 @@ const skills: SkillsSection = {
       name: "Divers",
       points: [
         "Git - Linux",
-        "CI/CD : GitHub Action/GitLab CI",
+        "CI/CD : GitHub Actions/GitLab CI",
         "Go / Python / C++",
         "UI/UX : Figma",
       ],
