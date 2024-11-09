@@ -1,0 +1,46 @@
+diff --git a/node_modules/@react-pdf/layout/lib/index.cjs b/node_modules/@react-pdf/layout/lib/index.cjs
+index 5cac161..c5acfa6 100644
+--- a/node_modules/@react-pdf/layout/lib/index.cjs
++++ b/node_modules/@react-pdf/layout/lib/index.cjs
+@@ -630,13 +630,12 @@ const resolveSvg = (node, fontStore) => {
+ 
+ /* eslint-disable import/prefer-default-export */
+ 
+-let instance;
++let instancePromise;
+ const loadYoga = async () => {
+-  if (!instance) {
+-    // Yoga WASM binaries must be asynchronously compiled and loaded
+-    // to prevent Event emitter memory leak warnings, Yoga must be loaded only once
+-    instance = await Yoga__namespace.loadYoga();
+-  }
++  // Yoga WASM binaries must be asynchronously compiled and loaded
++  // to prevent Event emitter memory leak warnings, Yoga must be loaded only once
++  const instance = await (instancePromise ??= Yoga__namespace.loadYoga());
++
+   const config = instance.Config.create();
+   config.setPointScaleFactor(0);
+   const node = {
+diff --git a/node_modules/@react-pdf/layout/lib/index.js b/node_modules/@react-pdf/layout/lib/index.js
+index 273eee1..7df2cda 100644
+--- a/node_modules/@react-pdf/layout/lib/index.js
++++ b/node_modules/@react-pdf/layout/lib/index.js
+@@ -600,13 +600,12 @@ const resolveSvg = (node, fontStore) => {
+ 
+ /* eslint-disable import/prefer-default-export */
+ 
+-let instance;
++let instancePromise;
+ const loadYoga = async () => {
+-  if (!instance) {
+-    // Yoga WASM binaries must be asynchronously compiled and loaded
+-    // to prevent Event emitter memory leak warnings, Yoga must be loaded only once
+-    instance = await Yoga.loadYoga();
+-  }
++  // Yoga WASM binaries must be asynchronously compiled and loaded
++  // to prevent Event emitter memory leak warnings, Yoga must be loaded only once
++  const instance = await (instancePromise ??= Yoga.loadYoga()); // renamed as this is the imported name at the top of the file
++
+   const config = instance.Config.create();
+   config.setPointScaleFactor(0);
+   const node = {

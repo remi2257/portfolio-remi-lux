@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "postinstall": "patch-package",
     "prebuild": "yarn check-i18n",
     "build": "next build",
     "start": "next start",
@@ -49,7 +50,9 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-tailwindcss": "^3.17.4",
     "eslint-plugin-unused-imports": "^4.1.4",
+    "patch-package": "^8.0.0",
     "postcss": "^8",
+    "postinstall-postinstall": "^2.1.0",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
     "server-only": "^0.0.1",
