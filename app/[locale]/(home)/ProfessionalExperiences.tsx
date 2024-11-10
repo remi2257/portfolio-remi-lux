@@ -61,7 +61,7 @@ const ProfessionalExperiences: React.FC<{
     {
       title: "Serendy",
       subtitle: "Full-Stack Engineer",
-      badges: ["Freelance", "React Native", "Next.js", "PostgreSQL"],
+      badges: ["Freelance", "React Native", "Next.js", "Supabase"],
       description: tList("serendy.description"),
 
       Icon: WiMoonAltWaxingCrescent1,

@@ -56,7 +56,7 @@ const professionalExperience: ProfessionalExperienceSection = {
           <Strong>Serendy</Strong>: Creation of a dating app enabling users to
           meet instantly in chic locations. Published on both App Store and Play
           Store
-          {"\n"}→ React Native (Expo) / Next.js / PostgreSQL
+          {"\n"}→ React Native (Expo) / Next.js / Supabase
         </>,
         <>
           <Strong>Milleis Private Bank</Strong>: Development of tools for
