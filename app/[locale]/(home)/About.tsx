@@ -83,27 +83,27 @@ const About: React.FC<{ index: number; className?: string }> = ({
             <SkillIcon
               Icon={SiHtml5}
               tooltip="HTML"
-              className={"hover:text-orange-500"}
+              className={"hover:text-[#f06529]"}
             />
             <SkillIcon
               Icon={SiCss3}
               tooltip="CSS"
-              className={"hover:text-blue-500"}
+              className={"hover:text-[#2965f1]"}
             />
             <SkillIcon
               Icon={SiTailwindcss}
               tooltip="TailwindCSS"
-              className={"hover:text-teal-500"}
+              className={"hover:text-[#38bdf8]"}
             />
             <SkillIcon
               Icon={SiJavascript}
               tooltip="JavaScript"
-              className={"hover:text-yellow-400"}
+              className={"hover:text-[#f0db51]"}
             />
             <SkillIcon
               Icon={SiTypescript}
               tooltip="TypeScript"
-              className={"hover:text-blue-700"}
+              className={"hover:text-[#007acc]"}
             />
           </div>
           <div
@@ -112,17 +112,17 @@ const About: React.FC<{ index: number; className?: string }> = ({
             <SkillIcon
               Icon={SiReact}
               tooltip="React.js"
-              className={"hover:text-blue-400"}
+              className={"hover:text-[#61dafb]"}
             />
             <SkillIcon
               Icon={SiNextdotjs}
               tooltip="Next.js"
-              className={"hover:text-neutral-500"}
+              className={"hover:text-neutral-600"}
             />
             <SkillIcon
               Icon={SiAngularjs}
               tooltip="Angular"
-              className={"hover:text-red-600"}
+              className={"hover:text-[#dd0031]"}
             />
           </div>
           <div
@@ -131,17 +131,17 @@ const About: React.FC<{ index: number; className?: string }> = ({
             <SkillIcon
               Icon={SiSupabase}
               tooltip="Supabase"
-              className={"hover:text-green-600"}
+              className={"hover:text-[#3ecf8e]"}
             />
             <SkillIcon
               Icon={SiPostgresql}
               tooltip="PostgreSQL"
-              className={"hover:text-blue-800"}
+              className={"hover:text-[#336791]"}
             />
             <SkillIcon
               Icon={SiFirebase}
               tooltip="Firebase"
-              className={"hover:text-amber-500"}
+              className={"hover:text-[#ffca28]"}
             />
           </div>
           <div
@@ -150,22 +150,22 @@ const About: React.FC<{ index: number; className?: string }> = ({
             <SkillIcon
               Icon={SiGit}
               tooltip="Git"
-              className={"hover:text-red-500"}
+              className={"hover:text-[#f34f29]"}
             />
             <SkillIcon
               Icon={SiVercel}
               tooltip="Vercel"
-              className={"hover:text-neutral-500"}
+              className={"hover:text-neutral-600"}
             />
             <SkillIcon
               Icon={SiAmazonaws}
               tooltip="AWS"
-              className={"hover:text-orange-600"}
+              className={"hover:text-[#ff9900]"}
             />
             <SkillIcon
               Icon={SiDocker}
               tooltip="Docker"
-              className={"hover:text-sky-600"}
+              className={"hover:text-[#2496ed]"}
             />
           </div>
           <div
@@ -174,22 +174,22 @@ const About: React.FC<{ index: number; className?: string }> = ({
             <SkillIcon
               Icon={SiNodedotjs}
               tooltip="Node.js"
-              className={"hover:text-green-600"}
+              className={"hover:text-[#68a063]"}
             />
             <SkillIcon
               Icon={SiGo}
               tooltip="Go"
-              className={"hover:text-sky-500"}
+              className={"hover:text-[#00add8]"}
             />
             <SkillIcon
               Icon={SiPython}
               tooltip="Python"
-              className={"hover:text-yellow-500"}
+              className={"hover:text-[#ffde57]"}
             />
             <SkillIcon
               Icon={SiCplusplus}
               tooltip="C++"
-              className={"hover:text-blue-700"}
+              className={"hover:text-[#3d7eaf]"}
             />
           </div>
         </div>
