@@ -24,7 +24,7 @@ const ProfessionalExperiences: React.FC<{
     {
       title: "Meero",
       subtitle: "Senior Front-End Engineer",
-      badges: [t("badges.cdi"), "React.js", "TailwindCSS"],
+      badges: ["React.js", "TailwindCSS"],
       description: tList("meero.description"),
 
       Icon: FaImages,

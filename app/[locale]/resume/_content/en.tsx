@@ -9,7 +9,7 @@ import {
 import { GithubStars } from "../_components/GithubStars";
 import { Strong } from "../_components/Strong";
 
-const headerSubtitle = "5+ years of experience";
+const headerSubtitle = "5 years of experience";
 
 const education: EducationSection = {
   name: "Education",
@@ -35,7 +35,7 @@ const professionalExperience: ProfessionalExperienceSection = {
   subSectionRecord: {
     meero: {
       name: "Senior Front-End Engineer | Meero, Paris",
-      subtitle: "Since June 2024 (Contract)",
+      subtitle: "Since June 2024",
       points: [
         "Development of the WebPlayer, a customisable Web Component enabling car dealerships to showcase Meero-processed media directly on their sites → React / TailwindCSS",
         "Publication on NPM with various adapters (Next.js, Vue, ...)",
