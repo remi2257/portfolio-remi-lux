@@ -318,7 +318,7 @@ const Resume: React.FC<ResumeProps> = ({
               >
                 <Text>{currentLocation}</Text>
                 <Text>{contactPhone}</Text>
-                <Link style={{ color: "white" }} src={`email:${contactEmail}`}>
+                <Link style={{ color: "white" }} src={`mailto:${contactEmail}`}>
                   {contactEmail}
                 </Link>
                 <Link style={{ color: "white" }} src={portfolioLink}>
@@ -441,7 +441,7 @@ const Resume: React.FC<ResumeProps> = ({
               />
               <Link
                 style={{ color: "white" }}
-                src="https://www.linkedin.com/in/remilux/"
+                src="https://www.linkedin.com/in/remi-lux/"
               >
                 Rémi Lux
               </Link>
